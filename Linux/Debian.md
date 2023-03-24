@@ -31,3 +31,16 @@ systemctl start systemd-networkd
 ---
 高级安装
 启动时选advance -> (图形化) expert install
+
+
+---
+默认shell
+https://www.howtogeek.com/669835/how-to-change-your-default-shell-on-linux-with-chsh/
+```
+cat /etc/shells
+```
+
+To set your login shell, use chsh with no parameters:
+```
+chsh
+```
