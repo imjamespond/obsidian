@@ -30,9 +30,177 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "511e7b393871fcea",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "技术/k8s/kubeadm 旧.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "f89b00771a49fa5a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "技术/k8s/kubeadm.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "8c2506be4cf5a24f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "技术/k8s/k3s.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "e79ef84e171724ec",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "技术/k8s/kubespray.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "87904b11e44371a9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Linux/运维/firewall.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "facf7539e8ac812f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Linux/ssh/ssh.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "a1fc018fd3dd46e2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Linux/ssh/proxy.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "20f3f213d82a260b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "技术/git/代理.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "fed31a8c059070b2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "技术/git/hooks.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "335c04f4acfc9a66",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "技术/git/reflog.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "b81dd16ce186d337",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "技术/git/status.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "e1add8557af96f42",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "技术/git/submodule.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "52236ead267562a9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "技术/git/log.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "525794fffd36daca",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "技术/git/常用.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 15
       }
     ],
     "direction": "vertical"
@@ -98,7 +266,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "技术/k8s/离线安装.md",
+                "file": "技术/git/常用.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +283,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "技术/k8s/离线安装.md",
+                "file": "技术/git/常用.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +306,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技术/k8s/离线安装.md"
+                "file": "技术/git/常用.md"
               }
             }
           },
@@ -176,47 +344,47 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "5cf96c5fc4a4c118",
+  "active": "525794fffd36daca",
   "lastOpenFiles": [
-    "技术/k8s/kubectl yaml.md",
+    "技术/git/log.md",
+    "技术/git/常用.md",
+    "技术/git/submodule.md",
+    "技术/git/status.md",
+    "技术/git/reflog.md",
+    "技术/git/hooks.md",
+    "技术/git/代理.md",
+    "Linux/ssh/proxy.md",
+    "技术/git",
+    "Linux/ssh/ssh.md",
+    "Linux/sshd.md",
+    "Linux/ssh/sshd.md",
+    "Linux/ssh/ssh tunnel.md",
+    "Linux/ssh tunnel.md",
+    "Linux/ssh.md",
+    "Linux/ssh",
+    "Linux/运维/firewall.md",
+    "Linux/运维/iptables.md",
+    "技术/k8s/kubespray.md",
+    "技术/k8s/k3s.md",
+    "技术/k8s/kubeadm.md",
+    "技术/k8s/kubeadm 旧.md",
     "技术/k8s/离线安装.md",
+    "技术/k8s/kubectl yaml.md",
     "Develop/Android IOS/scrcpy.md",
     "技术/k8s",
     "Develop/web js ts/css.md",
     "Develop/Android IOS",
     "Develop/web js ts/rxjs operator.md",
     "Develop/web js ts/rxjs.md",
-    "Develop/web js ts/ts declare.md",
-    "Develop/web js ts/=== awesome js ===.md",
-    "技术/trojan-go.md",
-    "技术/前端/关于video标签blob地址 - 知乎.md",
-    "技术/ffmpeg.md",
     "技术/前端",
-    "技术/msys2.md",
-    "Mac/Untitled.md",
-    "Mac/路径.md",
-    "Mac/cmd.md",
-    "Mac/finder.md",
-    "Mac/applesciprt.md",
-    "Develop/Rust/国内源.md",
-    "Develop/Rust/特性.md",
-    "Develop/Rust/issues.md",
-    "Develop/Rust/vscode issue.md",
-    "Develop/Regex/Search matched and replace wtih which.md",
     "Develop/Rust",
     "Develop/Regex/img/2.png",
     "Develop/Regex/img/1.png",
     "Develop/Regex/img",
     "Develop/Regex/未命名文件夹",
-    "Develop/Regex/检测中文字符.md",
-    "Develop/Regex/常用.md",
-    "Develop/Python/pyinstaller.md",
     "Develop/Regex",
-    "Develop/Python/django.md",
     "Develop/Python",
-    "Develop/golang",
     "Develop/webgl/img/1.png",
-    "Develop/webgl/img",
     "Develop/webgl/1.png",
     "Untitled.canvas",
     "Linux/image/1.png",
