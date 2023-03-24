@@ -2,6 +2,9 @@
 ioreg -rn AppleSmartBattery
 
 ---
+file  可以查看是否是x86可执行程序
+
+---
 
 ```
 diskutil <verb> with no options will provide help on that verb

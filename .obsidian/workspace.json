@@ -8,139 +8,31 @@
         "type": "tabs",
         "children": [
           {
-            "id": "1e18e6cb154be558",
+            "id": "1dd2f0eb863b15c7",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Develop/Python/pyinstaller.md",
+                "file": "技术/k8s/kubectl yaml.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "f593d4aeb0d6f7e9",
+            "id": "5cf96c5fc4a4c118",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Develop/Regex/常用.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "fce719386bac72ce",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Develop/Regex/检测中文字符.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "5a0022e241f1c1e7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Develop/Regex/Search matched and replace wtih which.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "57f35dee1d690c80",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Develop/Rust/vscode issue.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "f827ed8a63c6b19f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Develop/Rust/issues.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "e8bed42e4cc0d4f8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Develop/Rust/特性.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "7b0be1e01ad65711",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Develop/Rust/国内源.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "2f8bd589d339ed77",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "技术/ffmpeg.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "a22226e91ee9426f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Mac/cmd.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "1f2a221bb70a0ae7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Mac/cmd.md",
+                "file": "技术/k8s/离线安装.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 10
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -206,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Mac/cmd.md",
+                "file": "技术/k8s/离线安装.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -223,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Mac/cmd.md",
+                "file": "技术/k8s/离线安装.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -246,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Mac/cmd.md"
+                "file": "技术/k8s/离线安装.md"
               }
             }
           },
@@ -284,12 +176,28 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "1f2a221bb70a0ae7",
+  "active": "5cf96c5fc4a4c118",
   "lastOpenFiles": [
-    "Mac/applesciprt.md",
-    "Mac/cmd.md",
-    "技术/msys2.md",
+    "技术/k8s/kubectl yaml.md",
+    "技术/k8s/离线安装.md",
+    "Develop/Android IOS/scrcpy.md",
+    "技术/k8s",
+    "Develop/web js ts/css.md",
+    "Develop/Android IOS",
+    "Develop/web js ts/rxjs operator.md",
+    "Develop/web js ts/rxjs.md",
+    "Develop/web js ts/ts declare.md",
+    "Develop/web js ts/=== awesome js ===.md",
+    "技术/trojan-go.md",
+    "技术/前端/关于video标签blob地址 - 知乎.md",
     "技术/ffmpeg.md",
+    "技术/前端",
+    "技术/msys2.md",
+    "Mac/Untitled.md",
+    "Mac/路径.md",
+    "Mac/cmd.md",
+    "Mac/finder.md",
+    "Mac/applesciprt.md",
     "Develop/Rust/国内源.md",
     "Develop/Rust/特性.md",
     "Develop/Rust/issues.md",
@@ -305,27 +213,11 @@
     "Develop/Python/pyinstaller.md",
     "Develop/Regex",
     "Develop/Python/django.md",
-    "Develop/Python/virtualenv.md",
-    "Develop/golang/defer panic recover.md",
     "Develop/Python",
-    "Develop/golang/dll.md",
-    "Develop/golang/反射,判断接口是否符合.md",
-    "Develop/golang/replace.md",
-    "Develop/golang/内存分配.md",
-    "Develop/golang/channel, context.md",
-    "Develop/golang/casbin.md",
-    "Develop/golang/cgo windows.md",
-    "Develop/golang/Issues.md",
-    "Develop/golang/interface, struct.md",
-    "Develop/webgl/关于logarithmicDepthBuffer对数深度缓冲区.md",
     "Develop/golang",
-    "Develop/webgl/z轴.md",
     "Develop/webgl/img/1.png",
     "Develop/webgl/img",
-    "Develop/webgl/未命名文件夹",
     "Develop/webgl/1.png",
-    "Develop/webgl",
-    "Develop/Cuda",
     "Untitled.canvas",
     "Linux/image/1.png",
     "Linux/。img/1.png",
