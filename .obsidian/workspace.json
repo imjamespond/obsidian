@@ -13,26 +13,110 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "DB/postgres.md",
+                "file": "Develop/C#/dll.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "89d10fed7b128d94",
+            "id": "44a17e26acd726a0",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "DB/redis.md",
+                "file": "Develop/Cuda/deepstream.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "fb58a971cb1aaae8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Develop/Cuda/install nv driver.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "7fd0866829d7fea1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Develop/webgl/webgl - dFdx和dFdy.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "ce784048a129c962",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Develop/webgl/z轴.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "9721edbd1aa8b1a5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Develop/webgl/关于logarithmicDepthBuffer对数深度缓冲区.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "a363c77ce1a9f6f6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Develop/golang/interface, struct.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "98be179aa8800396",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Develop/golang/Issues.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "6a8088f2c4ca7203",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Develop/golang/cgo windows.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 8
       }
     ],
     "direction": "vertical"
@@ -98,7 +182,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "DB/redis.md",
+                "file": "Develop/golang/cgo windows.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +199,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "DB/redis.md",
+                "file": "Develop/golang/cgo windows.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +222,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "DB/redis.md"
+                "file": "Develop/golang/cgo windows.md"
               }
             }
           },
@@ -159,11 +243,12 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -175,9 +260,32 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "89d10fed7b128d94",
+  "active": "6a8088f2c4ca7203",
   "lastOpenFiles": [
+    "Develop/golang/Issues.md",
+    "Develop/golang/cgo windows.md",
+    "Develop/golang/interface, struct.md",
+    "Develop/webgl/关于logarithmicDepthBuffer对数深度缓冲区.md",
+    "Develop/golang",
+    "Develop/webgl/z轴.md",
+    "Develop/webgl/webgl - dFdx和dFdy.md",
+    "Develop/webgl/img/1.png",
+    "Develop/webgl/img",
+    "Develop/webgl/未命名文件夹",
+    "Develop/webgl/1.png",
+    "Develop/Cuda/install nv driver.md",
+    "Develop/webgl",
+    "Develop/Cuda/deepstream.md",
+    "Develop/C#/dll.md",
     "DB/postgres.md",
+    "Develop/Cuda/nano.md",
+    "Untitled.md",
+    "Develop/Cuda",
+    "技术/vmware esxi.md",
+    "Develop/C#",
+    "Develop/Java/maven.md",
+    "Develop/Java",
+    "DB/mysql.md",
     "DB/redis.md",
     "技术/Docker/dockerd.md",
     "技术/Docker/save.md",
@@ -190,34 +298,13 @@
     "Linux/su.md",
     "技术/Docker",
     "技术/vagrant.md",
-    "Linux/运维/X11.md",
-    "Linux/运维/systemctl.md",
-    "技术/Prometheus.md",
     "技术",
-    "Linux/nfs.md",
-    "Linux/rsync.md",
-    "Linux/screen tmux.md",
-    "Linux/socat.md",
-    "Linux/运维/rufus.md",
-    "Misc/Obsidian.md",
-    "Linux/运维/samba.md",
-    "2023-03-24.md",
     "Untitled.canvas",
-    "Linux/yum.md",
-    "Linux/ssh tunnel.md",
-    "Linux/运维/Ubuntu.md",
     "Linux/运维",
-    "Misc",
     "Linux/image/1.png",
-    "Linux/image",
     "Linux/。img/1.png",
-    "Linux/。img",
     "Linux/img/1.png",
-    "Linux/img",
     "Linux/1.png",
-    "Linux/未命名文件夹",
-    "Pasted image 20230324173217.png",
-    "Mac",
-    "Develop/web js ts"
+    "Pasted image 20230324173217.png"
   ]
 }

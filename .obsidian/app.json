@@ -2,5 +2,6 @@
   "showLineNumber": true,
   "autoPairMarkdown": false,
   "autoConvertHtml": true,
-  "readableLineLength": false
+  "readableLineLength": false,
+  "newFileLocation": "current"
 }
