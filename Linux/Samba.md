@@ -129,7 +129,7 @@ This change allows users on your Red Hat/CentOS server to log in to shares on th
 
 10.    Next, add a section for /smbdemo, which you created earlier. You can just add it to the very bottom of /etc/samba/smb.conf with the following lines:
 
-![[Pasted image 20230324173217.png]]
+![](image/1.png)
 
 Figure 5: Configuring Samba share definitions.
 
