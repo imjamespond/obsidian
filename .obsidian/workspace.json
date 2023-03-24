@@ -4,35 +4,59 @@
     "type": "split",
     "children": [
       {
-        "id": "3ba8c285870f13d1",
+        "id": "f2079495288c5f3c",
         "type": "tabs",
         "children": [
           {
-            "id": "fa5e219300ddef9b",
+            "id": "1a5d50de5ee8b25c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Linux/Samba.md",
-                "mode": "preview",
+                "file": "Linux/运维/并发.md",
+                "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "1569027d7eb40d7e",
+            "id": "15aaab17e2489e0b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Misc/Obsidian.md",
+                "file": "Linux/运维/Ubuntu.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "487d2ab6b0267e3b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Linux/运维/rufus.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "d338f1110c241367",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Linux/运维/samba.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -82,7 +106,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 216.5
   },
   "right": {
     "id": "a67ee5c406294951",
@@ -98,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Misc/Obsidian.md",
+                "file": "Linux/运维/samba.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Misc/Obsidian.md",
+                "file": "Linux/运维/samba.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Misc/Obsidian.md"
+                "file": "Linux/运维/samba.md"
               }
             }
           },
@@ -175,10 +199,27 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "1569027d7eb40d7e",
+  "active": "d338f1110c241367",
   "lastOpenFiles": [
-    "Linux/Samba.md",
+    "Linux/ssh tunnel.md",
+    "Linux/运维/rufus.md",
+    "Linux/运维/X11.md",
+    "Linux/运维/Ubuntu.md",
+    "Linux/运维/并发.md",
+    "2023-03-24.md",
+    "Untitled.canvas",
+    "Linux/awk sed grep.md",
+    "Linux/screen tmux.md",
+    "Linux/virus.md",
+    "Linux/运维/Debian.md",
+    "Linux/运维/Alpine安装.md",
+    "Linux/运维/启动运行.md",
+    "Linux/运维/journalctl.md",
+    "Linux/tail less more.md",
+    "Linux/运维",
+    "Linux/rsync.md",
     "Misc/Obsidian.md",
+    "Linux/运维/samba.md",
     "Misc",
     "Linux/image/1.png",
     "Linux/image",
@@ -188,13 +229,9 @@
     "Linux/sshd.md",
     "Linux/img/1.png",
     "Linux/img",
-    "Linux/rsync.md",
     "Linux/1.png",
     "Linux/未命名文件夹",
-    "Linux/Untitled",
     "Pasted image 20230324173217.png",
-    "Linux/virus.md",
-    "Linux/ssh tunnel.md",
     "Linux/ssh.md",
     "Mac/cmd.md",
     "Mac/vmware win11.md",
@@ -202,13 +239,7 @@
     "Mac",
     "Develop/web js ts/swr.md",
     "Develop/web js ts/string bitwise not 取反.md",
-    "Linux/Debian.md",
-    "Linux/启动运行.md",
-    "Linux/Alpine安装.md",
     "Linux/df.md",
-    "Hello World.md",
-    "DB/neo4j.md",
-    "Untitled.md",
     "Develop/web js ts",
     "Develop",
     "DB"
