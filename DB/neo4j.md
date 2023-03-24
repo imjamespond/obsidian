@@ -6,6 +6,6 @@ Match (nn)--(nn1) return nn, nn1
 ```
 
 
-(nn)-[r]-(nn1) 包括关系
+(nn)-[r]-(nn1) 包括关系  
 
-(nn)-[r]-->(nn1) 包括关系方向
+(nn)-[r]-->(nn1) 包括关系方向  
