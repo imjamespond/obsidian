@@ -61,14 +61,62 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Linux/运维/systemctl.md",
+                "file": "Linux/运维/X11.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "bf6e60f41131e229",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "技术/vagrant.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "53525fd7793648b9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Linux/su.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "7bc209cb661752a7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "技术/Docker/国内源.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "a1be7349a45c0364",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "技术/Docker/run.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 8
       }
     ],
     "direction": "vertical"
@@ -134,7 +182,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Linux/运维/systemctl.md",
+                "file": "技术/Docker/run.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -151,7 +199,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Linux/运维/systemctl.md",
+                "file": "技术/Docker/run.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -174,7 +222,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Linux/运维/systemctl.md"
+                "file": "技术/Docker/run.md"
               }
             }
           },
@@ -211,10 +259,16 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "c5851fe6196e2919",
+  "active": "a1be7349a45c0364",
   "lastOpenFiles": [
-    "技术/Prometheus.md",
+    "技术/Docker/国内源.md",
+    "技术/Docker/run.md",
+    "Linux/su.md",
+    "技术/Docker",
+    "技术/vagrant.md",
+    "Linux/运维/X11.md",
     "Linux/运维/systemctl.md",
+    "技术/Prometheus.md",
     "技术",
     "Linux/nfs.md",
     "Linux/rsync.md",
@@ -227,7 +281,6 @@
     "Untitled.canvas",
     "Linux/yum.md",
     "Linux/ssh tunnel.md",
-    "Linux/运维/X11.md",
     "Linux/运维/Ubuntu.md",
     "Linux/运维/并发.md",
     "Linux/awk sed grep.md",
@@ -243,17 +296,12 @@
     "Linux/image",
     "Linux/。img/1.png",
     "Linux/。img",
-    "Linux/sshd.md",
     "Linux/img/1.png",
     "Linux/img",
     "Linux/1.png",
     "Linux/未命名文件夹",
     "Pasted image 20230324173217.png",
-    "Linux/ssh.md",
-    "Mac/cmd.md",
-    "Mac/vmware win11.md",
     "Mac",
-    "Develop/web js ts",
-    "Develop"
+    "Develop/web js ts"
   ]
 }
