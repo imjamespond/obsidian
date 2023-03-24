@@ -1,10 +1,10 @@
 
-docker run -itd -v /docker/registry:/var/lib/registry -p 5000:5000 --restart=always --name my-registry registry:latest
+docker run -itd -v /docker/registry:/var/lib/registry -p 5000:5000 ==--restart=always== --name my-registry registry:latest
 当 Docker 重启时，容器自动启动
 
-docker run -p 8080:8080 --rm --name zeppelin apache/zeppelin:0.9.0
+docker run -p 8080:8080 ==--rm== --name zeppelin apache/zeppelin:0.9.0
 
--v local_path:container_path
+==-v local_path:container_path==
 
 Run an interactive container
 
