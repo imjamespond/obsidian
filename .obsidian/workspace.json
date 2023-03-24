@@ -8,115 +8,139 @@
         "type": "tabs",
         "children": [
           {
-            "id": "34b86e74d355c434",
+            "id": "1e18e6cb154be558",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Develop/C#/dll.md",
+                "file": "Develop/Python/pyinstaller.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "44a17e26acd726a0",
+            "id": "f593d4aeb0d6f7e9",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Develop/Cuda/deepstream.md",
+                "file": "Develop/Regex/常用.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "fb58a971cb1aaae8",
+            "id": "fce719386bac72ce",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Develop/Cuda/install nv driver.md",
+                "file": "Develop/Regex/检测中文字符.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "7fd0866829d7fea1",
+            "id": "5a0022e241f1c1e7",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Develop/webgl/webgl - dFdx和dFdy.md",
+                "file": "Develop/Regex/Search matched and replace wtih which.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "ce784048a129c962",
+            "id": "57f35dee1d690c80",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Develop/webgl/z轴.md",
+                "file": "Develop/Rust/vscode issue.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "9721edbd1aa8b1a5",
+            "id": "f827ed8a63c6b19f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Develop/webgl/关于logarithmicDepthBuffer对数深度缓冲区.md",
+                "file": "Develop/Rust/issues.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "a363c77ce1a9f6f6",
+            "id": "e8bed42e4cc0d4f8",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Develop/golang/interface, struct.md",
+                "file": "Develop/Rust/特性.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "98be179aa8800396",
+            "id": "7b0be1e01ad65711",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Develop/golang/Issues.md",
+                "file": "Develop/Rust/国内源.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "6a8088f2c4ca7203",
+            "id": "2f8bd589d339ed77",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Develop/golang/cgo windows.md",
+                "file": "技术/ffmpeg.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "a22226e91ee9426f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Mac/cmd.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "1f2a221bb70a0ae7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Mac/cmd.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 8
+        "currentTab": 10
       }
     ],
     "direction": "vertical"
@@ -182,7 +206,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Develop/golang/cgo windows.md",
+                "file": "Mac/cmd.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -199,7 +223,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Develop/golang/cgo windows.md",
+                "file": "Mac/cmd.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -222,7 +246,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Develop/golang/cgo windows.md"
+                "file": "Mac/cmd.md"
               }
             }
           },
@@ -260,47 +284,49 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "6a8088f2c4ca7203",
+  "active": "1f2a221bb70a0ae7",
   "lastOpenFiles": [
-    "Develop/golang/Issues.md",
+    "Mac/applesciprt.md",
+    "Mac/cmd.md",
+    "技术/msys2.md",
+    "技术/ffmpeg.md",
+    "Develop/Rust/国内源.md",
+    "Develop/Rust/特性.md",
+    "Develop/Rust/issues.md",
+    "Develop/Rust/vscode issue.md",
+    "Develop/Regex/Search matched and replace wtih which.md",
+    "Develop/Rust",
+    "Develop/Regex/img/2.png",
+    "Develop/Regex/img/1.png",
+    "Develop/Regex/img",
+    "Develop/Regex/未命名文件夹",
+    "Develop/Regex/检测中文字符.md",
+    "Develop/Regex/常用.md",
+    "Develop/Python/pyinstaller.md",
+    "Develop/Regex",
+    "Develop/Python/django.md",
+    "Develop/Python/virtualenv.md",
+    "Develop/golang/defer panic recover.md",
+    "Develop/Python",
+    "Develop/golang/dll.md",
+    "Develop/golang/反射,判断接口是否符合.md",
+    "Develop/golang/replace.md",
+    "Develop/golang/内存分配.md",
+    "Develop/golang/channel, context.md",
+    "Develop/golang/casbin.md",
     "Develop/golang/cgo windows.md",
+    "Develop/golang/Issues.md",
     "Develop/golang/interface, struct.md",
     "Develop/webgl/关于logarithmicDepthBuffer对数深度缓冲区.md",
     "Develop/golang",
     "Develop/webgl/z轴.md",
-    "Develop/webgl/webgl - dFdx和dFdy.md",
     "Develop/webgl/img/1.png",
     "Develop/webgl/img",
     "Develop/webgl/未命名文件夹",
     "Develop/webgl/1.png",
-    "Develop/Cuda/install nv driver.md",
     "Develop/webgl",
-    "Develop/Cuda/deepstream.md",
-    "Develop/C#/dll.md",
-    "DB/postgres.md",
-    "Develop/Cuda/nano.md",
-    "Untitled.md",
     "Develop/Cuda",
-    "技术/vmware esxi.md",
-    "Develop/C#",
-    "Develop/Java/maven.md",
-    "Develop/Java",
-    "DB/mysql.md",
-    "DB/redis.md",
-    "技术/Docker/dockerd.md",
-    "技术/Docker/save.md",
-    "Linux/运维/journalctl.md",
-    "技术/Docker/run examples.md",
-    "技术/Docker/run.md",
-    "技术/Docker/network.md",
-    "技术/Docker/私仓.md",
-    "技术/Docker/国内源.md",
-    "Linux/su.md",
-    "技术/Docker",
-    "技术/vagrant.md",
-    "技术",
     "Untitled.canvas",
-    "Linux/运维",
     "Linux/image/1.png",
     "Linux/。img/1.png",
     "Linux/img/1.png",
