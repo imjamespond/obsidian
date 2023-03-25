@@ -16,3 +16,12 @@ string             meaning
 
 配置完成后，会在开机后进行启动，如果需要延时启动，可以参考：
 `@reboot sleep 300 && /home/start.sh`
+
+---
+秒级控制
+```
+*/1 * * * * /bin/date >>/tmp/date.txt
+*/1 * * * * sleep 5  ; /bin/date >>/tmp/date.txt
+*/1 * * * * sleep 10 ; /bin/date >>/tmp/date.txt
+...
+```
