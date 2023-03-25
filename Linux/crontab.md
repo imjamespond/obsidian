@@ -14,8 +14,9 @@ string             meaning
 @hourly       Run once an hour, "0 * * * *".
 ```
 
-配置完成后，会在开机后进行启动，如果需要延时启动，可以参考：
-`@reboot sleep 300 && /home/start.sh`
+配置完成后，会在开机后进行启动，如果需要延时启动，可以参考：  
+`@reboot sleep 300 && /home/start.sh`  
+<font size="1">如果是系统自带命令任务，@reboot不一定会执行，由于系统开机初始化，很有可能系统自带命令运行环境并不满足，但crontab已经开始执行@reboot，从而造成命令运行失败。</font>
 
 ---
 秒级控制
