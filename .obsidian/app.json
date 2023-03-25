@@ -1,7 +1,8 @@
 {
   "showLineNumber": true,
-  "autoPairMarkdown": false,
+  "autoPairMarkdown": true,
   "autoConvertHtml": true,
   "readableLineLength": false,
-  "newFileLocation": "current"
+  "newFileLocation": "current",
+  "attachmentFolderPath": "./img"
 }
