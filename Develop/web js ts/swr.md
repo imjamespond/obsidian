@@ -1,5 +1,5 @@
 
-## Trigger
+## Trigger， method为POST
 ```
 service:
 	signin: MutationFetcher<any, { username: string, password: string }, string>
@@ -25,7 +25,7 @@ call:
       })
 ```
 
-<font color="grey">setArgs相同参数触发request，这种情况属于 Key地址变化hash没变， 或hash发生变化，的混合场景</font>
+<font color="blue" size="4">setArgs相同参数触发request，这种情况属于 Key地址变化hash没变， 或hash发生变化，的混合场景, <b>method应该为GET时</b></font>
 ```
   useEffect(()=>{
     console.debug(prevData.current, data)
