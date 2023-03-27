@@ -1,5 +1,31 @@
-setArgs相同参数触发request，这种情况属于 Key地址变化hash没变， 或hash发生变化，的混合场景
----
+
+## Trigger
+```
+service:
+	signin: MutationFetcher<any, { username: string, password: string }, string>
+impl:
+  signin: (_key, { arg }) => {
+    const body = qs.stringify(arg)
+    return request('post', `/api/auth/signin`, {
+      body, 
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      }
+    })
+  },
+call:
+	const { trigger, data, error } = useSWRMutation("api/signin", service.signin,)
+	...
+	onclick: 
+      trigger({
+        "username": "test",
+        "password": "a94a8fe5ccb19ba61c4c0873d391e987982fbbd3"
+      }).catch((err)=>{
+        console.debug(err)
+      })
+```
+
+<font color="grey">setArgs相同参数触发request，这种情况属于 Key地址变化hash没变， 或hash发生变化，的混合场景</font>
 ```
   useEffect(()=>{
     console.debug(prevData.current, data)
@@ -27,8 +53,7 @@ with error
 ```
 以上是相同界面，如果是modal则设置destroyonclose,dequeinterval为0即可，每次open会重新请求相同key
 
-OR 可以通过设置一个refresh的state，这样mutate可以和swr请求分离，这种情况属于 Key没变化，强制刷新
----
+<font color="grey">OR 可以通过设置一个refresh的state，这样mutate可以和swr请求分离，这种情况属于 Key没变化，强制刷新</font>
 ```
   const [refresh, set_refresh] = useState(false)
   useEffect(() => {
