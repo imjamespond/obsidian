@@ -1,3 +1,7 @@
+- 从nano切至vi
+`EDITOR=vim.tiny crontab -e`
+
+--- 
 crontab -e
 保存即可。
 
