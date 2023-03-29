@@ -1,3 +1,10 @@
+- 常用
+```shell
+# 拷贝区间
+ffmpeg -ss 00:01:23 -to 00:02:00 -c copy  -i url -copy tscut.mp4
+```
+
+--- 
 Merging video and audio, with audio re-encoding
 
 See this example, taken from this blog entry but updated for newer syntax. It should be something to the effect of:

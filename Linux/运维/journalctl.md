@@ -2,7 +2,7 @@
 ```
 journalctl --disk-usage
 
-journalctl --vacuum-time=1d
+journalctl --vacuum-time=1d 清除只剩一天
 journalctl --vacuum-size=100M
 ```
 

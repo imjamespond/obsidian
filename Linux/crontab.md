@@ -1,3 +1,12 @@
+- 常用
+```shell
+*/3 * * * * netstat -plant|grep CLOSE_WAIT|awk '{ split($7,cols,"/"); print cols[1]}'| xargs kill -9
+0 3 * * * find /run/docker/libcontainerd/ -regex ".*-std\(out\|err\|in\)"|xargs -n 9 rm -rf
+
+@reboot su test -c 'screen -dm ~/shell/tunnel-remote.sh git@git 2222 22'
+```
+--- 
+
 - 从nano切至vi
 `EDITOR=vim.tiny crontab -e`
 
