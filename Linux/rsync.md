@@ -1,3 +1,9 @@
+- 常用
+```shell
+rsync -avz --delete --exclude=node_modules -e ssh ./ root@192.168.0.36:/root/frontend >> change.log
+```
+
+--- 
 ```shell
 1、从本地同步到远程
 rsync -avz --exclude=node_modules -e 'ssh -p 22' ./ root@192.168.0.36:/root/frontend

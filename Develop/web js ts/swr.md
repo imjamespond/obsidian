@@ -1,5 +1,5 @@
 
-## Trigger， method为POST
+- ### Trigger， method为POST
 ```
 service:
 	signin: MutationFetcher<any, { username: string, password: string }, string>
@@ -67,7 +67,7 @@ with error
 ```
 
 ---
-mutate updateFunc, 
+- ### mutate with updateFunc, 
 ```
   const { data, mutate, isLoading, isValidating } = useSWR('aaa', () => {
     console.debug('query')
@@ -110,6 +110,28 @@ render.. undefined
 ...react: onStateUpdate
 ...swr: onRevalidate 
 ```
+
+--- 
+- ### 级联请求
+```tsx
+const args = useReduce({datesource, database, schema, table})
+const { databases, loadingDatabases } = swr(datesource ? 'getDatabases' : null ,getDatabases)
+const { schemas, loadingSchemas } = swr(database ? 'getSchemas' : null, getSchemas)
+const { tables, loadingTables } = swr(schema ? 'getTables' : null, getTables)
+const disable = loadingDatabases || loadingSchemas || loadingTables
+...
+<select disable={disable} >databases</select>
+<select disable={disable} >schemas</select>
+<select disable={disable} >tables</select>
+```
+
+
+
+
+
+
+
+
 
 ---
 同级两个route使用swr必须要refreshonmount，否则不会请求
