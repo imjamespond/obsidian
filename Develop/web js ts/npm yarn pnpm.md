@@ -48,7 +48,7 @@ node index.js
 - npm 查看依赖
 
 # issues
-MSBUILD : error MSB4132: 无法识别工具版本“2.0”。可用的工具版本为 "4.0"。
+- MSBUILD : error MSB4132: 无法识别工具版本“2.0”。可用的工具版本为 "4.0"。
 https://github.com/chjj/pty.js/issues/60
 open up a new cmd as administrator and run this command:
 npm install --global --production windows-build-tools
@@ -58,3 +58,7 @@ close all instances of shell/cmd, reopen a cmd (regular this time, non-administr
 
 cnpm i --save-dev node-sass
 目测是不能装到全局
+
+- pnpm missing peer dependency
+.npmrc 中加
+`auto-install-peers=true`
