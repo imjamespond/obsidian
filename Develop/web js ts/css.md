@@ -1,8 +1,22 @@
-backgroud有白线
-flex: wrap后, 容器后面的div 背景在特定宽度下会往上移一个像素并产生白线, 原因是backgroud origin加了padding-box,删除后就没了
+- flex + ellipsis, 此例中外层flex用space-between，将title 和 btn置于两端，title也是flex,其又分成icon和text，这两个child都是block属性，key point是两个地方加overflow: hidden
+```jsx
+<div style={{ display: 'flex', justifyContent: 'space-between' }}>
+	<div style={{ display: 'flex', flex: '1', alignItems: 'center', overflow: 'hidden' }}>
+		<MenuOutlined style={{ cursor: 'grab', color: '#999' }} />
+		<div
+		style={{ marginLeft: 10, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap'}}>
+		{initds?.cnName}{item.config?.custName ? ` (${item.config.custName})` : ''}
+		</div>
+	</div>
+	<Space style={{ flex: '0' }}>
+	...
+	</Space>
+</div>
+```
+![[Pasted image 20230411105328.png|200]]
 
----
-flex 容器最小宽度
+--- 
+- flex 容器最小宽度
 容器 display: flex
 子元素 flexBasis:800,flexGrow:1,flexShrink:0
 flexGrow1,自适应; flexShrink0,最小宽度,flexBasis:宽度值
@@ -14,3 +28,7 @@ The flex CSS shorthand property:
 ```
 外层div overflow auto
 内层div minWidth (1000px)
+
+--- 
+backgroud有白线
+flex: wrap后, 容器后面的div 背景在特定宽度下会往上移一个像素并产生白线, 原因是backgroud origin加了padding-box,删除后就没了
