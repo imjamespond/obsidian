@@ -67,7 +67,7 @@ export function useSession(isKey: boolean, config?: SWRConfiguration) {
 	// await trigger({ ...value, password })
 	const result = await signin.trigger({ ...value, password })
 	if (result === "ok") {
-		mutate(undefined) // 重新获取sesssion
+		// mutate(undefined) // 重复？
 		message.success("登录成功！")
 	}
 ...
