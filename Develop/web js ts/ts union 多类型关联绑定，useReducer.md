@@ -52,3 +52,17 @@ const reducer: React.Reducer<
   placeholder="请输入报表名称"
 />
 ```
+
+- useReducer将参数集中成一个params管理
+keyword onchange时太频繁，单独出来，page直接放入params
+```ts
+  const [keyword, set_keyword] = useState<string>()
+  const [page] = usePage()
+  const [params, dispatch] = useReducer(reducer, { ...page })
+
+  const reportsSwr = useSWR<any>(
+    params.dirId ? { url: 'rptCtlgService.listCurrentUserPrivilegeReportsByPage', params } : null,
+    ({ params }) => {
+      return rptCtlgService.listReportsByPage(params)
+    })
+```
