@@ -15,21 +15,40 @@
 		)} />
 	</Switch>
 </Router>
+```
 
+```tsx
 function WithSession({ children }: PropsWithChildren<unknown>) {
+    const location = useLocation()
+    const dispatch = useDispatch()
     const { isLoading, isValidating, error, data, mutate } = useSessionAuto()
+
+    const routes = useMemo(() => {
+        if (data) {
+            dispatch({
+                type: session_info,
+                session_info: { data, status: 200 }
+            })
+            // return <div>{JSON.stringify(data)}</div>
+            return <React.Fragment>{children}</React.Fragment>
+        }
+        return <div>用户信息为空</div> 
+    }, [data]);
+
+    useEffect(()=>{
+      if(!!error) {
+        message.info("用户信息已过期，请重新登录", 1)
+      }
+    }, [error])
+
     if (isLoading) {
-        return <div>正在获取登录信息... </div>
+        return <div style={{ color: '#eee' }}>正在获取用户信息... </div>
     }
-    if (!!error) { 
+    if (!!error) {
         // return <pre>{JSON.stringify({error, data}, undefined, 2)}</pre>
-        return <Redirect to={`${baseUrl}/view/login`} />
+        return <Redirect to={{ pathname: `${baseUrl}/view/login`, state: location.pathname }} />
     }
-    if (data) {
-        // return <div>{JSON.stringify(data)}</div>
-        return <React.Fragment>{children}</React.Fragment>
-    }
-    return <div>登录信息为空</div>
+    return routes
 }
 ```
 
