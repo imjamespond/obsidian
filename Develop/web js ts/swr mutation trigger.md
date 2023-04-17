@@ -9,12 +9,15 @@ const getCols = (Save: SaveType, env: number): TableColumnType<Report>[] => [
     width: 150,
     render: (_, record,) => {
       return <Space>
-        <Button size='small' type='link' shape="circle" onClick={() => {
-          Save({ 
-            params: { env }, 
-            body: { reportId: record.id, reportName: 'foobar', sort: 1, } 
-          })
-        }}>添加报告</Button>
+        <Button type='link' size='small' onClick={async () => {
+          try {
+            await del({ params: { id: record.id } })
+            message.success("删除成功！")
+          } catch (error) {
+            message.error(JSON.stringify(error))
+          }
+          mutate({ url: 'safetyPerformanceManagement.list', args: { params: { env } } }, undefined)
+        }} >删除</Button>
       </Space>
     }
   },
