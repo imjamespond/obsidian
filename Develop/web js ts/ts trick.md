@@ -1,5 +1,17 @@
 - ### sub属性未export
-`TableProps<any>['columns']`
+`TableProps<any>['columns']`, 这样dataIndex将有类型提示
+```ts
+export type Columns<T> = (Omit<TableColumnType<T>, 'dataIndex'> & { dataIndex?: keyof T })[]
+// export type Columns<T> = (Omit<ListOf<TableProps<T>['columns']>, 'dataIndex'> & { dataIndex: keyof T })[]
+
+type SampleItem = Sample['item'] 
+const colsSafety: Columns<SampleItem> = [
+  { 
+    title: '报告名称',
+    dataIndex: 'reportName',
+  }
+]
+```
 
 --- 
 - ### ts反射数据类型

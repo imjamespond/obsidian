@@ -54,7 +54,7 @@ const reducer: React.Reducer<
 ```
 
 - useReducer将参数集中成一个params管理
-keyword onchange时太频繁，单独出来，page直接放入params
+keyword onchange时太频繁，单独出来，page直接放入params, set_page则用不上，只在前端分页中使用
 ```ts
   const [keyword, set_keyword] = useState<string>()
   const [page] = usePage()

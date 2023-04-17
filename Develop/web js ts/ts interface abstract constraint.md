@@ -1,3 +1,4 @@
+
 - ### interface + super class
 使用接口约束，say在super中定义，参数可不带类型
 ```typescript
