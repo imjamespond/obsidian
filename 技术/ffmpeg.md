@@ -1,7 +1,7 @@
 - 常用
 ```shell
-# 拷贝区间
-ffmpeg -ss 00:01:23 -to 00:02:00 -c copy  -i url -copy tscut.mp4
+# 拷贝区间 -to 00:02:00
+./ffmpeg -user_agent "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_1_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Safari/537.36" -ss 01:40:23 -i  "https://upos-sz-mirrorali.bilivideo.com/upgcxcode/30/01/1098840130/1098840130-1-16.mp4"  -c copy new.mp4
 ```
 
 --- 
