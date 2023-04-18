@@ -66,6 +66,39 @@ with error
 <button onClick={() => set_refresh(true)}>test</button>
 ```
 
+--- 
+- ### 级联请求
+```tsx
+const args = useReduce({datesource, database, schema, table})
+const { databases, loadingDatabases } = swr(datesource ? 'getDatabases' : null ,getDatabases)
+const { schemas, loadingSchemas } = swr(database ? 'getSchemas' : null, getSchemas)
+const { tables, loadingTables } = swr(schema ? 'getTables' : null, getTables)
+const disable = loadingDatabases || loadingSchemas || loadingTables
+...
+<select disable={disable} >databases</select>
+<select disable={disable} >schemas</select>
+<select disable={disable} >tables</select>
+```
+
+
+--- 
+- ## modal, dawer...
+visible时发请求，收起后空缓存，但visible限制不再revalidate, 避免两次请求
+```tsx
+  const listSwr = useSWR<any, any, foobar['listKey'] | null>(
+    visible ? { url: 'service.list', args: { params: { env } } } : null,
+    service.list
+  )
+
+  useEffect(() => {
+    if (visible === false) {
+      listSwr.mutate(undefined)
+    }
+  }, [visible])
+
+// 或者仅在 增删改时 mutate！
+```
+
 ---
 - ### mutate with updateFunc, 
 ```
@@ -110,25 +143,6 @@ render.. undefined
 ...react: onStateUpdate
 ...swr: onRevalidate 
 ```
-
---- 
-- ### 级联请求
-```tsx
-const args = useReduce({datesource, database, schema, table})
-const { databases, loadingDatabases } = swr(datesource ? 'getDatabases' : null ,getDatabases)
-const { schemas, loadingSchemas } = swr(database ? 'getSchemas' : null, getSchemas)
-const { tables, loadingTables } = swr(schema ? 'getTables' : null, getTables)
-const disable = loadingDatabases || loadingSchemas || loadingTables
-...
-<select disable={disable} >databases</select>
-<select disable={disable} >schemas</select>
-<select disable={disable} >tables</select>
-```
-
-
---- 
-- ## check session
-
 
 
 ---
