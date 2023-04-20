@@ -17,6 +17,7 @@
 </Router>
 ```
 
+- with session
 ```tsx
 function WithSession({ children }: PropsWithChildren<unknown>) {
     const location = useLocation()
@@ -94,4 +95,48 @@ export function useSession(isKey: boolean, config?: SWRConfiguration) {
     if (signinOK && session && sessionError === undefined) { // session ok 后跳至首页
         return RedirectToHome
     }
+```
+
+- with session and redux
+
+```tsx
+function WithSession({ children }: PropsWithChildren<unknown>) {
+  const location = useLocation()
+  const dispatch = useDispatch()
+  const session = useSelector((state: any) => {
+    return state.session
+  })
+  const { error, data } = useSessionAuto()
+  const isLoading = data === undefined && error === undefined;
+  const hasError = !!error
+
+  const routes = useMemo(() => {
+    if (data && JSON.stringify(session.user) !== '{}') {
+      // return <div>{JSON.stringify(data)}</div>
+      return <React.Fragment>{children}</React.Fragment>
+    }
+    return <Loading />
+  }, [session, data]);
+
+  useEffect(() => {
+    if (data) {
+      dispatch(getUserInfo({ data, status: 200 }))
+    }
+  }, [data])
+
+  useEffect(() => {
+    if (hasError) {
+      message.info("用户信息已过期，请重新登录", 1)
+    }
+  }, [error])
+
+  if (isLoading) {
+    return <Loading />
+  }
+  if (hasError) {
+    // return <pre>{JSON.stringify({error, data}, undefined, 2)}</pre>
+    return <Redirect to={{ pathname: `${baseUrl}/view/login`, state: location.pathname }} />
+  }
+  return routes
+}
 ```
