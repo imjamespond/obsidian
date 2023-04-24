@@ -1,4 +1,4 @@
--  snippets 
+- ### snippets 
 `~/Library/Application Support/Code/User/snippets/typescriptreact.json`
 ```json
 {
@@ -35,5 +35,29 @@
 			"import useSWR from 'swr';"
 		]
 	}
+}
+```
+
+- ### live server
+.vscode/settings.json
+```json
+{
+  "liveServer.settings.root": "/dist",
+  "liveServer.settings.ChromeDebuggingAttachment": false,
+  "liveServer.settings.ignoreFiles": [
+    "**/**",
+  ],
+  "liveServer.settings.https": {
+    "enable": false,
+    "cert": "/Users/james/workspace/live-server/server.pem", // 证书
+    "key": "/Users/james/workspace/live-server/privkey.pem", // 私钥
+    "passphrase": ""
+  },
+  "liveServer.settings.proxy": {
+    "enable": true,
+    "baseUri": "/web-apps",
+    "proxyUri": "http://test2:8000/web-apps" //测试
+  },
+  "liveServer.settings.host": "0.0.0.0",
 }
 ```
