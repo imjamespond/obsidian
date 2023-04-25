@@ -15,3 +15,28 @@ File 接口没有定义任何方法，但是它从 Blob 接口继承了以下方
 
 - 返回值
 一个新的 Blob 对象，它包含了原始 Blob 对象的某一个段的数据。
+
+---
+
+```js
+const config = {
+      headers:{
+        'Content-Type':'multipart/form-data',
+      },
+      transformRequest: [function (data) {
+        return data
+      }],
+      onUploadProgress: progressEvent => {
+        let persent = (progressEvent.loaded / progressEvent.total * 100 | 0) //上传进度百分比
+        console.log(persent)
+      },
+    }
+```
+- **transformRequest**：
+作用：表示允许在向服务器发送前，修改请求数据
+使用要求：
+1、只能用在 ‘PUT’, ‘POST’ 和 ‘PATCH’ 这几个请求方法
+2、后面数组中的函数必须返回==一个字符串，或 ArrayBuffer，或 Stream==
+
+- **transformResponse：**
+作用：在传递给 then/catch 前，允许修改响应数据
