@@ -31,6 +31,9 @@ const config = {
         console.log(persent)
       },
     }
+const data = new FormData();
+data.append('file', files[0]);
+axios.request({ data, ...config})
 ```
 - **transformRequest**：
 作用：表示允许在向服务器发送前，修改请求数据
