@@ -17,3 +17,6 @@ https://github.com/twitter/hogan.js/
 - editor
 https://github.com/ianstormtaylor/slate
 
+- 高亮
+https://prismjs.com/
+https://highlightjs.org/
