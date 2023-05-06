@@ -1,4 +1,3 @@
-```ts
 import html2canvas from 'html2canvas'
 
 export function screenshot() {
@@ -42,6 +41,3 @@ export function screenshot() {
   });
 
 }
-```
-
-![[test.ts]]
