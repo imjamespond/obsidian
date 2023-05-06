@@ -1,3 +1,24 @@
+```bash
+caddy -h
+caddy adapt ./caddyfile
+caddy fmt ./caddyfile --overwrite
+caddy run -h
+caddy run --adapter caddyfile --config ./caddyfile
+```
+
+```
+http://:5500 {
+	handle_path /test-app/* {
+		file_server {
+			root ./dist
+			browse
+		}
+	}
+}
+```
+- [handle_path](https://caddyserver.com/docs/caddyfile/directives/handle_path) 会去掉匹配的(strip matched)path，传给file_server
+
+--- 
 ./caddy_windows_amd64.exe run --adapter caddyfile --config ./tv2.conf 
 
 ---
