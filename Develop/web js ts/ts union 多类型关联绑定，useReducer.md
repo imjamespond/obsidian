@@ -66,3 +66,36 @@ keyword onchange时太频繁，单独出来，page直接放入params, set_page�
       return rptCtlgService.listReportsByPage(params)
     })
 ```
+
+---
+
+### [Extract](https://stackoverflow.com/questions/70043499/get-extract-the-type-of-a-type-that-is-one-of-the-types-in-a-union-type-typesc)
+```ts
+//export type UnionTypeOfAB = { a: {}; id: number } | { b: {}; id: number };
+import {UnionTypeOfAB} from './generated.ts';
+
+interface A {
+  a: {};
+}
+
+interface B {
+  b: {};
+}
+
+type A_Type = Extract<UnionTypeOfAB, A>; 
+// can use an inline interface instead of declaring one:
+//type A_Type = Extract<UnionTypeOfAB, {a:{}}>;
+
+/*A_type result:
+ type A_Type = {
+  a: {};
+  id: number;
+} */
+
+type B_Type = Extract<UnionTypeOfAB, B>;
+/*B_type result:
+ type B_Type = {
+  b: {};
+  id: number;
+} */
+```
