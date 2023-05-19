@@ -1,6 +1,11 @@
-
-- ### Trigger， method为POST
+- 通过控制key null/ 有值 刷新
+```ts
+const { data: eventModels, } = useSWR<EventManage.EventModel[]>(
+    edit === EditType.Basic ? 'eventManagement.eventmodel.list' : null, service.eventManagement.model.list
+  )
 ```
+- ### Trigger， method为POST
+```ts
 service:
 	signin: MutationFetcher<any, { username: string, password: string }, string>
 impl:
@@ -26,7 +31,7 @@ call:
 ```
 
 <font color="blue" size="4">setArgs相同参数触发request，这种情况属于 Key地址变化hash没变， 或hash发生变化，的混合场景, <b>method应该为GET时</b></font>
-```
+```ts
   useEffect(()=>{
     console.debug(prevData.current, data)
     /**
@@ -54,7 +59,7 @@ with error
 以上是相同界面，如果是modal则设置destroyonclose,dequeinterval为0即可，每次open会重新请求相同key
 
 <font color="grey">OR 可以通过设置一个refresh的state，这样mutate可以和swr请求分离，这种情况属于 Key没变化，强制刷新</font>
-```
+```tsx
   const [refresh, set_refresh] = useState(false)
   useEffect(() => {
     if (refresh) {
