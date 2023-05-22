@@ -1,3 +1,7 @@
+
+- ### vscode 读取d.ts 
+文件名为==type.d.ts== 或 将文件置于==types文件夹==中
+
 - ### sub属性未export
 `TableProps<any>['columns']`, 这样dataIndex将有类型提示
 ```ts
