@@ -1,3 +1,23 @@
+
+- Axios 下载post文件
+```ts
+/* 从请求头中获取文件名称,用于将文件流转换成对应文件格式的文件,防止文件损坏 */
+let split = response.headers['content-disposition'].split("=");
+/* 将数据流转换为对应格式的文件,并创建a标签,模拟点击下载,实现文件下载功能 */
+let fileReader = new FileReader();
+fileReader.readAsDataURL(response.data);
+fileReader.onload = (e: any) => {
+  let a = document.createElement('a');
+  a.download = split[1];
+  a.href = e.target.result;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
+```
+
+--- 
+
 File 接口没有定义任何方法，但是它从 Blob 接口继承了以下方法：
 
 --- 
