@@ -1,4 +1,5 @@
-- 通过控制key null/ 有值 刷新
+
+- ## 通过控制key null/ 有值 刷新
 ```ts
 const { data: eventModels, } = useSWR<EventManage.EventModel[]>(
     edit === EditType.Basic ? 'eventManagement.eventmodel.list' : null, service.eventManagement.model.list
