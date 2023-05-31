@@ -15,6 +15,29 @@ function_listcpp()
 function_listcpp "."
 ```
 
+```bash
+for i in “file1” “file2” “file3”
+for i in /boot/*
+for i in /etc/*.conf
+for i in $(seq -w 10) --》等宽的01-10
+for i in {1…10}
+for i in $( ls )
+for I in $(< file)
+for i in “$@” --》取所有位置参数，可简写为for i 
+
+#!/bin/bash
+j=$1
+for ((i=1; i<=j; i++))
+do
+touch file$i && echo file $i is ok
+done
+
+```
+
+$@: 所有位置变量的内容
+$#: 位置变量的个数
+$0: 文件名
+$*: 所有位置变量的内容
 
 ---
 

@@ -1,3 +1,4 @@
+
 ### 查看电量
 ioreg -rn AppleSmartBattery
 
