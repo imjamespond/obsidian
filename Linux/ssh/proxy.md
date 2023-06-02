@@ -1,7 +1,8 @@
 
 ssh-overproxy.sh
-```
-ssh -o ProxyCommand='nc -x localhost:1080 %h %p' ${1}
+```bash
+proxy=${2:-'localhost:1080'}
+ssh -o ProxyCommand="nc -x ${proxy} %h %p" ${1}
 
 直接ssh
 ssh-overproxy.sh '-p 29871 foobar@cn2'
