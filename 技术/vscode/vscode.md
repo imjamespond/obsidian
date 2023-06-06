@@ -1,3 +1,4 @@
+
 - ### snippets 
 `~/Library/Application Support/Code/User/snippets/typescriptreact.json`
 ```json
@@ -60,4 +61,14 @@
   },
   "liveServer.settings.host": "0.0.0.0",
 }
+```
+
+- ### bash
+```json
+"terminal.integrated.profiles.osx": {
+    "bash": {
+      "path": "bash",
+      "args": ["-l"]
+    }
+  }
 ```
