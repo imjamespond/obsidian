@@ -1,3 +1,4 @@
+- 统一try catch可以统一处理后端返回的错误，又不需要侵入式在axios中拦截错误造成代码僵化
 ```ts
 // 例一： 显式声明泛型
   const [bindFn] = useTryCatch<[CustomerTag.CustomerTag]>(async (record) => {
@@ -41,12 +42,15 @@ export function useSafeState<T = unknown>(initialState: T): [T, React.Dispatch<R
   return [state, setSafeState]
 }
 
+
 type UseCallbackParams = Parameters<typeof useCallback>
-type UseTryCatchCallback<T extends any[]> = (...args: T) => Promise<any>
+type UseTryCatchCallback<T extends any[]> = (...args: T) => Promise<void>
 export function useTryCatch<T extends any[]>(callback: UseTryCatchCallback<T>, deps: UseCallbackParams[1]):
   [UseTryCatchCallback<T>, boolean] {
 
   const [loading, set_loading] = useSafeState(false)
+
+  const msg = useMsg()
 
   const cb = useCallback(async (...args: T) => {
     set_loading(true)
@@ -55,9 +59,9 @@ export function useTryCatch<T extends any[]>(callback: UseTryCatchCallback<T>, d
     } catch (error) {
       console.error(error)
       if (typeof error === 'string') {
-        message.error(error)
+        msg.error(error)
       } else if (error && typeof error === 'object' && typeof (error as Api.Error).message === 'string') {
-        message.error((error as Api.Error).message)
+        msg.error( (error as Api.Error).message)
       }
     }
     set_loading(false)
@@ -66,5 +70,4 @@ export function useTryCatch<T extends any[]>(callback: UseTryCatchCallback<T>, d
 
   return [cb, loading]
 }
-
 ```
