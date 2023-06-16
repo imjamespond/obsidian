@@ -6,6 +6,18 @@
 #    exit
 #fi
 
+LOCAL_PORT=${3:-'2200'}
+TARGET_PORT=${4:-'localhost:2200'}
+
+while true
+do
+  echo $(date)" ssh tunnel start..."
+  ssh -NT -o ExitOnForwardFailure=yes -o ServerAliveInterval=60 -o ServerAliveCountMax=100 \
+    -L *:${LOCAL_PORT}:${TARGET_PORT} ${1} -J ${2}
+  sleep 30
+done
+
+# 通过文件
 LOCAL_PORT=${2:-'2200'}
 TARGET_PORT=${3:-'localhost:2200'}
 HOST=$(head -n 1 ${1})
