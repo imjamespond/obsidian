@@ -36,3 +36,23 @@ function Item(props:any) {
 
 }
 ```
+
+复制一份拖拽
+```tsx
+<SortableContext items={items}>
+	{
+	items.map(val=>(<Item id={val}/>))
+	}
+	{createPortal(
+		<DragOverlay
+		// adjustScale={adjustScale}
+		// dropAnimation={dropAnimation}
+		>	
+		{activeId ? (
+		<div>{activeId}</div>
+		) : null}
+		</DragOverlay>,
+		document.body
+	)}
+</SortableContext>
+```

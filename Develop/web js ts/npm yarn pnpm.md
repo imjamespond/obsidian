@@ -62,3 +62,6 @@ cnpm i --save-dev node-sass
 - pnpm missing peer dependency
 .npmrc 中加
 `auto-install-peers=true`
+-  WARN  Issues with peer dependencies found
+?
+
