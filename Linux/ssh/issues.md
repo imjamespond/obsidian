@@ -1,5 +1,5 @@
 -  permissions are too open
-![[Pasted image 20230610150015.png]]
+![[Pasted image 20230610150015.png|400]]
 ![[Pasted image 20230610150056.png]]
 
 
