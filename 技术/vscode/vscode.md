@@ -72,3 +72,6 @@
     }
   }
 ```
+
+- ### disable 选中file后，cmd + f 搜索目录explorer而非editor
+ 在keyboard shortcuts里将`list.find`的快捷键改为cmd + shift + f

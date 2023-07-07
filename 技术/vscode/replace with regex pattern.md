@@ -1,6 +1,7 @@
 https://transform.tools/css-to-js
 sample: <span style="background:rgba(173, 239, 239, 0.55)">">div:not(<span style="background:rgba(205, 244, 105, 0.55)">:global(.__graph__)</span>)": {</span>
 pattern: <span style="background:rgba(205, 244, 105, 0.55)">":global\(<span style="background:rgba(240, 167, 216, 0.55)">([^\)]+)</span>\)</span>
+`":global\(([^\)]+)\)`
 replace: `"& $1`
 只匹配第一个反括号
 
