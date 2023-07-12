@@ -1,3 +1,23 @@
+
+- gcc and build tools
+```bash
+sudo apt install build-essential
+sudo apt install libssl-dev #OpenSSL
+# sudo apt-get install xorg openbox
+sudo apt-get install libx11-dev
+sudo apt-get -y install libxrandr-dev libxinerama-dev libxcursor-dev libxi-dev
+sudo apt-get -y install xorg-dev libglu1-mesa-dev #nanogui
+sudo apt-get install python3-dev
+```
+
+- Installing Ubuntu Desktop for arm64 using Ubuntu Server ISO
+```bash
+$ sudo apt update
+$ sudo apt install ubuntu-desktop
+$ sudo reboot
+```
+
+--- 
 https://askubuntu.com/questions/151840/how-to-disable-gdm-from-being-automatically-started
 
 For Ubuntu 18.04 this worked for me:
