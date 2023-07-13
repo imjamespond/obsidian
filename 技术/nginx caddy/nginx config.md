@@ -1,15 +1,27 @@
-Alias
-
+- Alias
+```nginx
 location /data-platform-demo {
           alias  /var/www/data-platform-admin-new/dist;
           try_files $uri $uri/ /data-platform-demo/index.html;
 }
+```
+
 访问location用alias替换, 找不到后访问index.html
 
----
-Remove prefix
+--- 
 
+- override root
+```nginx
+location /data-atlas/ {
+	root /var/demo; # override root of server
+	try_files $uri $uri/ /data-atlas/index.html;
+}
 ```
+
+---
+
+- Remove prefix
+```nginx
 location = /gogs {
     return 302 /gogs/;
 }
@@ -20,13 +32,14 @@ location /gogs/ {
 
 
 ---
-Cache with proxy_pass
+
+- Cache with proxy_pass
 
 ~ 表示正则
 ~* \.(css|js)$ 表示匹配末段
 ~ ^\/(.*\.(css|js))$ 表示匹配开始到末尾, /要escape
 
-```
+```nginx
     location ~ ^\/(.*\.(css|js))$ {
         expires 30d;
         add_header Pragma public;
