@@ -4,7 +4,7 @@
 export type TriggerOfMutationFetcher<T> = T extends MutationFetcher<infer Data, infer ExtraArg> ? SWRMutationResponse<Data, unknown, ExtraArg>['trigger'] : never
 ```
 
-- 
+- 这么写的好处是可复用不带modal,drawer的纯组件，loading state由swr 接管无需自己控制，若无需纯组件可将modal drawer捆绑以简化
 ```tsx
 import { KeyOfFetcher, TriggerOfMutationFetcher, service } from '@service';
 import { Checkbox, Col, Form, Row, Divider } from 'antd';
