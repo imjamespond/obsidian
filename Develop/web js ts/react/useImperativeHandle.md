@@ -1,5 +1,5 @@
 
-- TriggerOfMutationFetcher
+- TriggerOfMutationFetcher 推断trigger的类型
 ```ts
 export type TriggerOfMutationFetcher<T> = T extends MutationFetcher<infer Data, infer ExtraArg> ? SWRMutationResponse<Data, unknown, ExtraArg>['trigger'] : never
 ```
