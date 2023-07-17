@@ -1,3 +1,32 @@
+
+- -L
+```bash
+LOCAL_PORT=${2:-'12300'}
+TARGET_PORT=${3:-'localhost:12300'}
+
+while true
+do
+  echo $(date)" ssh tunnel start..."
+  ssh -NT -o ExitOnForwardFailure=yes -o ServerAliveInterval=60 -o ServerAliveCountMax=100 \
+    -L ${LOCAL_PORT}:${TARGET_PORT} ${1}
+  sleep 30
+done
+```
+
+- -R
+```bash
+REMOTE_lISTENING_PORT=${2:-'12300'}
+LOCAL_PROXY_PORT=${3:-'12300'}
+
+while true
+do
+  echo $(date)" ssh tunnel start..."
+  ssh -NT -o ExitOnForwardFailure=yes -o ServerAliveInterval=60 -o ServerAliveCountMax=100 \
+    -R localhost:${REMOTE_lISTENING_PORT}:localhost:${LOCAL_PROXY_PORT} ${1}
+  sleep 30
+done
+```
+
 通过跳板进行内网端口映射
 ```bash
 
