@@ -1,4 +1,13 @@
-## list cpp files
+- 不等于 not equal
+```bash
+if [[ $(id -u) -ne 0 ]]; then
+   echo "Please run as root"
+   exit
+fi
+```
+
+
+- list cpp files
 ```shell
 function_listcpp()
 {
