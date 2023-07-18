@@ -76,26 +76,25 @@ export function useSession(isKey: boolean, config?: SWRConfiguration) {
 ```
 
 1. login请求
-```ts
-  const location = useLocation()
-  const msg = useMsg()
-  const session = useSession()
-  const [signinOK, set_signinOK] = useState(false)
-  const { trigger: login, isMutating, error } = useMutation('auth.login', service.auth.login)
-  const onFinish: any = async (value: any) => {
-    try {
-      await login({ ...value, password: sha1(value.password) })
-      session.mutate(undefined) //清除error并再请求
-      msg.success('登录成功')
-      set_signinOK(true)
-    } catch (error) {
-      msg.error('用户名或密码错误')
+```
+	// swr
+    const signin = useSWRMutation<any>("/api/auth/signin", signinReq, { optimisticData: {} })
+    const signinOK = signin.data === "ok"
+    const { data: session, error: sessionError, mutate } = useSession(signinOK)
+...
+	// on submit
+	signin.reset()
+	// await trigger({ ...value, password })
+	const result = await signin.trigger({ ...value, password })
+	if (result === "ok") {
+		// mutate(undefined) // 重复？
+		message.success("登录成功！")
+	}
+...
+	// render
+    if (signinOK && session && sessionError === undefined) { // session ok 后跳至首页
+        return RedirectToHome
     }
-  }
-
-  if (signinOK && session.error === undefined && error === undefined) { // 这里一定要等session请求后才跳转，否则swr的error未清空，仍有跳至home后，error弹窗会触发等问题...
-    return <RedirectToHome to={location.state ?? '/'} />
-  }
 ```
 
 - with session and redux
