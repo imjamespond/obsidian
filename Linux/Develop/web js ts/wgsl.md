@@ -1,3 +1,0 @@
-- fn 函数
-- 预声明 [built-in value](https://www.w3.org/TR/WGSL/#built-in-values)
-vertex_index, position ...
