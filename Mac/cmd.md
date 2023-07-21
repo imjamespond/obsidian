@@ -1,5 +1,9 @@
 
-### 查看电量
+- 注销
+`ps aux|grep loginwindow`
+`sudo kill pid`
+
+- 查看电量
 ioreg -rn AppleSmartBattery
 
 ---
