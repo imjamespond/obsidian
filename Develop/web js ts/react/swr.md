@@ -200,3 +200,18 @@ refreshInterval: 0,
 
 mutate(undefined) //重置
 ```
+
+---
+- useSWRInfinite
+revalidateAll 为true，请求新数据
+```tsx
+  const { data: modelsData, size, setSize, isValidating, isLoading, mutate } = useSWRInfinite<DataAtlas.TableModelInfo[], Api.Error, SWRInfiniteKeyLoader<DataAtlas.TableModelInfo[], getTableModelInfoByDirIdAndBeginIndexKey>>(
+    (pageIndex, previousPageData) => {
+      kmDebug('pageIndex, previousPageData', pageIndex, previousPageData)
+      if (previousPageData && !previousPageData.length) return null // reached the end
+      return rootDir ? { url: 'getTableModelInfoByDirIdAndBeginIndex', args: { params: { env, dirId: rootDir.dirId, beginIndex: pageIndex * pageSize + 1, topNum: pageSize - 1 } } } : null                 // SWR key
+    },
+    service.dataAtlas.dataassetmanager.getTableModelInfoByDirIdAndBeginIndex,
+    { /* revalidateFirstPage: false, */ revalidateAll: true, dedupingInterval: 1000 }
+  )
+```
