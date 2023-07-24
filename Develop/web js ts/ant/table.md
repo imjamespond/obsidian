@@ -1,3 +1,4 @@
+- Modal [afterOpenChange](https://ant-design.antgroup.com/components/modal-cn#api) 后显示确保列宽正确
 
 - 通过comfirm来确认有值，并关闭下拉框
 ```tsx
