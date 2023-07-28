@@ -23,6 +23,18 @@ list
 ```
 
 ---
+- getconf 查看sqlite用户配置
+```shell
+getconf DARWIN_USER_DIR
+sqlite3 db2/db
+.tables
+.show
+.header on #表头
+.mode column
+```
+
+
+---
 pac
 ```
 function FindProxyForURL(url, host) {
