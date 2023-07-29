@@ -48,3 +48,4 @@ const FooMemo = React.memo( // 只有新的foo才会更新
 )
 ```
 注意不能直接`foo.v += 1`然后`set_foo(prev => [...prev])`更新, 这样memo的prev.foo和next.foo是相同值, 没有对比意义
+如果不用memo, 直接`foo.v += 1`再 `set_foo(prev => [...prev])`将触发每一个数组元素渲染，也可以
