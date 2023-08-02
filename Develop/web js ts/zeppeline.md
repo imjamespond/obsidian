@@ -81,6 +81,7 @@ export default class helloworld extends Visualization {
 
   render(tableData) {
     this.targetEl.html('Hello world!')
+    // render(this.targetEl[0], tableData)
   }
 
   getTransformation() {
