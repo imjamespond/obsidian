@@ -13,7 +13,6 @@ import useSWR, { mutate as swrMutate } from 'swr';
 
   useEffect(() => {
     if (mutateRef.current) {
-      mutateRef.current = false
       let hasCache = false
       swrMutate(
         (key) => {
@@ -29,6 +28,7 @@ import useSWR, { mutate as swrMutate } from 'swr';
         undefined, { revalidate: false }
       )
       if (hasCache) {
+        mutateRef.current = false
         setSize(2) // 防止请求之前全size数据
       }
     }
