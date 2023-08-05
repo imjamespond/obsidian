@@ -11,19 +11,26 @@ import useSWRInfinite from 'swr/infinite'
 ```tsx
 import useSWR, { mutate as swrMutate } from 'swr';
 
-<button onClick={() => {
-swrMutate(
-  (key) => {
-	if (typeof key === 'object' && (key as any).url === 'authservice.logs') {
-	  const logsKey = key as logsKeyType
-	  if (logsKey?.args.params?.appId === params.appId && logsKey?.args.params?.appLogContextId === params.appLogContextId) {
-		kmDebug(logsKey)
-		return true
-	  }
-	}
-	return false
-  },
-  undefined, { revalidate: false }
-)
-}}>swrMutate</button>
+  useEffect(() => {
+    if (mutateRef.current) {
+      mutateRef.current = false
+      let hasCache = false
+      swrMutate(
+        (key) => {
+          if (typeof key === 'object' && (key as any).url === 'authservice.logs') {
+            const logsKey = key as logsKeyType
+            if (logsKey?.args.params?.appId === params.appId && logsKey?.args.params?.appLogContextId === params.appLogContextId) {
+              hasCache = true
+              return true
+            }
+          }
+          return false
+        },
+        undefined, { revalidate: false }
+      )
+      if (hasCache) {
+        setSize(2) // 防止请求之前全size数据
+      }
+    }
+  }, [params.appLogContextId, setSize])
 ```
