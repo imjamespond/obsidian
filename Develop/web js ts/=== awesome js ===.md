@@ -6,7 +6,7 @@ https://github.com/angular-ui/ui-grid
 - ag-grid （table）
 https://github.com/ag-grid/ag-grid
 - solidjs
-
+https://github.com/one-aalam/awesome-solid-js#ui-components
 
 --- 
 
@@ -17,11 +17,11 @@ https://github.com/mattdesl/svg-mesh-3d svg转3d
 
 https://github.com/davidar/pandiff 文本差异
 
-swr, use-query 自动请求参数
-rxjs debounce相关
-ahooks clickaway/toggle相关
-DOMPurify 清除dom?
-immer 深拷贝对象数组
+- swr, use-query 自动请求参数
+- rxjs debounce相关
+- ahooks clickaway/toggle相关
+- DOMPurify 清除dom?
+- immer 深拷贝对象数组
 
 - 模板
 https://github.com/twitter/hogan.js/
