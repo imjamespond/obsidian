@@ -17,6 +17,7 @@ https://github.com/mattdesl/svg-mesh-3d svg转3d
 
 https://github.com/davidar/pandiff 文本差异
 
+
 - swr, use-query 自动请求参数
 - rxjs debounce相关
 - ahooks clickaway/toggle相关
@@ -46,3 +47,5 @@ https://highlightjs.org/
 - grid layout
 1，[isotope](https://github.com/metafizzy/isotope) 元素周期表
 2，
+
+- react-cropper

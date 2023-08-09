@@ -4,6 +4,11 @@
       "type": "file",
       "title": "css",
       "path": "Develop/web js ts/css.md"
+    },
+    {
+      "type": "file",
+      "title": "=== awesome js ===",
+      "path": "Develop/web js ts/=== awesome js ===.md"
     }
   ]
 }
