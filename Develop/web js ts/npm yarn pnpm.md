@@ -62,3 +62,14 @@ cnpm i --save-dev node-sass
 - pnpm missing peer dependency
 .npmrc 中加
 `auto-install-peers=true`
+
+# npm
+- overrides
+```json
+  "overrides": {
+    "amis": {
+      "react-cropper": "2.1.5"
+    }
+  }
+```
+**注意：**==deleting package-lock and node_modules==
