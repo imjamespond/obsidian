@@ -6,3 +6,6 @@ issues:
 - azul
 https://www.azul.com/downloads/?version=java-8-lts&os=macos#zulu
 
+--- 
+- Shared Indexes
+idea为了能够更快的使用共享索引，会下载JDK和Maven库的共享索引，给你的的项目代码构建共享索引 在 设置 → Tools → Shared Indexes 里面给关掉就可以。
