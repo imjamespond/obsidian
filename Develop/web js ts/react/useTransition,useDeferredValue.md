@@ -1,6 +1,6 @@
 - [useTransition](https://react.dev/reference/react/useTransition)
 ==a React Hook that lets you update the state without blocking the UI.== 
-tab切换时卡，
+tab切换时卡死，换这个后虽然仍卡，但UI还能响应。其实只是分片，例子中是分500片每片1ms，但如果是分5片，每片1秒还是会卡
 ```tsx
 const PostsTab = memo(function PostsTab() {
   // Log once. The actual slowdown is inside SlowPost.
@@ -30,30 +30,44 @@ function SlowPost({ index }) {
   );
 }
 
+TabButton({ children, isActive, onClick }) {
+  const [isPending, startTransition] = useTransition();
+  if (isActive) {
+    return <b>{children}</b>
+  }
+  if (isPending) {
+    return <b className="pending">{children}</b>;
+  }
+  return (
+    <button onClick={() => {
+      startTransition(() => {
+        onClick();
+      });
+    }}>
+      {children}
+    </button>
+  );
+}
+
 export default function TabContainer() {
   const [tab, setTab] = useState('about');
-
-  function selectTab(nextTab) {
-    setTab(nextTab);
-  }
-
   return (
     <>
       <TabButton
         isActive={tab === 'about'}
-        onClick={() => selectTab('about')}
+        onClick={() => setTab('about')}
       >
         About
       </TabButton>
       <TabButton
         isActive={tab === 'posts'}
-        onClick={() => selectTab('posts')}
+        onClick={() => setTab('posts')}
       >
         Posts (slow)
       </TabButton>
       <TabButton
         isActive={tab === 'contact'}
-        onClick={() => selectTab('contact')}
+        onClick={() => setTab('contact')}
       >
         Contact
       </TabButton>
@@ -64,6 +78,7 @@ export default function TabContainer() {
     </>
   );
 }
+
 ```
 
 - [useDeferedValue](https://react.dev/reference/react/useDeferredValue)
