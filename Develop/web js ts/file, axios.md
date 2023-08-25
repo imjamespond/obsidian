@@ -1,18 +1,49 @@
+- 长轮询
+```ts
+
+{
+    longPolling: ({ }) => {
+      kmDebug('longPolling', new Date().toLocaleString())
+      return request('get', `/api/mot/pop/longPolling`, {
+        timeout: (process.env.NODE_ENV === "development" ? 10 : 40) * 1000,
+        params: { requestId: Date.now().toString() }
+      })
+        .catch((err) => {
+          kmDebug('longPolling err', new Date().toLocaleString(), err)
+        })
+    }
+}
+
+export function usePortalMsg() {
+  return useSWR('long-polling', service.eventManagement.pop.longPolling, {
+    revalidateOnFocus: false,
+    shouldRetryOnError: false, errorRetryInterval: 0, errorRetryCount: 0,
+    dedupingInterval: 0,
+    refreshInterval: (process.env.NODE_ENV === "development" ? 15 : 5) * 1000,
+  })
+}
+```
+
 
 - Axios 下载post文件
 ```ts
-/* 从请求头中获取文件名称,用于将文件流转换成对应文件格式的文件,防止文件损坏 */
-let split = response.headers['content-disposition'].split("=");
-/* 将数据流转换为对应格式的文件,并创建a标签,模拟点击下载,实现文件下载功能 */
-let fileReader = new FileReader();
-fileReader.readAsDataURL(response.data);
-fileReader.onload = (e: any) => {
-  let a = document.createElement('a');
-  a.download = split[1];
-  a.href = e.target.result;
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
+import { AxiosResponse } from "axios";
+
+export function downloadFile (response: AxiosResponse){
+  // const response = await requestRaw({ params, responseType: 'blob' });
+  /* 从请求头中获取文件名称,用于将文件流转换成对应文件格式的文件,防止文件损坏 */
+  let split = response.headers['content-disposition'].split("=");
+  /* 将数据流转换为对应格式的文件,并创建a标签,模拟点击下载,实现文件下载功能 */
+  let fileReader = new FileReader();
+  fileReader.readAsDataURL(response.data);
+  fileReader.onload = (e: any) => {
+    let a = document.createElement('a');
+    a.download = decodeURIComponent(split[1]);
+    a.href = e.target.result;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  };
 }
 ```
 
