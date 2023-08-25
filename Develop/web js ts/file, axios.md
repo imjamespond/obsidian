@@ -28,6 +28,25 @@ export function usePortalMsg() {
   })
 }
 ```
+通过pollingmsg来取其他数据，比如未读数
+```ts
+  /* 门户消息 */
+  const lastMsg = useRef(undefined)
+  const { data: portalMsg, mutate: mutaePortalMsg } = usePortalMsg({ params: { readStatus: 0, pageSize: 1 } })
+  const { data: pollingMsg } = usePollingMsg(lastMsg)
+
+  useEffect(() => {
+    if (pollingMsg && Array.isArray(pollingMsg)) {
+      pollingMsg.forEach(item => {
+        notification.info({ description: item.content, message: item.sendObject, duration: 10 })
+      })
+      if (pollingMsg.length) {
+        lastMsg.current = pollingMsg[pollingMsg.length - 1]
+      }
+      mutaePortalMsg(undefined)
+    }
+  }, [pollingMsg])
+```
 
 
 - Axios 下载post文件
