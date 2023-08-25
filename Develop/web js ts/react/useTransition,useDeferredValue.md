@@ -1,7 +1,127 @@
 - [useTransition](https://react.dev/reference/react/useTransition)
 ==a React Hook that lets you update the state without blocking the UI.== 
-tab切换时卡，
+tab切换时卡死，换这个后虽然仍卡，但UI还能响应。其实只是分片，例子中是分500片每片1ms，但如果是分5片，每片1秒还是会卡
+```jsx
+const PostsTab = memo(function PostsTab() {
+  // Log once. The actual slowdown is inside SlowPost.
+  console.log('[ARTIFICIALLY SLOW] Rendering 500 <SlowPost />');
+
+  let items = [];
+  for (let i = 0; i < 500; i++) {
+    items.push(<SlowPost key={i} index={i} />);
+  }
+  return (
+    <ul className="items">
+      {items}
+    </ul>
+  );
+});
+
+function SlowPost({ index }) {
+  let startTime = performance.now();
+  while (performance.now() - startTime < 1) {
+    // Do nothing for 1 ms per item to emulate extremely slow code
+  }
+
+  return (
+    <li className="item">
+      Post #{index + 1}
+    </li>
+  );
+}
+
+TabButton({ children, isActive, onClick }) {
+  const [isPending, startTransition] = useTransition();
+  if (isActive) {
+    return <b>{children}</b>
+  }
+  if (isPending) {
+    return <b className="pending">{children}</b>;
+  }
+  return (
+    <button onClick={() => {
+      startTransition(() => {
+        onClick();
+      });
+    }}>
+      {children}
+    </button>
+  );
+}
+
+export default function TabContainer() {
+  const [tab, setTab] = useState('about');
+  return (
+    <>
+      <TabButton
+        isActive={tab === 'about'}
+        onClick={() => setTab('about')}
+      >
+        About
+      </TabButton>
+      <TabButton
+        isActive={tab === 'posts'}
+        onClick={() => setTab('posts')}
+      >
+        Posts (slow)
+      </TabButton>
+      <TabButton
+        isActive={tab === 'contact'}
+        onClick={() => setTab('contact')}
+      >
+        Contact
+      </TabButton>
+      <hr />
+      {tab === 'about' && <AboutTab />}
+      {tab === 'posts' && <PostsTab />}
+      {tab === 'contact' && <ContactTab />}
+    </>
+  );
+}
+
+```
 
 - [useDeferedValue](https://react.dev/reference/react/useDeferredValue)
 ==a React Hook that lets you defer updating a part of the UI.==
+其实本质还是分片的问题，这种会忽略部分分片，若将分片从250改成2，每片时间从1改为1000一样会卡
 频繁改变input value 时，忽略中间一些value的计算，[和debounce的区别是](https://juejin.cn/post/7126533788896591886)，debounce会always延迟，而defer只是cpu慢时延时，快时不会延时
+```jsx
+const SlowList = memo(function SlowList({ text }) {
+  // Log once. The actual slowdown is inside SlowItem.
+  console.log('[ARTIFICIALLY SLOW] Rendering 250 <SlowItem />');
+
+  let items = [];
+  for (let i = 0; i < 250; i++) {
+    items.push(<SlowItem key={i} text={text} />);
+  }
+  return (
+    <ul className="items">
+      {items}
+    </ul>
+  );
+});
+
+function SlowItem({ text }) {
+  let startTime = performance.now();
+  while (performance.now() - startTime < 1) {
+    // Do nothing for 1 ms per item to emulate extremely slow code
+  }
+
+  return (
+    <li className="item">
+      Text: {text}
+    </li>
+  )
+}
+
+export default function App() {
+  const [text, setText] = useState('');
+  const deferredText = useDeferredValue(text);
+  return (
+    <>
+      <input value={text} onChange={e => setText(e.target.value)} />
+      <SlowList text={deferredText} />
+    </>
+  );
+}
+```
