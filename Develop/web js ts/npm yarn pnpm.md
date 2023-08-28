@@ -7,7 +7,7 @@ yarn cache clean
 yarn config set cache-folder <path>
 
 npm cache add <package-spec>
-npm cache --force clean [<key>]
+npm cache clean --force [<key>]
 npm cache ls [<name>@<version>]
 npm cache verify
 npm config list --json # 查看所有配置
