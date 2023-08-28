@@ -1,0 +1,2 @@
+- `yarn create next-app --typescript`
+- root dir 加pages
