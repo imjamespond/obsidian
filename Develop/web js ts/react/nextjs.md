@@ -3,7 +3,7 @@
 - [路由](https://nextjs.org/docs/app/building-your-application/routing) root dir 加`pages/index.tsx` 或 `test.tsx`可以
 也可以加`app/test/page.tsx`
 
-- `next.config.js`中配置export静态页面
+- `next.config.js`中配置export静态页面, `npm run build`即可
 ```json
 output: 'export',
 ```
