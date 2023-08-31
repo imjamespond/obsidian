@@ -5,7 +5,7 @@
 从tailwind配置可看出
 ![[Pasted image 20230831134726.png|400 ]]
 
-- `next.config.js`中配置export静态页面
+- `next.config.js`中配置export静态页面, `npm run build`即可
 ```json
 output: 'export',
 ```
