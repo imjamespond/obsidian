@@ -68,6 +68,7 @@ done
 # bash tunnel.sh ./git.txt
 
 # tunnel.sh 'test@localhost -p2222' git@git 2200 22 将内网22映射到本地2200
+# metasoft@192.168.2.2 metasoft@58.67.156.50:2221 2222 localhost:22
 ```
 命令不能指定两机的identity file ` -i /e/id_rsa`, 所以应在~/.ssh/config中配置
 
