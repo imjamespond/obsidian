@@ -7,6 +7,7 @@ npm config set @mmm:registry https://nexus.mmm.com.cn/repository/mmm-admin-porta
 npm config set @aurum:registry https://nexus.mmm.com.cn/repository/mmm-bff-npm/    (Aurum/pfe-ui 组件库在该源下)
 npm login --registry=https://nexus.mmm.com.cn/repository/mmm-admin-portal-npm-group/
 npm login --registry=https://nexus.mmm.com.cn/repository/mmm-bff-npm/ 
+npm9 加 --auth-type=legacy
 输入
 user：portal-user
 pwd：portal-user@mmm2020
