@@ -12,3 +12,6 @@ const angle = Math.PI / 3 * i * 2
 }
 ```
 x,y 将影响force布局
+
+- color
+https://echarts.apache.org/zh/option.html#color
