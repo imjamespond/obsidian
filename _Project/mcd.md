@@ -9,9 +9,9 @@ npm login --registry=https://nexus.mmm.com.cn/repository/mmm-admin-portal-npm-gr
 npm login --registry=https://nexus.mmm.com.cn/repository/mmm-bff-npm/ 
 npm9 加 --auth-type=legacy
 输入
-user：portal-user
-pwd：portal-user@mmm2020
-mail：portal-user@cn.mmm.com
+user: portal-user
+pwd: portal-user@mmm2020
+mail: portal-user@cn.mmm.com
 ```
 
 
