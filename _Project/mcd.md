@@ -25,7 +25,7 @@ npm verb pkgid @aurum/pfe-ui@^0.3.2
 npm ERR! code E401
 npm ERR! Unable to authenticate, need: BASIC realm="Sonatype Nexus Repository Manager"
 ```
-文档只login了一个地址/mmm-admin-portal-npm-group, 没login mmm-bff-npm
+文档只login了一个地址==mmm-admin-portal-npm-group==, 没login ==mmm-bff-npm==
 ```
 npm login --registry=https://nexus.mmm.com.cn/repository/mmm-bff-npm/ 
 ```
