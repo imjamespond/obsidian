@@ -57,11 +57,12 @@ export function* watchIncrementAsync() {
   yield takeEvery('INCREMENT_ASYNC', incrementAsync)
 }
 
-export function* fetch(){
-  yield call(action.payload.fetcher, action.payload.args)
+export function* fetchAsnyc(action){
+  console.debug(action)
+  yield call(action.fetcher, action.args)
   yield put({ type: 'FETCH_RESULT' }) // put to reducer
 }
-export function* fetchAsnyc(){
+export function* watchFetchAsnyc(){
   yield takeEvery('FETCH', fetch)
 }
 
