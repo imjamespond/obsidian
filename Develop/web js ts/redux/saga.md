@@ -31,7 +31,7 @@ export interface Action<T = any> {
 } 
 */
 export const action = <Type = string, Payload = any>(type: Type, payload?: Payload) => store.dispatch({ type, payload })
-export const fetch = <Type = string, Payload = any>(type: Type, fetcher?: any, args?: any) => store.dispatch({ type, fetcher, args })
+export const fetchAsnyc = (type: Type, fetcher?: any) => store.dispatch({ type:'FETCH_ASYNC', fetcher })
 
 ```
 
@@ -57,13 +57,11 @@ export function* watchIncrementAsync() {
   yield takeEvery('INCREMENT_ASYNC', incrementAsync)
 }
 
-export function* fetchAsnyc(action){
-  console.debug(action)
-  yield call(action.fetcher, action.args)
-  yield put({ type: 'FETCH_RESULT' }) // put to reducer
-}
+
 export function* watchFetchAsnyc(){
-  yield takeEvery('FETCH', fetch)
+  yield takeEvery('FETCH_ASYNC', function*(action){
+    yield call(action.fetcher)
+  })
 }
 
 // notice how we now only export the rootSaga
@@ -72,11 +70,19 @@ export default function* rootSaga() {
   yield all([
     helloSaga(),
     watchIncrementAsync(),
-    fetchAsnyc()
+    watchFetchAsnyc()
   ])
 }
 ```
 
+```js
+function* fetchFoobarAsnyc(){
+  console.debug(action)
+  yield call(getFoo, {name:'bar'})
+  yield put({ type: 'Foo' }) // put to reducer
+}
+fetchAsnyc(fetchFoobarAsnyc)
+```
 
 `store.getState()`, [仅仅是示例！不要在实际的应用中这么做, 当 store state 变更时，组件不会自动更新](https://cn.react-redux.js.org/api/hooks/)
 ```jsx
