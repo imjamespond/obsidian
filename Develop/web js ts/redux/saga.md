@@ -78,8 +78,8 @@ export default function* rootSaga() {
 const args = {name:'bar'}
 ...
 const getFooAsync = useCallback(function* () {
-  yield call(getFoo, args) // equal to getFoo(args)
-  yield put({ type: 'Foo' }) // put to reducer
+  const bar = yield call(getFoo, args) // equal to getFoo(args)
+  yield put({ type: 'Foo', payload: bar }) // put to reducer
 }, [args])
 fetchAsync(getFooAsync)
 ```
