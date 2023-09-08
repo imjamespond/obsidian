@@ -53,6 +53,7 @@ export default function* rootSaga() {
 }
 ```
 
+`store.getState()`, [仅仅是示例！不要在实际的应用中这么做, 当 store state 变更时，组件不会自动更新](https://cn.react-redux.js.org/api/hooks/)
 ```jsx
 const Counter = ({ value, onIncrement, onDecrement, onIncrementAsync }) =>
   <div>
