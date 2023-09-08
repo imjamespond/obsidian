@@ -18,7 +18,21 @@ const store = createStore(
 )
 sagaMiddleware.run(helloSaga)
 
-const action = type => store.dispatch({type})
+const action = type => store.dispatch({type})  
+```
+
+```ts
+import { Action } from 'redux';
+// store.dispatch Action
+// Action 要有个 type 让saga知道要干嘛
+/* 
+export interface Action<T = any> {
+  type: T
+} 
+*/
+export const action = <Type = string, Payload = any>(type: Type, payload?: Payload) => store.dispatch({ type, payload })
+export const fetch = <Type = string, Payload = any>(type: Type, fetcher?: any, args?: any) => store.dispatch({ type, fetcher, args })
+
 ```
 
 - ### Making Asynchronous calls
@@ -43,15 +57,25 @@ export function* watchIncrementAsync() {
   yield takeEvery('INCREMENT_ASYNC', incrementAsync)
 }
 
+export function* fetch(){
+  yield call(action.payload.fetcher, action.payload.args)
+  yield put({ type: 'FETCH_RESULT' }) // put to reducer
+}
+export function* fetchAsnyc(){
+  yield takeEvery('FETCH', fetch)
+}
+
 // notice how we now only export the rootSaga
 // single entry point to start all Sagas at once
 export default function* rootSaga() {
   yield all([
     helloSaga(),
-    watchIncrementAsync()
+    watchIncrementAsync(),
+    fetchAsnyc()
   ])
 }
 ```
+
 
 `store.getState()`, [仅仅是示例！不要在实际的应用中这么做, 当 store state 变更时，组件不会自动更新](https://cn.react-redux.js.org/api/hooks/)
 ```jsx
@@ -76,9 +100,9 @@ const Counter = ({ value, onIncrement, onDecrement, onIncrementAsync }) =>
 
 <Counter  
 	value={store.getState()}  
-	onIncrement={() => action('INCREMENT')}  
+	onIncrement={() => action('INCREMENT')}  // 直接到reducer
 	onDecrement={() => action('DECREMENT')}  
-	onIncrementAsync={() => action('INCREMENT_ASYNC')}
+	onIncrementAsync={() => action('INCREMENT_ASYNC', {fetcher, args})} // 先到saga
 />
 
 const state = useSelector(state => state);
