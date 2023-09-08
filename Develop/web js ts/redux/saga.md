@@ -57,7 +57,7 @@ export function* watchIncrementAsync() {
 }
 
 
-export function* watchFetchAsnyc(){
+export function* watchFetchAsync(){
   yield takeEvery('FETCH_ASYNC', function*(action){
     yield call(action.fetcher)
   })
@@ -69,16 +69,18 @@ export default function* rootSaga() {
   yield all([
     helloSaga(),
     watchIncrementAsync(),
-    watchFetchAsnyc()
+    watchFetchAsync()
   ])
 }
 ```
-
+业务组件中调用
 ```js
+const args = {name:'bar'}
+...
 const getFooAsync = useCallback(function* () {
-  yield call(getFoo, {name:'bar'}) // equal to getFoo({name:'bar'})
+  yield call(getFoo, args) // equal to getFoo(args)
   yield put({ type: 'Foo' }) // put to reducer
-}, [])
+}, [args])
 fetchAsync(getFooAsync)
 ```
 
