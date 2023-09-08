@@ -31,8 +31,7 @@ export interface Action<T = any> {
 } 
 */
 export const action = <Type = string, Payload = any>(type: Type, payload?: Payload) => store.dispatch({ type, payload })
-export const fetchAsnyc = (type: Type, fetcher?: any) => store.dispatch({ type:'FETCH_ASYNC', fetcher })
-
+export const fetchAsnyc = (fetcher?: any) => store.dispatch({ type:'FETCH_ASYNC', fetcher })
 ```
 
 - ### Making Asynchronous calls
@@ -76,12 +75,11 @@ export default function* rootSaga() {
 ```
 
 ```js
-function* fetchFoobarAsnyc(){
-  console.debug(action)
-  yield call(getFoo, {name:'bar'})
+const getFooAsync = useCallback(function* () {
+  yield call(getFoo, {name:'bar'}) // equal to getFoo({name:'bar'})
   yield put({ type: 'Foo' }) // put to reducer
-}
-fetchAsnyc(fetchFoobarAsnyc)
+}, [])
+fetchAsnyc(getFooAsync)
 ```
 
 `store.getState()`, [仅仅是示例！不要在实际的应用中这么做, 当 store state 变更时，组件不会自动更新](https://cn.react-redux.js.org/api/hooks/)
