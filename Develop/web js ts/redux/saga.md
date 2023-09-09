@@ -35,7 +35,7 @@ export const fetchAsync = (fetcher?: any) => store.dispatch({ type:'FETCH_ASYNC'
 ```
 
 - ### Making Asynchronous calls
-Next, we created another Saga watchIncrementAsync. We use takeEvery, a helper function provided by redux-saga, to listen for dispatched INCREMENT_ASYNC actions and run incrementAsync each time.
+Next, we created another Saga watchIncrementAsync. We use takeEvery, a helper function provided by redux-saga, ==to listen for dispatched **INCREMENT_ASYNC** actions== and ==run **incrementAsync** each time==.
 
 Now we have 2 Sagas, and we need to start them both at once. To do that, we'll add a rootSaga that is responsible for starting our other Sagas. In the same file sagas.js, refactor the file as follows:
 ```js
