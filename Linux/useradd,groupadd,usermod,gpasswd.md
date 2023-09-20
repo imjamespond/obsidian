@@ -16,7 +16,7 @@ usermod -g mygroup user3
 ```
 
 使用 gpasswd 命令
-```
+```bash
 gpasswd -M user1 mygroup
 gpasswd -d user1 mygroup
 ```
