@@ -1,4 +1,14 @@
 - min-height跟的是父节点的height, 所以父节点设置为height:100%或100vh,子节点min-height才生效
+**解决设置min-height的子元素高度为百分比不生效的情况**，min-height子节点height100%能生效
+```js 
+'& .container': {
+	display: 'flex',
+	'& > div': {
+	  minHeight: 800,
+	}
+}
+```
+
 - flex align-items 默认是stretch, 设置center后stretch不生效
 
 - flex + ellipsis, 此例中外层flex用space-between，将title 和 btn置于两端，title也是flex,其又分成icon和text，这两个child都是block属性，key point是两个地方加overflow: hidden
