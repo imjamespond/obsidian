@@ -2,6 +2,7 @@
 **解决设置min-height的子元素高度为百分比不生效的情况**，min-height子节点height100%能生效
 ```js 
 '& .container': {
+	display: 'flex',
 	'& > div': {
 	  minHeight: 800,
 	}
