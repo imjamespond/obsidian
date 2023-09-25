@@ -1,3 +1,22 @@
+
+- rename  folder-file 文件夹-文件名
+```bash
+for dir in *; do
+    if [ -d "$dir" ]; then
+        echo "./$dir/"
+        cd "./$dir/"
+        # for file in ./"$dir"/*; do
+        for file in *; do
+            if [ -f "$file" ]; then
+                echo $file
+                mv $file "$dir - $file"
+            fi
+        done
+        cd ..
+    fi
+done
+```
+
 - 不等于 not equal
 ```bash
 if [[ $(id -u) -ne 0 ]]; then
