@@ -203,3 +203,34 @@ upstream中的server的属性，我们也可以灵活配置，包括轮询算法
 ## **6. 总结**
 
 依赖`ngx_stream_proxy_module`和`ngx_stream_upstream_module`等模块，nginx实现了强大的四层反向代理功能。相较于七层反向代理，性能更高。但是对于业务的请求分发，灵活性比较低，所以nginx的四层和七层代理我们要根据自己的要求灵活使用，让nginx发挥最大的作用。
+
+--- 
+https://www.zhihu.com/question/63434275
+层次不一样，nginx转发属于应用层，iptables是网络层。
+
+iptables转发一般用于nat内网服务器提供外网应用。比如一个ip做公网，服务器放在内网，公共ip就一个，把服务器就放在公网ip的电脑上话会有些问题，一般还要提供上网服务（做路由器），需要提供的服务可能也很多，比如，www，ftp，mail，那么通过iptables实现端口映射，把不同服务放到不同服务器上，又不需要很多公网ip。
+
+nginx转发主要是负载均衡，而且比较灵活，比如部分转发，转发到不同的服务器上。iptables只能实现全部转发，按照端口，到达端口的数据全部转发给一台服务器。nginx转发http请求就灵活很多，比如对于静态内容，js，css，图片，可以利用memcache等缓存，直接提供服务，而其他复杂的请求可以转发过应用服务器，而且支持多个服务器。
+
+# nginx与iptables作为网络连接代理的简单区别
+
+[Feb 3, 2020](https://sdww2348115.github.io/tmp/iptables-nginx)
+
+相比于iptables，使用Nginx作为网关主要有以下几个方面不足：
+
+1.  工作于TCP层，转发效率不高
+2.  任何新增/删除端口的操作，都需要重新构建nginx.conf配置文件，并执行nginx -s reload重启所有broker
+
+## TCP层转发 vs. IP层转发
+
+如下图所示，TCP层代理在转发数据时需要维持两个连接：`client->proxy的tcp连接`以及`proxy->server的连接`，当client端有数据到来时，Nginx需要将数据从内核缓冲区中拷贝至预置的buffer中，再将buffer中的数据塞到与server端连接的内核缓冲区中。相比iptables数据转发，Nginx转发会多一次数据拷贝，并使得程序多次在内核态/用户态切换，因此整体效率相比iptables转发要低。 ![nginx-iptables](https://sdww2348115.github.io/resources/img/nginx-iptables.png)
+
+我做了一个简单的测试，Client端分别通过iptables的网关以及Nginx的网关向服务发送数据，发送1GB数据的耗时分别为:
+
+-   使用Nginx作为网关,总耗时为42522ms
+-   使用iptables作为网关,总耗时为30749ms
+
+除数据转发耗时较长以外，由于Nginx创建了两个连接，因此随着连接的增多，承载Nginx的服务器的`内存`和`文件描述符`资源也会随之增加。其中：
+
+-   文件描述符资源需要放开ulimit限制
+-   每10000个链接约增加200MB内存消耗
