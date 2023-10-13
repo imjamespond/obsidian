@@ -1,5 +1,5 @@
 每秒select一次 consume一条数据， 5秒后select出 done chan并退出线程
-```
+```go
 package main
 import (
 "time"
@@ -41,7 +41,7 @@ func main() {
 
 ---
 https://zhuanlan.zhihu.com/p/136664236
-```
+```go
 func main() {
     // 创建一个监听8000端口的服务器
     http.ListenAndServe(":8000", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
@@ -65,7 +65,7 @@ func main() {
 
 ```
 
-```
+```go
 func operation1(ctx context.Context) error {
   // 让我们假设这个操作会因为某种原因失败
   // 我们使用time.Sleep来模拟一个资源密集型操作
@@ -104,7 +104,7 @@ func main() {
 }
 ```
 
-```
+```go
 func main() {
     // 创建一个超时时间为100毫秒的上下文
     ctx := context.Background()
