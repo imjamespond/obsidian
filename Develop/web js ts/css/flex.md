@@ -1,3 +1,5 @@
+https://developer.mozilla.org/en-US/docs/Web/CSS/flex
+
 - min-height跟的是父节点的height, 所以父节点设置为height:100%或100vh,子节点min-height才生效
 **解决设置min-height的子元素高度为百分比不生效的情况**，min-height子节点height100%能生效
 ```js 
