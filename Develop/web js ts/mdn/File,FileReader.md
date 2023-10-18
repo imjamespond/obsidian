@@ -44,4 +44,4 @@ function previewFile() {
   }
 }
 ```
-将file转成b64, 可将file slice成多块再read然后上传
+将file转成base64, 可将file (通过size)slice成多块再read然后上传
