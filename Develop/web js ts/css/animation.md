@@ -10,3 +10,8 @@ animation: animate 1s steps(28) infinite;
     }
 }
 ```
+
+- 动画暂停
+```css
+animation-play-state: paused;
+```
