@@ -1,3 +1,4 @@
+https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/instanceof
 https://blog.csdn.net/weixin_42289279/article/details/131343054
 
         众所周知，js中使用 typeof 只能检测基本数据类型，包括：number、string、boolean、undefined、symbol。函数的 typeof 返回值是function。而null、Array、Object以及除 Function 外的所有构造函数的类型都是 'object'。所以无法使用typeof去判断js的数组类型
