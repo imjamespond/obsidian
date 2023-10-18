@@ -1,4 +1,16 @@
 
+- 对比前后keyword无差异时强制更新
+```tsx
+  <KmInput.Search placeholder='全文检索' enterButton allowClear onSearch={(val) => {
+	dispatch({ type: 'keyword', payload: val })
+	if (keyword.current === val || val === "") {
+	  mutate(undefined)
+	}
+	kmDebug(val, keyword.current)
+```
+
+--- 
+
 ```ts
 type SaveType = SWRMutationResponse<any, any, saveArgs>['trigger'];
 
