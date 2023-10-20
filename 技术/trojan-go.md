@@ -1,5 +1,5 @@
 自签名证书
-```
+```bash
 
 openssl genrsa -out cn2.key 2048
 # openssl rsa -text -in ./cn2.key
@@ -19,6 +19,70 @@ openssl req -newkey rsa:2048 -nodes -keyout server.key -subj "/C=CN/ST=GD/L=SZ/O
 openssl x509 -req -extfile <(printf "subjectAltName=DNS:cn2,DNS:www.cn2") -days 3650 -in server.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out server.crt
 ```
 
+--- 
+
+```yaml
+{
+  "run_type": "client",
+  "local_addr": "0.0.0.0",
+  "local_port": 1080,
+  "remote_addr": "cn2",
+  "remote_port": 2443,
+  "password": [
+    "noonewillguess@2021"
+  ],
+  "ssl": {
+    "sni": "cn2"
+  },
+  "mux": {
+    "enabled": true
+  },
+  "router": {
+    "enabled": true,
+    "bypass": [
+      "geoip:cn",
+      "geoip:private",
+      "geosite:cn",
+      "geosite:private"
+    ],
+    "block": [
+      "geosite:category-ads"
+    ],
+    "proxy": [
+      "geosite:geolocation-!cn"
+    ],
+    "default_policy": "proxy",
+    "geoip": "./geoip.dat",
+    "geosite": "./geosite.dat"
+  }
+}
+
+{
+    "run_type": "server",
+    "local_addr": "0.0.0.0",
+    "local_port": 2443,
+    "remote_addr": "127.0.0.1",
+    "remote_port": 8000,
+    "password": [
+"noonewillguess@2021"
+    ],
+    "ssl": {
+        "cert": "server.crt",
+        "key": "server.key",
+        "sni": "cn2"
+    },
+    "router": {
+        "enabled": true,
+        "block": [
+            "geoip:private"
+        ],
+        "geoip": "./geoip.dat",
+        "geosite": "./geosite.dat"
+    }
+}
+```
+
+--- 
 ```
 不验证
 
