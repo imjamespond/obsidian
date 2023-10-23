@@ -19,7 +19,8 @@ iptables -I INPUT -p tcp -m state --state NEW -m tcp --dport 18000 -j ACCEPT
 
 ```
 iptables -t nat -A PREROUTING -p tcp --dport 18000 -j REDIRECT --to-port 80
-本地发起连接无效?
+本地发起连接无效?ymlf
+net.ipv4.conf.all.route_localnet=1
 ```
 
 ---
