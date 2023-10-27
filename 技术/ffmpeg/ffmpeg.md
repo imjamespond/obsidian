@@ -35,7 +35,7 @@ The -map option makes ffmpeg only use the first video stream from the first inpu
 
 ---
 
-```
+```bash
  ~/ffmpeg-5.1.1-amd64-static/ffmpeg -y -progress pipe:1 -i ${1}.mp4 -r 3 -vf scale=-1:72 -preset ultrafast -b:v 30k -b:a 40k ${1}-1.mp4 
 -progress pipe:1 输出至stdout
 ~/ffmpeg-5.1.1-amd64-static/ffmpeg -ss 01:01:23 -i 1.mp4 -r 3 -vf scale=-1:72 -preset ultrafast -b:v 30k -b:a 40k 11.mp4
@@ -66,7 +66,7 @@ ffmpeg -ss 00:01:23 -i video.mp4 -to 00:02:00 -c copy -copy tscut.mp4
 	ffmpeg -i input.avi -r netsc output.mp4
 ```
 
-Update 2020: This answer was written in 2009. Since 2013 a video format much better than H.264 is widely available, namely H.265 (better in that it compresses more for the same quality, or gives higher quality for the same size). To use it, replace the libx264 codec with libx265, and push the compression lever further by increasing the CRF value — add, say, 4 or 6, since a reasonable range for H.265 may be 24 to 30. Note that lower CRF values correspond to higher bitrates, and hence produce higher quality videos.
+Update 2020: This answer was written in 2009. Since 2013 a video format much better than H.264 is widely available, namely H.265 (better in that it compresses more for the same quality, or gives higher quality for the same size). To use it, ==replace the libx264 codec with libx265,== and push the compression lever further by increasing the CRF value — add, say, 4 or 6, since a reasonable range for H.265 may be 24 to 30. Note that lower CRF values correspond to higher bitrates, and hence produce higher quality videos.
 ```
 ffmpeg -i input.mp4 -vcodec libx265 -crf 28 output.mp4
 ```
