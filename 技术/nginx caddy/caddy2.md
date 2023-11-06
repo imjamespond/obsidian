@@ -81,7 +81,7 @@ https://trueviewar.com  {
     tls D:\tools\caddy_v1.0.4_windows_amd64\tls\STAR_trueviewar_com.crt D:\tools\caddy_v1.0.4_windows_amd64\tls\trueviewar.key
     
     @opt {
-        # preflight request for CORS
+        #  preflight request for CORS
         method OPTIONS
     }
     
@@ -100,8 +100,8 @@ https://trueviewar.com  {
         header Access-Control-Allow-Methods "GET, HEAD, POST, PUT, OPTIONS, DELETE"
        respond @opt ""
         reverse_proxy localhost:8086 localhost:8086 {
-            #header_down Access-Control-Allow-Origin * 
-            #header_down Access-Control-Allow-Methods "GET, HEAD, POST, PUT, OPTIONS, DELETE"
+            # header_down Access-Control-Allow-Origin * 
+            # header_down Access-Control-Allow-Methods "GET, HEAD, POST, PUT, OPTIONS, DELETE"
         }
     }
     handle /uac/* {
@@ -140,7 +140,7 @@ https://trueview.realshops.com {
     tls "C:\Program Files\Apache Software Foundation\Apache24\conf\ssl\trueview_realshops_com.crt" "C:\Program Files\Apache Software Foundation\Apache24\conf\ssl\trueview_realshops_com.key" 
     
    @opt {
-        # preflight request for CORS
+        #  preflight request for CORS
         method OPTIONS
     }
 handle /fileStore/* {
@@ -175,7 +175,7 @@ reverse_proxy http://localhost:8080
     method GET
     header_regexp @ua User-Agent (foo|foobar|googlebot|yahoo|bingbot|baiduspider|yandex|yeti|yodaobot|gigabot|ia_archiver|facebookexternalhit|twitterbot|developers\.google\.com)
   }
-  #respond @us "Hello, world!"
+  # respond @us "Hello, world!"
   reverse_proxy @ua {
     to http://localhost:8080
   }
