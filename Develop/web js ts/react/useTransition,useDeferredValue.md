@@ -130,3 +130,31 @@ export default function App() {
 
 This optimization ==requires `SlowList` to be wrapped in [`memo`.](https://react.dev/reference/react/memo)== This is because whenever the `text` changes, React needs to be able to re-render the parent component quickly. During that re-render, `deferredText` still has its previous value, so `SlowList` is able to skip re-rendering (its props have not changed). ==**Without [`memo`,](https://react.dev/reference/react/memo)** it would have to re-render anyway, **defeating the point of the optimization**.==
 必须要包裹在memo中！当text改变，父节点要快速重渲染，在之中defered仍然是之前的值
+
+渲染顺序是，从分片中取出部分渲染，如果value改变就渲染新的value分片组.
+```
+[ARTIFICIALLY SLOW] Rendering 250 <SlowItem />
+[ARTIFICIALLY SLOW] Rendering 250 <SlowItem />
+[ARTIFICIALLY SLOW] m
+[ARTIFICIALLY SLOW] m
+[ARTIFICIALLY SLOW] Rendering 250 <SlowItem />
+[ARTIFICIALLY SLOW] Rendering 250 <SlowItem />
+[ARTIFICIALLY SLOW] mm
+[ARTIFICIALLY SLOW] mm
+[ARTIFICIALLY SLOW] Rendering 250 <SlowItem />
+[ARTIFICIALLY SLOW] Rendering 250 <SlowItem />
+[ARTIFICIALLY SLOW] mmm
+[ARTIFICIALLY SLOW] mmm
+[ARTIFICIALLY SLOW] Rendering 250 <SlowItem />
+[ARTIFICIALLY SLOW] Rendering 250 <SlowItem />
+[ARTIFICIALLY SLOW] mmmm
+[ARTIFICIALLY SLOW] mmmm
+[ARTIFICIALLY SLOW] Rendering 250 <SlowItem />
+[ARTIFICIALLY SLOW] Rendering 250 <SlowItem />
+[ARTIFICIALLY SLOW] mmmmm
+[ARTIFICIALLY SLOW] mmmmm
+[ARTIFICIALLY SLOW] mmmmm
+[ARTIFICIALLY SLOW] mmmmm
+[ARTIFICIALLY SLOW] mmmmm
+[ARTIFICIALLY SLOW] mmmmm
+```
