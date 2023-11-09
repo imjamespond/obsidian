@@ -125,3 +125,8 @@ export default function App() {
   );
 }
 ```
+
+### ==Pitfall==
+
+This optimization ==requires `SlowList` to be wrapped in [`memo`.](https://react.dev/reference/react/memo)== This is because whenever the `text` changes, React needs to be able to re-render the parent component quickly. During that re-render, `deferredText` still has its previous value, so `SlowList` is able to skip re-rendering (its props have not changed). ==**Without [`memo`,](https://react.dev/reference/react/memo)** it would have to re-render anyway, **defeating the point of the optimization**.==
+必须要包裹在memo中！当text改变，父节点要快速重渲染，在之中defered仍然是之前的值
