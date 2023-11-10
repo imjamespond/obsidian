@@ -99,6 +99,8 @@ const SlowList = memo(function SlowList({ text }) {
       {items}
     </ul>
   );
+}, (prev, next) => {
+  return prev.dataNodes === next.dataNodes && prev.text === next.text
 });
 
 function SlowItem({ text }) {
