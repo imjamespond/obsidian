@@ -1,3 +1,4 @@
+#axios #blob #download
 ### 'readAsDataURL' on 'FileReader': parameter 1 is not of type 'Blob'.
 ```
 原因: 在请求时没有配置返回类型responseType='blob'
