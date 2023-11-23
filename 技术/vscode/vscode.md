@@ -63,7 +63,7 @@
     "description": "Act, ActType"
   },
   "reduce": {
-    "prefix": "reduce",
+    "prefix": "useReduce",
     "body": [
       "export type ReducerType = Misc.Prettier<Exclude<someKey['args']['params'], undefined>>",
       "export interface IAct<A, T> { type: A, payload: T }",
