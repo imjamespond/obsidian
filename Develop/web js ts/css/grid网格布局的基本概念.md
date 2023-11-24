@@ -5,7 +5,7 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/grid
 
 ```jsx
 <div
-  style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr',gridTemplateRows:'1fr' }}
+  style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr', gap: 10, maxHeight: 300, overflow: 'auto', marginBottom: 10, padding: 0, gridTemplateRows:'1fr' }}
 >
 </div>
 ```
