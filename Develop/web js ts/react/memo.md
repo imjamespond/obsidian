@@ -6,6 +6,17 @@ React ==normally re-renders a component whenever its parent re-renders.== With m
 新旧相同就不更新
 
 ---
+这样会触发更新, fn用useCallback才能避免更新
+```jsx
+function FC
+{
+	const fn = ()=>{}
+	return <Child fn={fn}/>
+}
+
+const Child = memo(()=><b>child</b>)
+```
+--- 
 
 更新数组导致全部子组件渲染
 ```tsx
