@@ -22,7 +22,7 @@ https://www.cnblogs.com/keerya/p/7987886.html
 vim /etc/ansible/hosts
 	[web]
 	192.168.37.122
-	192.168.37.133
+	192.168.37.133 ansible_ssh_port=22 ansible_ssh_user=root ansible_ssh_pass='jack' ansible_su_pass='root_password'
 ```
 
 `ansible web -m command -a 'hostname'`
