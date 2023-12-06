@@ -28,6 +28,39 @@ vim /etc/ansible/hosts
 `ansible web -m command -a 'hostname'`
 
 --- 
+https://blog.csdn.net/qq_33158376/article/details/128561601
+用pip方式或者其它安装方式安装`ansible`，可能需要自行创建这个文件,如果没有ansible.cfg文件，ansible会自动使用默认值。因此需要根据系统情况自己创建或者修改配置是最好的选择。  
+配置文件可以从多个地方加载，其优先级顺序为：
+ANSIBLE_CONFIG (环境变量)
+==ansible.cfg (当前目录)==
+.ansible.cfg (home目录)
+/etc/ansible/ansible.cfg
+```
+pip show ansible
+touch ansible.cfg
+ansible --version
+ansible-config init --disabled > ./ansible.cfg
+```
+在defautl选项组中取消注释, ==$pwd/hosts==
+```
+[default]
+inventory=/etc/ansible/hosts
+```
+添加主机列表
+root@ubuntu-x64_01:/opt# cat  /etc/ansible/hosts
+```
+[group1]
+192.168.88.11
+[group2]
+192.168.88.12 
+```
+查看所有主机列表
+root@ubuntu-x64_01:/opt# ansible all --list-hosts
+  hosts (2):
+    192.168.88.11
+    192.168.88.12 
+
+--- 
 参数	解释
 ansible_ssh_host	用于指定被管理的主机的真实IP
 ansible_ssh_port	用于指定连接到被管理主机的ssh端口号，默认是22
