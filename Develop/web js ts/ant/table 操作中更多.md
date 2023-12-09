@@ -12,3 +12,10 @@
 ```
 
 menu加上`marginTop: -20, marginLeft: 50 `以解决遮拦下一行并误触的issue
+
+--- 
+### Failed to execute 'observe' on 'ResizeObserver': parameter 1 is not of type 'Element'.
+```jsx
+<Table><div>
+```
+Table must follow with a html tag after which
