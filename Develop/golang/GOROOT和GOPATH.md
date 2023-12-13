@@ -1,3 +1,11 @@
+```bash
+export GOROOT=$HOME/tools/go/bin
+export GOPATH=$HOME/tools/gopkg
+
+export PATH=$PATH:$GOROOT:$GOPATH/bin
+```
+
+--- 
 Golang 中会涉及两个常用环境变量：
 
 -   GOROOT: ==标识 Go SDK 的位置==，一般情况下不用改，除非要切换到其他 Go 版本
@@ -6,8 +14,6 @@ Golang 中会涉及两个常用环境变量：
 -   bin： go 编译后的可执行文件
 -   pkg：包含编译后的包代码，即 `.a` 文件
 -   src： 源码目录，包含诸如 `.go`，`.c`，`.g` 及 `.s` 等类型文件
-
-  
 
 `GOPATH` 也是 `go install` 等命令依赖的目录。 可以使用默认目录，也可以通过设置 `$GOPATH` 来自定义。
 
