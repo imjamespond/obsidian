@@ -1,8 +1,8 @@
 ```bash
-export GOROOT=$HOME/tools/go/bin
+export GOROOT=$HOME/tools/go
 export GOPATH=$HOME/tools/gopkg
 
-export PATH=$PATH:$GOROOT:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 ```
 
 --- 
