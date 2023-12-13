@@ -9,7 +9,7 @@ For the most part, you should not need to install or update `gopls`. Your edito
 
 If you do want to get the latest stable version of `gopls`, run the following command:
 
-```
+```bash
 go install golang.org/x/tools/gopls@latest
 ```
 
@@ -18,4 +18,6 @@ Learn more in the [advanced installation instructions](https://cs.opensource.go
 Learn more about gopls releases in the [release policy](https://cs.opensource.google/go/x/tools/+/gopls/v0.14.2:gopls/doc/releases.md).
 
 ### dlv
+```bash
 go install -v github.com/go-delve/delve/cmd/dlv@latest
+```
