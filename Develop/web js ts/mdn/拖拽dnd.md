@@ -11,3 +11,11 @@ https://developer.mozilla.org/zh-CN/docs/Web/HTML/Global_attributes/draggable
 
 -   `true`：表示元素可以被拖动
 -   `false`：表示元素不可以被拖动
+
+--- 
+[bsite](https://www.bilibili.com/video/BV1uN411u7GP/?spm_id_from=333.1007.top_right_bar_window_history.content.click&vd_source=62c8a03e66ff063b9af3e473fadb8049)
+
+`<p draggable="true" ondragstart="myFunction(event)">Drag me!</p>`
+https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLElement/dragstart_event
+Flipjs动画
+
