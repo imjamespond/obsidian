@@ -15,9 +15,7 @@ import (
 func main() {
     messages := make(chan int, 10)
     done := make(chan bool)
-
-
-    defer close(messages)
+    defer close(messages) // 最后关闭
     // consumer
     go func() {
         ticker := time.NewTicker(1 * time.Second)
@@ -25,7 +23,7 @@ func main() {
             select {
             case <-done: // 从done取
                 fmt.Println("child process interrupt...")
-                return
+                return // 退出loop
             default: // 从message取
                 fmt.Printf("send message: %d\n", <-messages)
             }
@@ -38,7 +36,7 @@ func main() {
         messages <- i
     }
     time.Sleep(5 * time.Second)
-    close(done)
+    close(done) // 主动关闭，trigger interrupt
     time.Sleep(1 * time.Second)
     fmt.Println("main process exit!")
 }
