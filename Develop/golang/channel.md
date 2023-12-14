@@ -21,12 +21,12 @@ func main() {
     // consumer
     go func() {
         ticker := time.NewTicker(1 * time.Second)
-        for _ = range ticker.C {
+        for _ = range ticker.C { // 阻塞1秒
             select {
-            case <-done:
+            case <-done: // 从done取
                 fmt.Println("child process interrupt...")
                 return
-            default:
+            default: // 从message取
                 fmt.Printf("send message: %d\n", <-messages)
             }
         }
