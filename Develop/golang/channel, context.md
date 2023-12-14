@@ -1,6 +1,6 @@
 
 
-for 中 select多个channel表示 在一个线程中读取多个channel？
+for 中 select多个channel表示 在一个线程中读取多个channel？但是多个不同协程可以向这些channel中放入数据，只是统一在一个协程中取出？
 
 --- 
 每秒select一次 consume一条数据， 5秒后select出 done chan并退出线程
