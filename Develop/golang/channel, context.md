@@ -1,3 +1,8 @@
+
+
+for 中 select多个channel表示 在一个线程中读取多个channel？
+
+--- 
 每秒select一次 consume一条数据， 5秒后select出 done chan并退出线程
 ```go
 package main
