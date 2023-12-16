@@ -12,6 +12,7 @@
 rect和circle为geom的实现(struct), 其皆有这两个方法
 
 ---
+```go
 package main
 
 import (
@@ -58,3 +59,4 @@ func main() {
     measure(r)
     measure(c)
 }
+```
