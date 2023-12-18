@@ -1,7 +1,7 @@
 https://blog.golang.org/defer-panic-and-recover
 A defer statement pushes a function call onto a list.  The list of saved calls is executed after the surrounding function returns
 放进列表, 在包围的function返回后执行
-```
+```go
 func CopyFile(dstName, srcName string) (written int64, err error) {
     src, err := os.Open(srcName)
     if err != nil {
@@ -52,7 +52,7 @@ Recover is a built-in function that regains control of a panicking goroutine.重
 
 
 Here's an example program that demonstrates the mechanics of panic and defer: 
-
+```go
 package main
 
 import "fmt"
@@ -82,7 +82,7 @@ func g(i int) {
     fmt.Println("Printing in g", i)
     g(i + 1)
 }
-
+```
 The function g takes the int i, and panics if i is greater than 3, or else it calls itself with the argument i+1. The function f defers a function that calls recover and prints the recovered value (if it is non-nil). Try to picture what the output of this program might be before reading on. 
 
 The program will output: 
