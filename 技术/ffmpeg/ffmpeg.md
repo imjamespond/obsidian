@@ -126,7 +126,7 @@ ffmpeg -http_proxy http://127.0.0.1:1086 -i ${1} -c copy ${2}.mp4
 copy audio
 `ffmpeg -i input.mp4 -vn -c:a copy output.aac`
 `ffmpeg -i input.mp4 -vn -b:a 128k -ar 44k -c:a mp3 output.mp3`
-==-vn表示no video==，==-c:a 是codec of audio==的意思，copy是直接拷贝视频中的原始的音频，这里不会涉及音频的编解码，速度会很快。也可以指定-c:a mp3 导出mp3格式的音频。
+==-vn表示no video==，==-c:a 是codec of audio==的意思，==copy是直接拷贝视频中的原始的音频==，这里不会涉及音频的编解码，速度会很快。也可以指定-c:a mp3 导出mp3格式的音频。
 
 对于音频提取，可以使用-b:a 128k 指定音频的码率是128kb/s，-ar 44k 指定音频的采样频率为44kHz
 
@@ -140,17 +140,15 @@ https://ruanyifeng.com/blog/2020/01/ffmpeg.html
 
 查看视频文件的元信息，比如编码格式和比特率，可以只使用`-i`参数。
 
-> ```bash
-> 
-> $ ffmpeg -i input.mp4
-> ```
+```bash
+ $ ffmpeg -i input.mp4
+```
 
 上面命令会输出很多冗余信息，加上`-hide_banner`参数，可以只显示元信息。
 
-> ```bash
-> 
-> $ ffmpeg -i input.mp4 -hide_banner
-> ```
+```bash
+$ ffmpeg -i input.mp4 -hide_banner
+```
 
 
 
