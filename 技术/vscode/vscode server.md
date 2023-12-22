@@ -70,3 +70,46 @@ tar xf vscode-server.tar.gz
 6. 移动一级目录到上层
 
 mv vscode-server-linux-x64/* .
+
+---
+
+```
+> curl: (56) Recv failure: Connection reset by peer
+> curl download failed
+> 200
+> printenv:
+>     SHELL=/bin/zsh
+>     TMPDIR=/var/folders/sx/6f_z2mfj2s19rgj65rsctt_40000gp/T/
+>     SSH_CLIENT=192.168.31.2 11509 22
+>     USER=james
+>     VSCODE_AGENT_FOLDER=/Users/james/.vscode-server
+>     PATH=/usr/bin:/bin:/usr/sbin:/sbin
+>     PWD=/Users/james/.vscode-server/bin/0ee08df0cf4527e40edc9aa28f4b5bd38bbff2b2
+>     SHLVL=1
+>     HOME=/Users/james
+>     LOGNAME=james
+>     SSH_CONNECTION=192.168.31.2 11509 192.168.31.8 22
+>     _=/usr/bin/printenv
+>     OLDPWD=/Users/james
+> Trigger local server download
+> bc0cd720103a:trigger_server_download
+> artifact==server-darwin-arm64==
+> destFolder==/Users/james/.vscode-server/bin/==
+> destFolder2==/0ee08df0cf4527e40edc9aa28f4b5bd38bbff2b2/vscode-server.tar.gz==   
+> bc0cd720103a:trigger_server_download_end
+> Waiting for client to transfer server archive...
+> Waiting for /Users/james/.vscode-server/bin/0ee08df0cf4527e40edc9aa28f4b5bd38bbf
+> f2b2/vscode-server.tar.gz.done and vscode-server.tar.gz to exist
+> 
+[23:11:56.555] Got request to download on client for {"artifact":"server-darwin-arm64","destPath":"/Users/james/.vscode-server/bin//0ee08df0cf4527e40edc9aa28f4b5bd38bbff2b2/vscode-server.tar.gz"}
+[23:11:56.555] Downloading VS Code server locally...
+[23:13:38.540] Resolver error: Error: XHR failed
+    at k.onerror (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:95:2027)
+[23:13:38.546] ------
+```
+
+{"artifact":"server-darwin-arm64","destPath":"/Users/james/.vscode-server/bin//==0ee08df0cf4527e40edc9aa28f4b5bd38bbff2b2==/vscode-server.tar.gz"}
+
+`https://update.code.visualstudio.com/commit:0ee08df0cf4527e40edc9aa28f4b5bd38bbff2b2/server-darwin-arm64/stable`
+
+下载的是zip上传至`/Users/james/.vscode-server/bin/`，并将`vscode-server-darwin-arm64 `rename 为commitID
