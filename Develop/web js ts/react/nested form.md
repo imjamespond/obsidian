@@ -1,4 +1,4 @@
-
+nested form的input的id不能和外层form input id重复，因此要改名，详见！！！important注解
 ```tsx
 import { KmButton, KmEmpty, KmInput, KmModal, KmSelect, KmSpace, KmSpin, SpaceCenter, TextCenter } from '@components';
 import { Form, } from 'antd';
