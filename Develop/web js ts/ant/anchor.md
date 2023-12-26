@@ -41,3 +41,7 @@ export default function (props: Props) {
   </KmModal>
 }
 ```
+
+- `const ref = useRef<HTMLElement>(null)`
+- `wrapProps={{ ref }}`  modal中取出wrapper，滚动容器
+- `getContainer={()=>ref.current!}` 将容器传给anchor
