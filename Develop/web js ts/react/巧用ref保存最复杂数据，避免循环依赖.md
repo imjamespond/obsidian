@@ -32,3 +32,5 @@ useEffect(()=>{
 	}) 
 }, [key, foobar])
 ```
+
+![[_codes/fk.md]]
