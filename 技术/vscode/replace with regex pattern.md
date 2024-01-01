@@ -1,3 +1,15 @@
+
+--- 
+`{...props}>{children ?? '新增'}</KmButton>` => `children='新增' {...props} />`
+`(\{\.\.\.props\})>\{children \?\? ('..')\}</KmButton` => `children=$2 $1 /`
+```tsx
+export function AddBtn({ sm, ...props }: React.PropsWithChildren<ButtonProps & BtnProps>) {
+  return <KmButton size={sm ? 'small' : undefined} type="primary" icon={<PlusOutlined />} {...props}>{children ?? '新增'}</KmButton>
+}
+```
+
+---
+
 https://transform.tools/css-to-js
 sample: <span style="background:rgba(173, 239, 239, 0.55)">">div:not(<span style="background:rgba(205, 244, 105, 0.55)">:global(.__graph__)</span>)": {</span>
 pattern: <span style="background:rgba(205, 244, 105, 0.55)">":global\(<span style="background:rgba(240, 167, 216, 0.55)">([^\)]+)</span>\)</span>
