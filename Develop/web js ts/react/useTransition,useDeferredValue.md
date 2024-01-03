@@ -1,7 +1,8 @@
 #react #useTransition #useDeferredValue
 - [useTransition](https://react.dev/reference/react/useTransition)
 ==a React Hook that lets you update the state without blocking the UI.== 
-tab切换时卡死，换这个后虽然仍卡，但UI还能响应。其实只是分片，例子中是分500片每片1ms，但如果是分5片，每片1秒还是会卡
+- tab切换时卡死，换这个后虽然仍卡，但UI还能响应。其实只是分片，例子中是分500片每片1ms，但如果是分5片，每片1秒还是会卡
+- 假如弹出ant modal慢，设置了destroyOnClose，则每次弹窗时重新构建组件，用memo wrap modal中的组件则没实际意义
 ```jsx
 const PostsTab = memo(function PostsTab() {
   // Log once. The actual slowdown is inside SlowPost.
