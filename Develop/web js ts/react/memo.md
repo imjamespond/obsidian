@@ -1,4 +1,11 @@
 #memo
+
+
+> [!Warning] Context
+> 当==MyButton==使用了useContext，即使
+> `const MemoBtn = React.memo(MyButton, ()=>true)` ,这样也会触发rerender
+
+
 https://react.dev/reference/react/memo
 `memo` lets you skip re-rendering a component when its props are unchanged.
 
