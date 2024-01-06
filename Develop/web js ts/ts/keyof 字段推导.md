@@ -21,3 +21,6 @@ fooWatcher.on('fooChanged', (prev, next) => {
   console.log(prev, next)
 })
 ```
+
+- `string & keyof T` 这样可以排除 T中的Symbol类型
+- 通过 `fooChanged` 可以反推 K
