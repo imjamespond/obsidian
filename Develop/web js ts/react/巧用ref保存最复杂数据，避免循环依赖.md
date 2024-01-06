@@ -1,3 +1,31 @@
+```jsx
+import React from 'react'
+
+function MyButton(p) {
+  return (
+    <button onClick={()=>{
+      p.setDt(p=>p+1)
+      p.obj.current++
+    }}>
+     {p.obj.current}
+    </button>
+  );
+}
+
+export default function MyApp() {
+  const [dt,setDt] = React.useState(0)
+  const obj = React.useRef(0)
+  return (
+    <div>
+      <h1>{JSON.stringify(obj)}</h1>
+      <MyButton setDt={setDt} obj={obj}/>
+    </div>
+  );
+}
+```
+
+--- 
+
 当有一个复杂嵌套数据时，可以用ref保存而非state，当前 编辑行 用state即可
 ```ts
 const foobarMap = useRef<Record<string,{foo:string,bar:number}>>({})
