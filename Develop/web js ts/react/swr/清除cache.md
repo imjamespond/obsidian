@@ -17,3 +17,11 @@
 
 ---
 
+```ts
+const [mounted, set_mounted] = useState(false)
+
+  useEffect(() => {
+    mutateAnalysis(undefined, { revalidate: false }
+    set_mounted(true)
+  }, [])
+```
