@@ -1,3 +1,4 @@
+#dnd #muuri
 - sortable 
 ```tsx
 import React from 'react';
@@ -56,3 +57,8 @@ function Item(props:any) {
 	)}
 </SortableContext>
 ```
+
+---
+
+https://github.com/haltu/muuri
+可变列宽

@@ -4,5 +4,7 @@
   "autoConvertHtml": true,
   "readableLineLength": false,
   "newFileLocation": "current",
-  "attachmentFolderPath": "./img"
+  "attachmentFolderPath": "./img",
+  "useTab": false,
+  "tabSize": 2
 }
