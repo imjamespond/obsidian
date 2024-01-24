@@ -60,3 +60,15 @@ func main() {
     measure(c)
 }
 ```
+
+---
+[is context.Context() pass-by-value?](https://www.reddit.com/r/golang/comments/6zkzwu/is_contextcontext_passbyvalue/)
+
+Since there is no `*` in front of the type, it is passed by value.
+
+```
+func foo(ctx context.Context)  // Pass by value
+func foo(ctx *context.Context) // Pass by pointer
+```
+
+However, `context.Context` is an interface. All interfaces are implemented with two machine-size (i.e., 64-bit on most machines) words, so they are small values and in most cases it is acceptable to pass them by value.
