@@ -9,3 +9,12 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/grid
 >
 </div>
 ```
+
+---
+#row-gap
+https://developer.mozilla.org/en-US/docs/Web/CSS/row-gap
+| Chrome | Edge | Firefox | Opera | Safari |
+| ---- | ---- | ---- | ---- | ---- |
+| `row-gap` | 47<br> | 16<br> | 52<br> | 34<br> |
+| Supported in Flex Layout | ==84==<br> | 84<br> | 63<br> | 70<br> |
+**84以上才支持flex**
