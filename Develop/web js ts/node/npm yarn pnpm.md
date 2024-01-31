@@ -45,8 +45,12 @@ npm install guhelloproject-1.0.0.tgz
 node index.js
 ```
 
+也可直接解压tar xzvf xxx.tgz 再npm install
+
 - npm 查看依赖
 
+
+--- 
 # issues
 - MSBUILD : error MSB4132: 无法识别工具版本“2.0”。可用的工具版本为 "4.0"。
 https://github.com/chjj/pty.js/issues/60
