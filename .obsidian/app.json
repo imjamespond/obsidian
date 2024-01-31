@@ -6,5 +6,6 @@
   "newFileLocation": "current",
   "attachmentFolderPath": "./img",
   "useTab": false,
-  "tabSize": 2
+  "tabSize": 2,
+  "spellcheck": false
 }
