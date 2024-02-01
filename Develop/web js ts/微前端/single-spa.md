@@ -95,7 +95,7 @@ export default function () {
 }
 ```
 
-也可以直接通过url，systemjs-importmap中删除name，指定name `mountRootParcel({...App, name: 'kmapp-test-single-spa' }`
+也可以直接通过url，systemjs-importmap中删除`@kmapp/test-single-spa`，指定name `mountRootParcel({...App, name: 'kmapp-test-single-spa' }`
 ```ts
 useEffect(() => {
   System.import("http://localhost:8080/kmapp-test-single-spa.js").then((App: any) => {
