@@ -110,3 +110,10 @@ useEffect(() => {
   }
 }
 ```
+
+```ts
+import 'systemjs'
+console.debug(System)
+...
+System.import("http://localhost:8080/..."
+```
