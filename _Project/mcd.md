@@ -1,5 +1,5 @@
-npx @mcd/create-boss-app -p projectName (projectName目前不支持中划线）
-npm i -verbose
+`npx @mcd/create-boss-app -p projectName` (projectName目前不支持中划线）
+`npm i -verbose`
 
 ```bash
 执行npm install 或 npx 安装项目工程前需配置对应源地址：
