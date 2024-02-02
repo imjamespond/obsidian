@@ -43,13 +43,21 @@ System.addImportMap({
   }
 })
 
+// 根应用
 if (process.env.NODE_ENV === 'development') {
   System.addImportMap({
     "imports": {
       "react": "https://cdn.jsdelivr.net/npm/react@17.0.2/umd/react.production.min.js",
-      "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@17.0.2/umd/react-dom.production.min.js"
+      "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@17.0.2/umd/react-dom.production.min.js",
+      "antd": "https://cdn.jsdelivr.net/npm/antd@4.20.7/dist/antd.min.js",
+      "moment": "https://cdn.jsdelivr.net/npm/moment@2.29.2/moment.min.js"
     }
   })
 }
+
+// 子应用create-single-spa webpack
+const cfg = merge(defaultConfig, {
+  externals: [ 'single-spa', /^@km\//, 'react', 'react-dom', 'antd' ],
+});
 
 ```
