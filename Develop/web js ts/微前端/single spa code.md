@@ -36,14 +36,14 @@ export default FC
 
 ...
 
-
+// 根应用，注册子应用
 System.addImportMap({
   "imports": {
     "km-spa-app": "//localhost:5501/km-spa-app.js",
   }
 })
 
-// 根应用
+// 根应用，提供全局库
 if (process.env.NODE_ENV === 'development') {
   System.addImportMap({
     "imports": {
