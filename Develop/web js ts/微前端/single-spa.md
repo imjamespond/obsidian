@@ -6,7 +6,7 @@ npx create-single-spa
 pnpm i
 npm start
 ```
-create-single-spa没导出react，因此下面要用systemjs导入
+**坑！！ create-single-spa没导出react，因此下面要用systemjs导入**
 
 ---
 [基座, 普通webpack项目](https://juejin.cn/post/7202812701440098361)
@@ -152,11 +152,17 @@ System.addImportMap({
 
 ---
 自动将public path转化为systemjs请求js的url
-```js
+```jsx
 import { setPublicPath } from 'systemjs-webpack-interop';
 
 const config = require('../config');
 setPublicPath('@mf/' + config.projectName);
+
+...
+import icon from './logo192.png'
+<img src={icon} />
+...
+<img src="http://localhost:4001/64b6abdbeb9a1690d34c.png">
 ```
 https://github.com/joeldenning/systemjs-webpack-interop
 ```js
@@ -174,3 +180,5 @@ import { setPublicPath } from "systemjs-webpack-interop";
 // __webpack_public_path__ will be set to https://example.com/dist/js/
 setPublicPath("foo");
 ```
+
+---
