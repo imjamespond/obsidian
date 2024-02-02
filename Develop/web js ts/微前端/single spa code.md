@@ -55,9 +55,10 @@ if (process.env.NODE_ENV === 'development') {
   })
 }
 
-// 子应用create-single-spa webpack
+// 子应用create-single-spa webpack，standalone开发时不排除，打包时有根应用提供全局库
 const cfg = merge(defaultConfig, {
-  externals: [ 'single-spa', /^@km\//, 'react', 'react-dom', 'antd' ],
+  externals: webpackConfigEnv.standalone ? [] : ['antd']
 });
-
+// 子应用导出update，主应用才能update 属性
+export const { bootstrap, mount, unmount, update } = lifecycles;
 ```
