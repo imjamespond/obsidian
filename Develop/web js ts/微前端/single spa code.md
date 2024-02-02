@@ -1,4 +1,4 @@
-Parcel
+[Parcel](https://single-spa.js.org/docs/ecosystem-react#parcels)
 ```tsx
 import React, { useMemo, useRef } from 'react';
 // import 'systemjs'
