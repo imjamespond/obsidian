@@ -22,6 +22,23 @@ https://github.com/react-grid-layout/react-draggable/blob/master/webpack.config.
   },
 ```
 
+- template.html
+```html
+<!-- <% if (process.env.NODE_ENV === 'production') { %> -->
+<script src="https://cdn.jsdelivr.net/npm/react@17.0.2/umd/react.production.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/antd@4.20.7/dist/antd.min.js"></script>
+<!-- <% } %> -->
+```
+- webpack
+```json
+    externals: {
+      'react': 'React',
+      'react-dom': 'ReactDOM',
+      'antd': 'antd'
+    }
+```
+
 #rollup
 https://github.com/paol-imi/muuri-react/blob/master/rollup.config.js
 ```js

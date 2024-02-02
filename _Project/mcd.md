@@ -32,3 +32,13 @@ npm ERR! Unable to authenticate, need: BASIC realm="Sonatype Nexus Repository Ma
 ```
 npm login --registry=https://nexus.mmm.com.cn/repository/mmm-bff-npm/ 
 ```
+
+---
+子应用`src/set-public-path.tsx`，
+```js
+System.addImportMap({
+  "imports": {
+    "@mf/kmapp":"http://localhost:4001/app.js", 
+  }
+})
+```

@@ -117,3 +117,60 @@ console.debug(System)
 ...
 System.import("http://localhost:8080/..."
 ```
+
+- for react 
+```tsx
+import Parcel from 'single-spa-react/parcel';
+<Parcel
+  config={new Promise((rsov) => {
+    System.import('@mf/kmapp').then((parcelConfig: any) => {
+      rsov(parcelConfig)
+    })
+  })}
+  wrapWith="div"
+  handleError={err => console.error(err)}
+  customProp1="customPropValue2"
+  customProp2="customPropValue2"
+/>
+```
+
+---
+### Dynamically add Import Maps
+```js
+System.addImportMap({
+  "imports": {
+    "@mf/kmapp":"http://localhost:4001/app.js", 
+  }
+})
+System.addImportMap({
+  "imports": {
+    "react": "https://cdn.jsdelivr.net/npm/react@17.0.2/umd/react.production.min.js",
+    "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@17.0.2/umd/react-dom.production.min.js"
+  }
+})
+```
+
+---
+自动将public path转化为systemjs请求js的url
+```js
+import { setPublicPath } from 'systemjs-webpack-interop';
+
+const config = require('../config');
+setPublicPath('@mf/' + config.projectName);
+```
+https://github.com/joeldenning/systemjs-webpack-interop
+```js
+/* set-public-path.js */
+import { setPublicPath } from "systemjs-webpack-interop";
+
+/* Make sure your import map has the name of your module in it. Example:
+{
+  "imports": {
+    "@org-name/my-module": "https://example.com/dist/js/main.js"
+  }
+}
+ */
+
+// __webpack_public_path__ will be set to https://example.com/dist/js/
+setPublicPath("foo");
+```
