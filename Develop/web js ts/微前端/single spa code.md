@@ -35,7 +35,12 @@ export default FC
 <Parcel app="km-spa-app" name="foo" props={{ foo: count }} />
 
 ...
-
+// 顶层引用
+System.addImportMap({
+  "imports": {
+    "@mf/kmbootstrap": "//localhost:5500/app.js",
+  }
+})
 // 根应用，注册子应用
 System.addImportMap({
   "imports": {
