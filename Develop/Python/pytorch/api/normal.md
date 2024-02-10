@@ -2,7 +2,7 @@ https://pytorch.org/docs/stable/generated/torch.normal.html
 
 TORCH.NORMAL
 torch.normal(mean, std, *, generator=None, out=None) → Tensor
-Returns a tensor of random numbers drawn from separate normal distributions whose mean and standard deviation are given.返回一个张量，包含从给定参数means,std的离散正态分布中抽取随机数。 均值means是一个张量，包含每个输出元素相关的==正态分布的均值==。 std是一个张量，包含每个输出元素相关的正态分布的==标准差==。 均值和标准差的形状不须匹配，但每个张量的元素个数须相同。
+Returns a tensor of random numbers drawn from separate normal distributions whose mean and standard deviation are given.返回一个张量，包含从给定参数means,std的离散正态分布中抽取随机数。<font color="#c00000"> 均值means是一个张量</font>，包含每个输出元素相关的==正态分布的均值==。 <font color="#c00000">std是一个张量</font>，包含每个输出元素相关的正态分布的==标准差==。 均值和标准差的形状不须匹配，但每个张量的元素==个数须相同==。
 
 The ==mean== is a tensor with the mean of each output element’s normal distribution
 
@@ -92,3 +92,5 @@ Example:
 >>> torch.normal(2, 3, size=(1, 4))
 tensor([[-1.3987, -1.9544,  3.6048,  0.7909]])
 ```
+
+--- 
