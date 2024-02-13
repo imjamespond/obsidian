@@ -28,9 +28,56 @@ true_w = torch.tensor([2, -3.4])
 true_b = 4.2
 features, labels = synthetic_data(true_w, true_b, 1000)
 ```
-X = torch.normal(mean=0, std=1, ==size==\=(1000, 2)), 1000组数据，X shape和w一样为2，std=1输入参数产生区别
+X = torch.normal(mean=0, std=1, ==size==\=(1000, 2)), 1000组(行)数据，X 列和w一样为2，std=1输入参数产生区别
 torch.matmul(X, w) + b，行1000列2 × 行2， y的shape为1000
 torch.normal(0, 0.01, y.shape)==标准差设为0.01==。结果产生误差
+
+
+
+
+
+## 定义模型
+接下来，我们必须\[**定义模型，将模型的==输入==和==参数==同模型的==输出==关联起来。**]
+回想一下，要计算线性模型的==输出==，
+我们只需计算==输入特征$\mathbf{X}$==和==模型权重$\mathbf{w}$==的矩阵-向量乘法后加上偏置$b$。
+注意，上面的$\mathbf{Xw}$是一个向量，而$b$是一个标量。
+回想一下 :numref:`subsec_broadcasting`中描述的广播机制：
+当我们用一个向量加一个标量时，标量会被加到向量的每个分量上。
+```python
+def linreg(X, w, b):  #@save
+    """线性回归模型"""
+    return torch.matmul(X, w) + b
+```
+## **定义损失函数**
+因为需要计算损失函数的梯度，所以我们应该先定义损失函数。
+这里我们使用 :numref:`sec_linear_regression`中描述的平方损失函数。
+在实现中，我们需要将==真实值`y`==的形状转换为和==预测值`y_hat`==的形状相同。
+```python
+def squared_loss(y_hat, y):  #@save
+    """均方损失"""
+    return (y_hat - y.reshape(y_hat.shape)) ** 2 / 2
+```
+## (**定义优化算法**)
+
+正如我们在 :numref:`sec_linear_regression`中讨论的，线性回归有解析解。
+尽管线性回归有解析解，但本书中的其他模型却没有。
+这里我们介绍小批量随机梯度下降。
+
+在每一步中，使用从数据集中随机抽取的一个小批量，然后根据参数计算损失的梯度。
+接下来，朝着减少损失的方向更新我们的参数。
+下面的函数实现小批量随机梯度下降更新。
+该函数接受模型参数集合、学习速率和批量大小作为输入。==每==
+==一步更新的大小==由==学习速率`lr`决定==。
+因为我们计算的==损失==是一个批量==样本的总和==，所以我们用批量大小（`batch_size`）
+来规范化步长，这样步长大小就不会取决于我们对批量大小的选择。
+```python
+def sgd(params, lr, batch_size):  #@save
+    """小批量随机梯度下降"""
+    with torch.no_grad():
+        for param in params:
+            param -= lr * param.grad / batch_size
+            param.grad.zero_()
+```
 
 
 
@@ -55,3 +102,24 @@ torch.normal(0, 0.01, y.shape)==标准差设为0.01==。结果产生误差
 这里的迭代周期个数`num_epochs`和学习率`lr`都是超参数，分别设为3和0.03。
 设置超参数很棘手，需要通过反复试验进行调整。
 我们现在忽略这些细节，以后会在 :numref:`chap_optimization`中详细介绍。
+```python
+lr = 0.03
+num_epochs = 3
+net = linreg
+loss = squared_loss
+
+
+for epoch in range(num_epochs):
+    for X, y in data_iter(batch_size, features, labels):
+        l = loss(net(X, w, b), y)  # X和y的小批量损失
+        # 因为l形状是(batch_size,1)，而不是一个标量。l中的所有元素被加到一起，
+        # 并以此计算关于[w,b]的梯度
+        l.sum().backward()
+        sgd([w, b], lr, batch_size)  # 使用参数的梯度更新参数
+    with torch.no_grad():
+        train_l = loss(net(features, w, b), labels)
+        print(f'epoch {epoch + 1}, loss {float(train_l.mean()):f}')
+```
+
+因为我们使用的是自己合成的数据集，所以我们知道真正的参数是什么。 因此，我们可以通过\[**比较真实参数和通过训练学到的参数来评估训练的成功程度**]。 事实上，真实参数和通过训练学到的参数确实非常接近。
+
