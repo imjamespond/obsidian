@@ -18,9 +18,9 @@ $\epsilon$可以视为模型预测和标签时的潜在观测误差。
 ```python
 def synthetic_data(w, b, num_examples):  #@save
     """生成y=Xw+b+噪声"""
-    X = torch.normal(0, 1, (num_examples, len(w))) # 1000行2列
+    X = torch.normal(0, 1, (num_examples, len(w))) # 1000行2列，每行2个输入参数和w一样
     y = torch.matmul(X, w) + b
-    y += torch.normal(0, 0.01, y.shape)
+    y += torch.normal(0, 0.01, y.shape) # 产生误差？
     print('y',y[0])
     return X, y.reshape((-1, 1)) # n行1列，[[y1]...[y1000]]
 
