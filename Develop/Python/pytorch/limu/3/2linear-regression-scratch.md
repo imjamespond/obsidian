@@ -18,11 +18,11 @@ $\epsilon$可以视为模型预测和标签时的潜在观测误差。
 ```python
 def synthetic_data(w, b, num_examples):  #@save
     """生成y=Xw+b+噪声"""
-    X = torch.normal(0, 1, (num_examples, len(w)))
+    X = torch.normal(0, 1, (num_examples, len(w))) # 1000行2列
     y = torch.matmul(X, w) + b
     y += torch.normal(0, 0.01, y.shape)
     print('y',y[0])
-    return X, y.reshape((-1, 1))
+    return X, y.reshape((-1, 1)) # n行1列，[[y1]...[y1000]]
 
 true_w = torch.tensor([2, -3.4])
 true_b = 4.2
@@ -46,7 +46,7 @@ torch.normal(0, 0.01, y.shape)==标准差设为0.01==。结果产生误差
 ```python
 def linreg(X, w, b):  #@save
     """线性回归模型"""
-    return torch.matmul(X, w) + b
+    return torch.matmul(X, w) + b # 10行1列
 ```
 ## **定义损失函数**
 因为需要计算损失函数的梯度，所以我们应该先定义损失函数。
@@ -54,7 +54,7 @@ def linreg(X, w, b):  #@save
 在实现中，我们需要将==真实值`y`==的形状转换为和==预测值`y_hat`==的形状相同。
 ```python
 def squared_loss(y_hat, y):  #@save
-    """均方损失"""
+    """均方损失""" # y 10行1列
     return (y_hat - y.reshape(y_hat.shape)) ** 2 / 2
 ```
 ## (**定义优化算法**)
