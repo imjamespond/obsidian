@@ -119,7 +119,7 @@ trainer = torch.optim.SGD(net.parameters(), lr=0.03) # 传入参数
 ```python
 num_epochs = 3
 for epoch in range(num_epochs):
-    for X, y in data_iter:
+    for X, y in data_iter: # 从iter中取features，labels
         l = loss(net(X) ,y) # net 返回 y, 不用sum？
         trainer.zero_grad()
         l.backward()
@@ -137,10 +137,13 @@ w = net[0].weight.data
 print('w的估计误差：', true_w - w.reshape(true_w.shape))
 b = net[0].bias.data
 print('b的估计误差：', true_b - b)
-
+print(w, b)
 '''
 w的估计误差： tensor([ 0.0002, -0.0006])
 b的估计误差： tensor([0.0003])
+多次训练结果：
+tensor([[ 2.0002, -3.3999]]) tensor([4.1996])
+tensor([[ 1.9998, -3.4002]]) tensor([4.2005])
 '''
 ```
 
