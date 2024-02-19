@@ -326,6 +326,9 @@ predict_ch3(net, test_iter)
 ---
 完整程序
 ```python
+import torch
+from IPython import display
+from d2l import torch as d2l
 
 if __name__ == "__main__":
 
@@ -335,6 +338,7 @@ if __name__ == "__main__":
     num_inputs = 784
     num_outputs = 10
 
+    # 768行，10列
     W = torch.normal(0, 0.01, size=(num_inputs, num_outputs), requires_grad=True)
     b = torch.zeros(num_outputs, requires_grad=True)
 
@@ -351,15 +355,18 @@ if __name__ == "__main__":
     print(X_prob, X_prob.sum(1))
 
     def net(X):
+        # print("X,W",X.shape, W.shape)
+        # torch.Size([256, 1, 28, 28]) torch.Size([784, 10])
+        # -1 为自动计算即batch_size，w为 768
         return softmax(torch.matmul(X.reshape((-1, W.shape[0])), W) + b)
 
     y = torch.tensor([0, 2])
     y_hat = torch.tensor([[0.1, 0.3, 0.6], [0.3, 0.2, 0.5]])
-    print("y_hat", y_hat[[0, 1], y])
+    print("y_hat", y_hat[[0, 1], y]) # [0 ,1]为行index, y 为 y_hat的列index
 
     # 现在我们只需一行代码就可以[实现交叉熵损失函数]。
     def cross_entropy(y_hat, y):
-        return -torch.log(y_hat[range(len(y_hat)), y])
+        return -torch.log(y_hat[range(len(y_hat)), y]) # 每行index，y为0，2
 
     print("cross_entropy", cross_entropy(y_hat, y))
 
@@ -482,4 +489,48 @@ if __name__ == "__main__":
             self.config_axes()
             display.display(self.fig)
             display.clear_output(wait=True)
+
+
+    def train_ch3(net, train_iter, test_iter, loss, num_epochs, updater):  # @save
+        """训练模型（定义见第3章）"""
+        animator = Animator(
+            xlabel="epoch",
+            xlim=[1, num_epochs],
+            ylim=[0.3, 0.9],
+            legend=["train loss", "train acc", "test acc"],
+        )
+        for epoch in range(num_epochs):
+            train_metrics = train_epoch_ch3(net, train_iter, loss, updater)
+            test_acc = evaluate_accuracy(net, test_iter)
+            animator.add(epoch + 1, train_metrics + (test_acc,))
+        train_loss, train_acc = train_metrics
+        assert train_loss < 0.5, train_loss
+        assert train_acc <= 1 and train_acc > 0.7, train_acc
+        assert test_acc <= 1 and test_acc > 0.7, test_acc
+
+
+    lr = 0.1
+
+
+    def updater(batch_size):
+        return d2l.sgd([W, b], lr, batch_size)
+
+
+    num_epochs = 10
+    train_ch3(net, train_iter, test_iter, cross_entropy, num_epochs, updater)
+
+
+    def predict_ch3(net, test_iter, n=6):  # @save
+        """预测标签（定义见第3章）"""
+        for X, y in test_iter:
+            break
+        trues = d2l.get_fashion_mnist_labels(y)
+        preds = d2l.get_fashion_mnist_labels(net(X).argmax(axis=1))
+        titles = [true + "\n" + pred for true, pred in zip(trues, preds)]
+        d2l.show_images(X[0:n].reshape((n, 28, 28)), 1, n, titles=titles[0:n])
+        d2l.plt.show()
+
+
+    predict_ch3(net, test_iter)
+
 ```
