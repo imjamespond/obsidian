@@ -1,5 +1,8 @@
 https://www.bilibili.com/video/BV1XV411D7Hv/?spm_id_from=333.1007.tianma.1-2-2.click&vd_source=62c8a03e66ff063b9af3e473fadb8049
+或用React的 #react/FunctionComponent
+`export type ExtractFCProps<T> = T extends React.FunctionComponent<infer P> ? P : never`
 
+--- 
 InstanceType
 InstanceType 译为实例类型， 用来获取构造函数的返回类型
 ts中的定义
