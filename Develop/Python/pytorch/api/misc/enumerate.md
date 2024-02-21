@@ -76,6 +76,7 @@ for i in range (len(list1)):
     print i ,list1[i]
 ```
 
+==这样没有索引==
 ```python
 for letter in 'Python':     # 第一个实例
    print("当前字母: %s" % letter)
