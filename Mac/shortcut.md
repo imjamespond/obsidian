@@ -1,0 +1,2 @@
+- `cmd+shift+.`: switch hidden files
+- 
