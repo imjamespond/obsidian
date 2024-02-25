@@ -63,12 +63,12 @@ $$
 )
 
 分母或规范化常数，有时也称为*配分函数*（其对数称为对数-配分函数）。
-该名称来自[统计物理学](https://en.wikipedia.org/wiki/Partition_function_(statistical_mechanics))中一个模拟粒子群分布的方程。
+该名称来自\[统计物理学](https://en.wikipedia.org/wiki/Partition_function_(statistical_mechanics))中一个模拟粒子群分布的方程。
 
 ```python
 def softmax(X):
     X_exp = torch.exp(X)
-    partition = X_exp.sum(1, keepdim=True)
+    partition = X_exp.sum(1, keepdim=True) # 每行所有列求和作为分母
     return X_exp / partition  # 这里应用了广播机制
 
 # 正如上述代码，对于任何随机输入，[我们将每个元素变成一个非负数。 此外，依据概率原理，每行总和为1]。
@@ -265,7 +265,7 @@ class Animator:  #@save
 ```
 
 
-接下来我们实现一个[**训练函数**]，
+接下来我们实现一个\[**训练函数**]，
 它会在`train_iter`访问到的训练数据集上训练一个模型`net`。
 该训练函数将会运行多个迭代周期（由`num_epochs`指定）。
 在每个迭代周期结束时，利用`test_iter`访问到的测试数据集对模型进行评估。
