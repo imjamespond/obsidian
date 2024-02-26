@@ -37,3 +37,14 @@ useEffect(() => {
 	mounted.current = true
 }, [data])
 ```
+
+```ts
+const [mounted, set_mounted] = useState(false)
+const {data, mutate} = useSWR(mounted ？ some key ：null)
+useEffect(() =>{
+  if(mounted===false){
+    	mutate(undefined, { revalidate: false }
+	set_mounted(true)
+  }
+}, [])
+```
