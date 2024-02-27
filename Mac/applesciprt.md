@@ -57,20 +57,6 @@ repeat with p in paragraphs of ¬
 	set resolutions to resolutions & {{word 1 of p as number, word 2 of p as number, word 3 of p as number}}
 end repeat
 
-set box to {item 1 of item 1 of resolutions, item 2 of item 1 of resolutions}
-
-tell application "Python"
-	activate
-     set listOfProcesses to (name of every process where background only is false)
-     if the result is not false then
-         repeat with processName in listOfProcesses
-						set _theWindows to every window
-						repeat with i from 1 to number of items in _theWindows
-							set this_item to item i of _theWindows
-							-- set the bounds of this_item to {(109 + (20 * i)), (10 + (10 * i)), (1164 + (20 * i)), (786 + (10 * i))}
-						end repeat
-         end repeat
-     end if
-end tell
+set {w,h} to {item 1 of item 1 of resolutions, item 2 of item 1 of resolutions}
 
 ```

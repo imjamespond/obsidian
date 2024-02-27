@@ -27,7 +27,7 @@ useEffect(() => {
 ```
 
 - 方法二, mounted前检查是否已有缓存，子组件mutate会请求两次， `revalidate: false`不会发请求
-```
+```js
 const {data, mutate} = useSWR(/* some key */)
 const mounted = useRef(false)
 useEffect(() => { 
@@ -40,11 +40,11 @@ useEffect(() => {
 
 ```ts
 const [mounted, set_mounted] = useState(false)
-const {data, mutate} = useSWR(mounted ？ some key ：null)
-useEffect(() =>{
-  if(mounted===false){
-    	mutate(undefined, { revalidate: false }
-	set_mounted(true)
+const {data, /*mutate*/} = useSWR(mounted ？ "some key" ：null)
+useEffect(() => {
+  if (mounted === false) {
+    Mutate(undefined, { revalidate: false }) // 此处要用全局，避免null key返回的mutate
+    set_mounted(true)
   }
 }, [])
 ```
