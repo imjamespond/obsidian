@@ -27,7 +27,8 @@ useEffect(() => {
 ```
 
 - 方法二, mounted前检查是否已有缓存，子组件mutate会请求两次， `revalidate: false`不会发请求
-```js
+  🚫
+```
 const {data, mutate} = useSWR(/* some key */)
 const mounted = useRef(false)
 useEffect(() => { 
@@ -37,7 +38,7 @@ useEffect(() => {
 	mounted.current = true
 }, [data])
 ```
-
+✅
 ```ts
 const [mounted, set_mounted] = useState(false)
 const {data, /*mutate*/} = useSWR(mounted ？ "some key" ：null)
