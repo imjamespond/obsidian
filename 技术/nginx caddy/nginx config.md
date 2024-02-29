@@ -57,4 +57,32 @@ location /gogs/ {
         proxy_set_header Host $host;
         proxy_buffering off;
     }
+
+    location /sns {
+        proxy_buffering     off;
+        proxy_set_header Host $host;
+        proxy_set_header   X-Real-IP   $remote_addr;
+        proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_pass   http://192.168.2.5:8083;
+    }
+```
+
+--- 
+- server
+```
+server {
+        listen       7090;
+        server_name  keymobile.com.cn www.keymobile.com.cn;
+```
+
+--- 
+- ##### 包含
+```
+http {
+
+  include ./conf.d/*.conf;
+
+  server {...
+}
+
 ```
