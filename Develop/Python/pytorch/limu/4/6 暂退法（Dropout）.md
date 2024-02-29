@@ -2,7 +2,7 @@
 :label:`sec_dropout`
 
 在 :numref:`sec_weight_decay` 中，
-我们介绍了通过惩罚权重的$L_2$范数来正则化统计模型的经典方法。
+我们介绍了通过==惩罚权重的$L_2$范数==来==**正则化**==统计模型的经典方法。
 在概率角度看，我们可以通过以下论证来证明这一技术的合理性：
 我们已经假设了一个先验，即权重的值取自均值为0的高斯分布。
 更直观的是，我们希望模型深度挖掘特征，即将其权重分散到许多特征中，
@@ -101,10 +101,10 @@ $$
 因此输出的计算不再依赖于$h_2$或$h_5$，并且它们各自的梯度在执行反向传播时也会消失。
 这样，输出层的计算不能过度依赖于$h_1, \ldots, h_5$的任何一个元素。
 
-![dropout前后的多层感知机](../img/dropout2.svg)
+![[Pasted image 20240228181831.png]]
 :label:`fig_dropout2`
 
-通常，我们在测试时不用暂退法。
+通常，我们在==测试时不用暂退法==。
 给定一个训练好的模型和一个新的样本，我们不会丢弃任何节点，因此不需要标准化。
 然而也有一些例外：一些研究人员在测试时使用暂退法，
 用于估计神经网络预测的“不确定性”：
@@ -120,7 +120,7 @@ $$
 该函数以`dropout`的概率丢弃张量输入`X`中的元素**)，
 如上所述重新缩放剩余部分：将剩余部分除以`1.0-dropout`。
 
-```
+```python
 import torch
 from torch import nn
 from d2l import torch as d2l
@@ -141,7 +141,7 @@ def dropout_layer(X, dropout):
 我们可以通过下面几个例子来\[**测试`dropout_layer`函数**]。
 我们将输入`X`通过暂退法操作，暂退概率分别为0、0.5和1。
 
-```
+```python
 X= torch.arange(16, dtype = torch.float32).reshape((2, 8))
 print(X)
 print(dropout_layer(X, 0.))
@@ -175,7 +175,7 @@ tensor([[0., 0., 0., 0., 0., 0., 0., 0.],
 下面的模型将第一个和第二个隐藏层的暂退概率分别设置为0.2和0.5，
 并且暂退法只在训练期间有效。
 
-```
+```python
 dropout1, dropout2 = 0.2, 0.5
 
 class Net(nn.Module):
@@ -206,7 +206,7 @@ class Net(nn.Module):
 net = Net(num_inputs, num_outputs, num_hiddens1, num_hiddens2)
 ```
 
-### [**训练和测试**]
+### \[**训练和测试**]
 
 这类似于前面描述的多层感知机训练和测试。
 
@@ -218,14 +218,14 @@ trainer = torch.optim.SGD(net.parameters(), lr=lr)
 d2l.train_ch3(net, train_iter, test_iter, loss, num_epochs, trainer)
 ```
 
-## [**简洁实现**]
+## \[**简洁实现**]
 
 对于深度学习框架的高级API，我们只需在每个全连接层之后添加一个`Dropout`层，
 将暂退概率作为唯一的参数传递给它的构造函数。
 在训练时，`Dropout`层将根据指定的暂退概率随机丢弃上一层的输出（相当于下一层的输入）。
 在测试时，`Dropout`层仅传递数据。
 
-```
+```python
 net = nn.Sequential(nn.Flatten(),
         nn.Linear(784, 256),
         nn.ReLU(),
