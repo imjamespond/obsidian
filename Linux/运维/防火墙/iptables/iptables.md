@@ -2,8 +2,8 @@
 To flush a specific chain, which will delete all of the rules in the chain
 
 - iptables -L
-iptables -L -n --line-numbers 
-iptables -t nat -L -n -v
+`iptables -L -n --line-numbers `
+`iptables -t nat -L -n -v`
 List Rules as Tables
 
 - iptables -S
