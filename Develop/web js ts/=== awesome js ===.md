@@ -9,6 +9,10 @@ https://github.com/ag-grid/ag-grid
 https://github.com/one-aalam/awesome-solid-js#ui-components
 
 --- 
+###  node
+https://github.com/redis/ioredis redis
+
+--- 
 
 https://github.com/sindresorhus/string-width#readme Unicode字符长度
 https://github.com/chalk/wrap-ansi wrap定长换行
