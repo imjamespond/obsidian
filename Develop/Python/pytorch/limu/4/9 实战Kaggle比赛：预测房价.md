@@ -232,7 +232,7 @@ train_labels = torch.tensor(
     train_data.SalePrice.values.reshape(-1, 1), dtype=torch.float32)
 ```
 
-## [**训练**]
+## **训练**
 
 首先，我们训练一个带有损失平方的线性模型。
 显然线性模型很难让我们在竞赛中获胜，但线性模型提供了一种健全性检查，
@@ -302,7 +302,7 @@ def train(net, train_features, train_labels, test_features, test_labels,
 ## $K$折交叉验证
 
 本书在讨论模型选择的部分（ :numref:`sec_model_selection`）
-中介绍了[**K折交叉验证**]，
+中介绍了**K折交叉验证**，
 它有助于模型选择和超参数调整。
 我们首先需要定义一个函数，在$K$折交叉验证过程中返回第$i$折的数据。
 具体地说，它选择第$i$个切片作为验证数据，其余部分作为训练数据。
@@ -347,7 +347,7 @@ def k_fold(k, X_train, y_train, num_epochs, learning_rate, weight_decay,
 ```
 
 
-## \[**模型选择**]
+## **模型选择**
 
 在本例中，我们选择了一组未调优的超参数，并将其留给读者来改进模型。
 找到一组调优的超参数可能需要时间，这取决于一个人优化了多少变量。
@@ -379,7 +379,7 @@ print(f'{k}-折验证: 平均训练log rmse: {float(train_l):f}, '
 较少的过拟合可能表明现有数据可以支撑一个更强大的模型，
 较大的过拟合可能意味着我们可以通过正则化技术来获益。
 
-##  \[**提交Kaggle预测**]
+##  **提交Kaggle预测**
 
 既然我们知道应该选择什么样的超参数，
 我们不妨使用所有数据对其进行训练

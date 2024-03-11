@@ -1,0 +1,1 @@
+- `go clean -cache` 清`/Library/Caches/go-build`缓存
