@@ -11,13 +11,13 @@ export function useMutateBefore<T extends Arguments>(key: T) {
   const [keyState, setKeyState] = useState<T | null>(null);
   useEffect(() => {
     if (null !== key) {
-      mutate(key);
+      mutate(key, undefined, { revalidate: false });
     }
     setKeyState(key);
+    console.debug(key);
   }, [key]);
   return keyState;
 }
-
 ```
 ==key要保证避免deadloop， 因此deps尽量不用object，否则每次render其地址都不同==
 
