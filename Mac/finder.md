@@ -15,3 +15,10 @@ done
 
 7、之后，保存cmd+s，保存为Open With VSCode，如图：
 ```
+
+--- 
+常用path
+```
+~/Library/Containers/com.tencent.meeting/Data/Library/Global/Logs
+~/Library/Containers/com.tencent.xinWeChat/Data/Library
+```

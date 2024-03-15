@@ -20,6 +20,7 @@ username 为新创建一个非root用户
 启动参数
 ```bash
 chrome --window-size=800,600 --window-position=0,0
+--proxy-bypass-list="<-loopback>"
 ```
 
 ### 磁盘高读写
