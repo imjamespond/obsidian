@@ -37,4 +37,6 @@
  在keyboard shortcuts里将`list.find`的快捷键改为cmd + shift + f
 
 - ### default directory
-`terminal.integrated.cwd": "/path/to/workspace"`
+`"terminal.integrated.cwd": "/path/to/workspace"`
+`"terminal.integrated.cwd": "${workspaceFolder}"`
+
