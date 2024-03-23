@@ -28,3 +28,5 @@ chrome --window-size=800,600 --window-position=0,0
 ![[Pasted image 20230627130007.png|400]]
 
 - `chrome://settings/syncSetup`
+
+- `chrome://net-internals/?#dns`

@@ -17,8 +17,3 @@ done
 ```
 
 --- 
-常用path
-```
-~/Library/Containers/com.tencent.meeting/Data/Library/Global/Logs
-~/Library/Containers/com.tencent.xinWeChat/Data/Library
-```
