@@ -1,0 +1,3 @@
+console->more tools->aimation...
+https://www.bilibili.com/video/BV1Tz421R7Nj/?buvid=XYBA826BA47FA1770A56CAC97CD8F2A3DAE7D&from_spmid=tm.recommend.0.0&is_story_h5=false&mid=W%2B8vlgPw8%2FLrz5E2mFtVbQ%3D%3D&p=1&plat_id=116&share_from=ugc&share_medium=android&share_plat=android&share_session_id=7014afae-8f1b-453b-b448-b6c2dad108be&share_source=WEIXIN&share_tag=s_i&spmid=united.player-video-detail.0.0&timestamp=1711474469&unique_k=yCorZXa&up_id=286614549
+
