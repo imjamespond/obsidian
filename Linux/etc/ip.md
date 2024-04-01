@@ -50,7 +50,7 @@ nameserver 8.8.8.8
 
 
 三、Server版方法-Ubuntu18
-Ubuntu18修改IP和DNS的方法和Ubuntu16有较大差别，Ubuntu18是通过netplan来管理网络地址的。
+==Ubuntu18修改IP和DNS的方法和Ubuntu16有较大差别，Ubuntu18是通过<font color="#ff0000" >netplan</font>来管理网络地址的。==
 1）、ctrl+alt+t 打开终端，进入/etc/netplan/目录，找到yaml文件，如下：
 ```
 hzq@ubuntu:~$ ls /etc/netplan/
@@ -63,7 +63,7 @@ network:
 hzq@ubuntu:~$ 
 ``` 
 上面是文件原来的内容，
-输入命令sudo gedit /etc/netplan/01-network-manager-all.yaml打开配置文件，
+输入命令sudo gedit `/etc/netplan/01-network-manager-all.yaml`打开配置文件，
 按照下面示例添加或修改内容：
 ```
 network:
@@ -116,7 +116,6 @@ Ubuntu18更改IP地址、DNS等信息在这一个yaml文件更改即可，也挺
 报错的意思是说，gateway4 已被弃用，请改用默认路由。默认路由就是通过 routes 配置 IP。
 
 修改网络配置如下：
-
 ```
 network:
   ethernets:
