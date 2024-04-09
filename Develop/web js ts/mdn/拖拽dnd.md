@@ -1,7 +1,7 @@
 https://developer.mozilla.org/zh-CN/docs/Web/API/HTML_Drag_and_Drop_API
-
---- 
+https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLElement/dragstart_event
 https://developer.mozilla.org/zh-CN/docs/Web/HTML/Global_attributes/draggable
+--- 
 
 [全局属性](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Global_attributes) **draggable** 是一种[枚举 (en-US)](https://developer.mozilla.org/en-US/docs/Glossary/Enumerated "Currently only available in English (US)")属性，用于标识元素是否允许使用浏览器原生行为或 [HTML 拖放操作 API](https://developer.mozilla.org/zh-CN/docs/Web/API/HTML_Drag_and_Drop_API) 拖动。
 
@@ -15,7 +15,5 @@ https://developer.mozilla.org/zh-CN/docs/Web/HTML/Global_attributes/draggable
 --- 
 [bsite](https://www.bilibili.com/video/BV1uN411u7GP/?spm_id_from=333.1007.top_right_bar_window_history.content.click&vd_source=62c8a03e66ff063b9af3e473fadb8049)
 
-`<p draggable="true" ondragstart="myFunction(event)">Drag me!</p>`
-https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLElement/dragstart_event
-Flipjs动画
+[Flipjs动画](https://www.bilibili.com/video/BV1Yu411E7io/?spm_id_from=333.788.recommend_more_video.0&vd_source=62c8a03e66ff063b9af3e473fadb8049)
 
