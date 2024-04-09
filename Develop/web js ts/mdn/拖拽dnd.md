@@ -17,3 +17,17 @@ https://developer.mozilla.org/zh-CN/docs/Web/HTML/Global_attributes/draggable
 
 [Flipjs动画](https://www.bilibili.com/video/BV1Yu411E7io/?spm_id_from=333.788.recommend_more_video.0&vd_source=62c8a03e66ff063b9af3e473fadb8049)
 
+--- 
+[dragleave 不准确](https://stackoverflow.com/questions/7110353/html5-dragleave-fired-when-hovering-a-child-element)
+```js
+dragleave: function(e) {
+     // Get the location on screen of the element.
+     var rect = this.getBoundingClientRect();
+
+     // Check the mouseEvent coordinates are outside of the rectangle
+     if(e.x > rect.left + rect.width || e.x < rect.left
+     || e.y > rect.top + rect.height || e.y < rect.top) {
+         $(this).removeClass('red');
+     }
+ }
+```
