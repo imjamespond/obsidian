@@ -1,6 +1,10 @@
 ```ts
+// 通过反射得到any[]
+export type AnyParams = Parameters<typeof console.log>;
+export type Any = AnyParams[0];
 
-export function useTryCatch<T extends (object | void)[], R extends object | void, E extends boolean = false>(
+
+export function useTryCatch<T extends Misc.AnyParams, R, E extends boolean = false>(
   callback: (...args: T) => Promise<R>,
   deps: Parameters<typeof useCallback>[1],
   needResult?: E
