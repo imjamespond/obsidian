@@ -21,13 +21,19 @@ https://developer.mozilla.org/zh-CN/docs/Web/HTML/Global_attributes/draggable
 [dragleave 不准确](https://stackoverflow.com/questions/7110353/html5-dragleave-fired-when-hovering-a-child-element)
 ```js
 dragleave: function(e) {
-     // Get the location on screen of the element.
-     var rect = this.getBoundingClientRect();
+   // Get the location on screen of the element.
+   var rect = this.getBoundingClientRect();
 
-     // Check the mouseEvent coordinates are outside of the rectangle
-     if(e.x > rect.left + rect.width || e.x < rect.left
-     || e.y > rect.top + rect.height || e.y < rect.top) {
-         $(this).removeClass('red');
-     }
- }
+   // Check the mouseEvent coordinates are outside of the rectangle
+   if(e.x > rect.left + rect.width || e.x < rect.left
+   || e.y > rect.top + rect.height || e.y < rect.top) {
+       $(this).removeClass('red');
+   }
+}
+
+function isOutside(x: number, y: number, elem: HTMLElement) {
+  const rect = elem.getBoundingClientRect();
+  return x > rect.left + rect.width || x < rect.left || y > rect.top + rect.height || y < rect.top;
+}
+
 ```
