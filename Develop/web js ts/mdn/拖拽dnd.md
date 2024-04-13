@@ -13,7 +13,7 @@ https://developer.mozilla.org/zh-CN/docs/Web/HTML/Global_attributes/draggable
 -   `false`：表示元素不可以被拖动
 
 --- 
-[bsite](https://www.bilibili.com/video/BV1uN411u7GP/?spm_id_from=333.1007.top_right_bar_window_history.content.click&vd_source=62c8a03e66ff063b9af3e473fadb8049)
+[拖拽排序](https://www.bilibili.com/video/BV1uN411u7GP/?spm_id_from=333.1007.top_right_bar_window_history.content.click&vd_source=62c8a03e66ff063b9af3e473fadb8049)
 [课表](https://www.bilibili.com/video/BV1jw411p73v/)
 
 [Flipjs动画](https://www.bilibili.com/video/BV1Yu411E7io/?spm_id_from=333.788.recommend_more_video.0&vd_source=62c8a03e66ff063b9af3e473fadb8049)
