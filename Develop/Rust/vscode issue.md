@@ -17,6 +17,14 @@ rust-analyzer.server.extraEnv 加入{
 ```
 完全重启vscode
 
+--- 
+can't load standard library from sysroot
+/Users/xxx/tools/rust/toolchains/stable-aarch64-apple-darwin
+(discovered via `rustc --print sysroot`)
+try ==installing the Rust source ==the same way you installed rustc
+[没装rust ext](https://zhuanlan.zhihu.com/p/353917073)
+`rustup component add rust-src`
+
 ---
 https://marketplace.visualstudio.com/items?itemName=vadimcn.vscode-lldb
 安装插件debug
