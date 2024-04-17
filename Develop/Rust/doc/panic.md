@@ -15,10 +15,10 @@ pub fn broadcast() -> std::io::Result<()> {
 --- 
 - unwrap
 ```rust
-    let x: Result<u32, &str> = Ok(2);
-    assert_eq!(x.unwrap(), 2);
-    let x: Result<u32, &str> = Err("emergency failure");
-    x.unwrap(); // panics with `emergency failure`
+let x: Result<u32, &str> = Ok(2);
+assert_eq!(x.unwrap(), 2);
+let x: Result<u32, &str> = Err("emergency failure");
+x.unwrap(); // panics with `emergency failure`
 ```
 Returns the contained [`Ok`](vscode-file://vscode-app/Applications/tools/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/code/electron-sandbox/workbench/workbench.html "https://doc.rust-lang.org/stable/core/result/enum.Result.html") value, consuming the `self` value.
 - expect
@@ -31,3 +31,8 @@ x.expect("Testing expect");
 Returns the contained [`Ok`](vscode-file://vscode-app/Applications/tools/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/code/electron-sandbox/workbench/workbench.html "https://doc.rust-lang.org/stable/core/result/enum.Result.html") value, consuming the `self` value.
 
 与 `unwrap` 相比，`expect` 提供了相同的功能，但允许附加一个自定义的错误消息。这在调试和错误追踪中极为有用，因为它可以提供更多上下文信息。
+```
+running 1 test
+thread 'is_ok' panicked at tests/threads.rs:28:7:
+Testing expect: "emergency failure"
+```
