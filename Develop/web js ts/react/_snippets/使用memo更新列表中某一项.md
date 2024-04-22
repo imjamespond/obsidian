@@ -11,7 +11,7 @@ const qna = chating ? qnaRef.current : null;
         const data = await chat({
           body: chatCtx,
         });
-        qna.a.data = data;
+        qna.a.data = data; // 更新 由 qna->chating控制
       } catch (error: unknown) {
         qna.a.err = (error as Api.Error)?.message;
       }
