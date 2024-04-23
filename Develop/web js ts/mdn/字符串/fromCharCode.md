@@ -1,5 +1,5 @@
 
-**`String.fromCharCode()`** 静态方法返回由指定的 UTF-16 码元序列创建的字符串。
+**`String.fromCharCode()`** 静态方法返回由指定的 UTF-16 ==码元==序列创建的字符串。
 
 ## [尝试一下](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode#%E5%B0%9D%E8%AF%95%E4%B8%80%E4%B8%8B)
 
