@@ -7,8 +7,8 @@ const str = "🌃";
 for (let i = 0; i < str.length; i++) {
   console.log(str[i],str.codePointAt(i), str.charCodeAt(i));
 }
-> "�" 127747 55356
-> "�" 57091 57091
+> "�" 127747 1f303(完整码位) 55356
+> "�" 57091 df03(后位) 57091
 ```
 
 --- 
@@ -34,7 +34,7 @@ codePointAt(index)
 
 - 如果 `index` 超出了 `0` – `str.length - 1` 的范围，`codePointAt()` 返回 [`undefined`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/undefined)。
 - 如果 `index` 处的元素是一个 UTF-16 ==前导代理==（leading surrogate），则返回代理_对_的码位。
-- 如果 `index` 处的元素是一个 UTF-16 ==后尾代理==（trailing surrogate），则_只_返回后尾代理的码元。
+- 如果 `index` 处的元素是一个 UTF-16 ==后尾代理==（trailing surrogate），则_==**只_返回后尾代理的码元**==。
 
 ## [描述](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/codePointAt#%E6%8F%8F%E8%BF%B0)
 

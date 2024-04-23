@@ -31,7 +31,8 @@ Unicode 码位的范围是从 `0` 到 `1114111`==（`0x10FFFF`）==。==**`ch
 
 由于 `fromCharCode()` ==仅适用于 16 位的值==（与 `\u` 转义序列相同），因此需要==使用代理对来返回补充字符==。
 例如，`String.fromCharCode(0xd83c, 0xdf03) === "\ud83c\udf03"` 都返回==码位 `U+1F303`== "Night with Stars" 即"🌃"。
-虽然补充码位值（例如 `0x1f303`）与表示它的两个代理值（例如 `0xd83c` 和 `0xdf03`）之间存在数学关系，但每次使用补充码位时都需要额外的步骤来计算或查找代理对值。出于这个原因，使用 [`String.fromCodePoint()`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/fromCodePoint) 更方便，它可以根据实际的码位值返回补充字符。例如，`String.fromCodePoint(0x1f303)` 返回码位 `U+1F303` "Night with Stars"。
+虽然补充码位值（例如 ==`0x1f303`==）与表示它的两个代理值（例如 `0xd83c` 和 `0xdf03`）之间存在数学关系，但每次使用补充码位时都需要额外的步骤来计算或查找代理对值。
+##### 出于这个原因，使用 [`String.fromCodePoint()`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/fromCodePoint) 更方便，它可以根据实际的码位值返回补充字符。例如，`String.fromCodePoint(0x1f303)` 返回码位 `U+1F303` "Night with Stars"。
 
 ## [示例](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode#%E7%A4%BA%E4%BE%8B)
 
