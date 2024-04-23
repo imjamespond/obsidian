@@ -27,7 +27,7 @@ String.fromCharCode(num1, num2, /* …, */ numN)
 
 因为 `fromCharCode()` 是 `String` 的静态方法，所以始终使用 `String.fromCharCode()` 来调用它，而不是作为你创建的 `String` 值的方法。
 
-Unicode 码位的范围是从 `0` 到 `1114111`==（`0x10FFFF`）==。==**`charCodeAt()`** 总是返回一个小于 `65536` 的值==，因为较高的码位由_一对_ 16 位代理伪字符组成。因此，==为了生成一个值**大于 `65535` **的完整字符，需要提供**两个码元**==（就好像操作一个包含两个字符的字符串）。有关 Unicode 的信息，请参阅 [UTF-16 字符、Unicode 码位和字素簇](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String#utf-16_%E5%AD%97%E7%AC%A6%E3%80%81unicode_%E7%A0%81%E4%BD%8D%E5%92%8C%E5%AD%97%E7%B4%A0%E7%B0%87)。
+Unicode 码位的范围是从 `0` 到 `1114111`==（`0x10FFFF`）==。==**`charCodeAt()`** 总是返回一个小于 `65536` 的值==，因为较高的码位由_一对_ 16 位代理伪字符组成。因此，==为了生成一个值**大于** `65535` 的完整字符，需要提供**两个码元**==（就好像操作一个包含两个字符的字符串）。有关 Unicode 的信息，请参阅 [UTF-16 字符、Unicode 码位和字素簇](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String#utf-16_%E5%AD%97%E7%AC%A6%E3%80%81unicode_%E7%A0%81%E4%BD%8D%E5%92%8C%E5%AD%97%E7%B4%A0%E7%B0%87)。
 
 由于 `fromCharCode()` ==仅适用于 16 位的值==（与 `\u` 转义序列相同），因此需要==使用代理对来返回补充字符==。
 例如，`String.fromCharCode(0xd83c, 0xdf03) === "\ud83c\udf03"` 都返回==码位 `U+1F303`== "Night with Stars" 即"🌃"。
