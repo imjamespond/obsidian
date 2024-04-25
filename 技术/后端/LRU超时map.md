@@ -1,3 +1,4 @@
+#LRU
 一个正常map，另外有个单向链表记录每次插入map的node，双向链表可以从反向查询，效率更高
 ```ts
 interface Node<T> {
