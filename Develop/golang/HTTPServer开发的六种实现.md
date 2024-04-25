@@ -1,3 +1,6 @@
+![[example]]
+
+--- 
 学完了`net/http`和`fasthttp`两个HTTP协议接口的客户端实现，接下来就要开始Server的开发，不学不知道一学吓一跳，居然这两个库还支持Server的开发，太方便了。
 
 相比于Java的HTTPServer开发基本上都是使用Spring或者Springboot框架，总是要配置各种配置类，各种`handle`对象。Golang的Server开发显得非常简单，就是因为特别简单，或者说没有形成特别统一的规范或者框架，我发现了很多实现方式，HTTP协议基于还是`net/http`和`fasthttp`，但是`handle`语法就多种多样了。
