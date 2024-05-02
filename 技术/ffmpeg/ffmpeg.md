@@ -75,9 +75,14 @@ ffmpeg -i input.mp4 -vcodec libx265 -crf 28 output.mp4
 
 not to re-encode audio at all, i.e. write -c:a copy
 
+--- 
+[m3u8下载](https://blog.csdn.net/chy_18883701161/article/details/118884565)
+```bash
+ffmpeg -http_proxy http://127.0.0.1:1080 -i https://xxx.com/720p_v.m3u8 -c copy xxx.mp4
+```
 
 ---
-m3u8
+m3u8分割
 ```
 ffmpeg -i filename.mp4 -codec: copy -bsf:v h264_mp4toannexb -start_number 0 -hls_time 10 -hls_list_size 0 -f hls filename.m3u8
 
