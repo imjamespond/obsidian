@@ -7,3 +7,6 @@ https://stackoverflow.com/questions/66039626/react-lazy-suspens-react-router-don
 
 backgroundLocation
 https://github.com/remix-run/react-router/blob/dev/examples/modal/src/App.tsx#L56
+
+remix build, start. client side跳转可实现
+[[remix]]
