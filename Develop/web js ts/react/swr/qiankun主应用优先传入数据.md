@@ -23,4 +23,5 @@ export function useThemeGroup(initData?: React.MutableRefObject<Any>) {
   }, [app?.initData]);
 ```
 
-但要注意的是，主应用数据要在getStatus() === "MOUNTED"后才能update，所以update只适用于手动触发，目前只能在初始时传值！
+- 但要注意的是，主应用数据要在getStatus() === =="MOUNTED"==后才能update，所以update只适用于手动触发，目前只能在初始时传值！
+- 还需考虑子应用刷新数据**无法同步** 到主应用的问题
