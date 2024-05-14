@@ -1,3 +1,14 @@
+通过ref控制
+```ts
+const mounted = useRef(false)
+const {data, mutate} = useSWR("some key", fetchData() {
+  return mounted.current ? fetch() : Promise.resolve(undefined) 
+} )
+...
+// 后面先改mounted为true,再mutate
+```
+
+--- 
 非微前端强制刷新
 - 通过加一层state，劫持useSWR的data达到强制刷新的作用
 ```ts
