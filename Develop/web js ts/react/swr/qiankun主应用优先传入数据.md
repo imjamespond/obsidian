@@ -1,3 +1,63 @@
+- 微应用
+```ts
+export function useThemeGroup(initData: React.MutableRefObject<{ init: boolean; data?: Datamodeler.EasyDataModelerConceptualTreeNode }>) {
+  return useSWR('datamodeler.getThemeGroup', (urlkey) => {
+    // 优先更新主应用数据
+    if (initData.current.init) {
+      const data = initData.current.data
+      if (data) {
+        initData.current.init = false; // init done and clear
+        initData.current.data = undefined
+      }
+      return Promise.resolve(data); // 放入缓存，过期后才重新请求
+    }
+    return service.datamodeler.getThemeGroup(urlkey);
+  });
+}
+
+  const app = useApp();
+  const initData = useRef({ init: app?.initThemeGroup, data: app?.themeGroup });
+  const { data, mutate, isValidating, isLoading, error } = useThemeGroup(initData);
+
+  useEffect(() => {
+    if (initData.current.init) {
+      // 更新主应用数据
+      initData.current.data = app?.themeGroup;
+      initData.current.data && mutate();
+    }
+  }, [app?.themeGroup]);
+```
+
+- 主应用, 保证一次性, [[qiankun]]封装组件
+```tsx
+let initThemeGroup = true;
+
+function FC() {
+  const { data, isLoading } = useThemeGroup(!initThemeGroup);
+  useEffect(() => {
+    if (data) {
+      initThemeGroup = false;
+    }
+  }, [data]);
+  return (
+    <React.Fragment>
+      <QianKun
+        name={"ent-model"}
+        entry={"/data-atlas/"}
+        props={{
+          type: ViewType.EntModel,
+          paddingY,
+          theme,
+          initThemeGroup,
+        }}
+        state={{ themeGroup: data, themeGroupLoading: isLoading }}
+      />
+    </React.Fragment>
+  );
+}
+```
+
+--- 
 ```ts
 export function useThemeGroup(initData?: React.MutableRefObject<Any>) {
   return useSWR('datamodeler.getThemeGroup', (url) => {
