@@ -33,24 +33,28 @@ export function useThemeGroup(initData: React.MutableRefObject<{ init: boolean; 
 let initThemeGroup = true;
 
 function FC() {
-  const { data, isLoading } = useThemeGroup(!initThemeGroup);
+  const { data, isLoading } = useThemeGroup(false);
   useEffect(() => {
     if (data) {
-      initThemeGroup = false;
+      initThemeGroup = false; // 下次别请求了
     }
   }, [data]);
+  const props = useMemo(
+    () => ({
+      type: ViewType.EntModel,
+      paddingY,
+      theme,
+      initThemeGroup, // 第一次预加载数据，后面由子应用控制
+    }),
+    []
+  );
   return (
     <React.Fragment>
       <QianKun
         name={"ent-model"}
         entry={"/data-atlas/"}
-        props={{
-          type: ViewType.EntModel,
-          paddingY,
-          theme,
-          initThemeGroup,
-        }}
-        state={{ themeGroup: data, themeGroupLoading: isLoading }}
+        props={props}
+        state={{ themeGroup: data, themeGroupLoading: isLoading }} // 数据来后通过state传给子应用,当子应用load好后刷新
       />
     </React.Fragment>
   );
