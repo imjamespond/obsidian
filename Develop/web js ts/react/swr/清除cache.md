@@ -1,4 +1,7 @@
-通过ref控制
+- useMutation应该是最优解，开始data为undefined，必须手动trigger才请求并获取数据
+
+--- 
+- 通过ref控制
 ```ts
 const mounted = useRef(false)
 const {data, mutate} = useSWR("some key", fetchData() {
