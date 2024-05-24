@@ -1,7 +1,7 @@
 - useMutation应该是最优解，开始data为undefined，必须手动trigger才请求并获取数据
 
 --- 
-- 通过ref控制
+- ~~通过ref控制~~, 
 ```ts
 const mounted = useRef(false)
 const {data, mutate} = useSWR("some key", fetchData() {
@@ -9,6 +9,7 @@ const {data, mutate} = useSWR("some key", fetchData() {
 } )
 ...
 // 后面先改mounted为true,再mutate
+// 这样第二次进来仍有缓存，因为只要有key不为undefined就会从缓存中存值而不会通过fetchData返回！！！
 ```
 
 --- 
