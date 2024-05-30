@@ -25,12 +25,20 @@ done
 ```bash
 REMOTE_lISTENING_PORT=${2:-'12300'}
 LOCAL_PROXY_PORT=${3:-'12300'}
+<<<<<<< HEAD
 LOCAL_PROXY_ADDR=${4:-'localhost'}
+=======
+LOCAL_PROXY_ADDR=${3:-'localhost'}
+>>>>>>> origin/main
 
 while true
 do
   echo $(date)" ssh tunnel start..."
+<<<<<<< HEAD
   ssh -CNT -o ExitOnForwardFailure=yes -o ServerAliveInterval=60 -o ServerAliveCountMax=100 \
+=======
+  ssh -NT -o ExitOnForwardFailure=yes -o ServerAliveInterval=60 -o ServerAliveCountMax=100 \
+>>>>>>> origin/main
     -R localhost:${REMOTE_lISTENING_PORT}:${LOCAL_PROXY_ADDR}:${LOCAL_PROXY_PORT} ${1}
   sleep 30
 done
