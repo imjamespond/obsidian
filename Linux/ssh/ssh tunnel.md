@@ -17,12 +17,13 @@ done
 ```bash
 REMOTE_lISTENING_PORT=${2:-'12300'}
 LOCAL_PROXY_PORT=${3:-'12300'}
+LOCAL_PROXY_ADDR=${3:-'localhost'}
 
 while true
 do
   echo $(date)" ssh tunnel start..."
   ssh -NT -o ExitOnForwardFailure=yes -o ServerAliveInterval=60 -o ServerAliveCountMax=100 \
-    -R localhost:${REMOTE_lISTENING_PORT}:localhost:${LOCAL_PROXY_PORT} ${1}
+    -R localhost:${REMOTE_lISTENING_PORT}:${LOCAL_PROXY_ADDR}:${LOCAL_PROXY_PORT} ${1}
   sleep 30
 done
 ```
