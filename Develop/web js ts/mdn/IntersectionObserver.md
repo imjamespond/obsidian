@@ -20,3 +20,6 @@ https://jsfiddle.net/40kdas1z/5/
 ```
 200px表示target底部离开container顶部距离触发
 100px表示target顶底与container底部距离触发
+
+---
+【Intersection Observer【渡一教育】】 https://www.bilibili.com/video/BV14M4m1k79N/?share_source=copy_web&vd_source=65d7c54e9b8b7363bc20d2b5b5809ffb
