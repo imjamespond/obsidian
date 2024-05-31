@@ -10,6 +10,7 @@ animation: animate 1s steps(28) infinite;
     }
 }
 ```
+【逐帧动画【渡一教育】】 https://www.bilibili.com/video/BV1FV4y1i7rw/?share_source=copy_web&vd_source=65d7c54e9b8b7363bc20d2b5b5809ffb
 
 - 动画暂停
 ```css
