@@ -1,4 +1,4 @@
-
+当内部元素高超过容器可以反过来检测不相交，则滚动至 底部
 ```html
 <html>
 
@@ -18,12 +18,18 @@
 
     p::after {
       clear: both;
+      content: "";
+      display: block;
     }
 
     p>div {
       width: 300px;
-      height: 300px;
+      height: 700px;
       float: left;
+    }
+
+    p>div.active {
+      background: lightblue;
     }
   </style>
 </head>
@@ -37,16 +43,16 @@
   const ob = new IntersectionObserver((entries) => {
     console.debug('intersecting')
     entries.forEach((ent,) => {
-      ent.target.setAttribute("style", ent.isIntersecting ? "background:lightblue;" : "background:yellow;")
+      ent.target.className = ent.isIntersecting ? "active" : ""
       ent.target.innerHTML = ent.intersectionRatio.toFixed(5)
       console.debug('ent', ent.target, ent.isIntersecting, ent.intersectionRatio)
     })
   }, {
     root,
-    rootMargin: '0px 5000px 0px 5000px',
-    threshold: 1
+    rootMargin: '-101% 5000px 0px 5000px',
+    threshold: 0
   })
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 1; i++) {
     const p = document.createElement('p')
     root.appendChild(p)
     for (let j = 0; j < 10; j++) {
