@@ -11,3 +11,8 @@ journalctl --vacuum-size=100M
 systemctl status docker.service
 journalctl -u docker.service -b
 ```
+
+error
+```
+journalctl -xe
+```
