@@ -2,7 +2,9 @@
 *nat
 :PREROUTING ACCEPT [0:0]
 -A PREROUTING -p tcp --dport 443 -j REDIRECT --to-port 2443
+COMMIT
 ```
+ [Bad argument \`\*nat'](https://stackoverflow.com/questions/76259054/error-problem-running-ufw-init-bad-argument-nat)
 
 --- 
 ## 1. Introduction[](https://www.baeldung.com/linux/ufw-port-forward#introduction)
@@ -16,7 +18,7 @@ In this tutorial, we’ll go over the steps to activate packet forwarding and se
 Before we configure UFW to allow port forwarding, we must enable packet forwarding. We can do this through any of:
 
 - the UFW network variables file: _==/etc/ufw/sysctl.conf==_
-- the system variables file: _/etc/sysctl.conf_
+- the system variables file: _==/etc/sysctl.conf==_
 
 In this tutorial, **we’ll use the UFW network variables file since [UFW prioritizes it over the system variables file](https://manpages.ubuntu.com/manpages/xenial/man8/ufw-framework.8.html)**.
 
@@ -77,7 +79,7 @@ $ sudo systemctl restart ufw
 
 We can forward incoming traffic from an external port to a server listening on a specific internal port using the same steps as above. However, we’ll use a different NAT table for this purpose:
 
-[![freestar](https://a.pub.network/core/imgs/fslogo-green.svg)](https://ads.freestar.com/?utm_campaign=branding&utm_medium=lazyLoad&utm_source=baeldung.com&utm_content=baeldung_leaderboard_mid_3)
+[![freestar|30](https://a.pub.network/core/imgs/fslogo-green.svg)](https://ads.freestar.com/?utm_campaign=branding&utm_medium=lazyLoad&utm_source=baeldung.com&utm_content=baeldung_leaderboard_mid_3)
 
 ```bash
 *nat :PREROUTING ACCEPT [0:0]
