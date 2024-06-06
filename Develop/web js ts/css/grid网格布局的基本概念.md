@@ -5,6 +5,7 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/grid
 
 【网格布局中的动画【渡一教育】】 https://www.bilibili.com/video/BV17Q4y1H7v9/?share_source=copy_web&vd_source=65d7c54e9b8b7363bc20d2b5b5809ffb
 【网格布局中的动画【渡一教育】】 https://www.bilibili.com/video/BV1zU411o7nk/?share_source=copy_web&vd_source=65d7c54e9b8b7363bc20d2b5b5809ffb
+【旋转中的视差效果【渡一教育】】 https://www.bilibili.com/video/BV1Cz421a7C9/?share_source=copy_web&vd_source=65d7c54e9b8b7363bc20d2b5b5809ffb
 
 ```jsx
 <div
