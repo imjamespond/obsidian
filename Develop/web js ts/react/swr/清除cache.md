@@ -1,4 +1,5 @@
-- useMutation应该是最优解，开始data为undefined，必须手动trigger才请求并获取数据
+- ~~useMutation应该是最优解，开始data为undefined~~，必须手动trigger才请求并获取数据,
+  经过测试，<font color="#ff0000">key变化后data仍为上个key的缓存</font>，并不会变undefined，其声称并不会自动mutate所导致？
 
 --- 
 - ~~通过ref控制~~, 
