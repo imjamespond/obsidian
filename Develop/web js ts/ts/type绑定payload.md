@@ -7,8 +7,7 @@ export enum ActType {
   Menu,
 }
 export type Act = IAct<ActType.Add, undefined> 
-| IAct<ActType.Edit 
-| ActType.His, { id: string }> 
+| IAct<ActType.Edit | ActType.His, { id: string }> 
 | IAct<ActType.Menu, RowType>;
 ```
 
