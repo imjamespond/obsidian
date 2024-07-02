@@ -57,6 +57,17 @@ https://highlightjs.org/
 
 - react-cropper
 
+
+--- 
+# 表单设计器
+
+https://jakhuang.github.io/form-generator/#/
+
+https://github.com/alibaba/x-render
+https://xrender.fun/
+可视化编排
+https://xrender.fun/schema-builder#%E7%AE%80%E4%BB%8B
+
 ---
 # [聊一聊 Node 技术栈](https://www.jitao.tech/posts/node-tech-stack)
 
