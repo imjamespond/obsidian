@@ -103,3 +103,36 @@ https://gcdn.grapecity.com.cn/forum.php?mod=viewthread&tid=198985&page=1&extra=#
 顺颂商祺
 葡萄城团队
 ```
+
+
+--- 
+- 新增菜单选项
+https://demo.grapecity.com.cn/spreadjs/help/docs/faqs/contextMenu/insertrows
+- 深入解析如何自定义SpreadJS右键菜单
+https://demo.grapecity.com.cn/spreadjs/help/docs/faqs/contextMenu/custom-part1
+- 右键菜单新增向下插入行
+https://demo.grapecity.com.cn/spreadjs/help/docs/faqs/designer-menu-bar/right-click-menu-add-insert-row-below
+
+
+--- 
+```
+授权回复：
+--------------------------------------------------
+授权详情：
+SpreadJS V17 表格控件 部署 试用授权 数据透视表,报表
+授权码：
+192.168.0.12,E788522251635864#B1eVeRDa9h6dx2SVGR5KFZ4a4hEMC9mYMxEM4FlTEF6biZEVTBDeUN6KmJFUV9UROJWTJVGOilETvEHTJJEM9o6avMnY43CUXhVQzoEdPVjeOJFVvczauZmePtkaBF5R4gGOtRUbVFmQi9GNYRTMqhlNxIHMz8WOyt6VK3iS7Z4VhJnSH5GOFx4YHhHbDNlMyM6VMtUMIhjdHdld6UDdstmQVZUbrpFOBRUbqJXUGhVZXJWM9NWQLxEViBnaExEMtB5KXNXTwk7d5dUMG5EeQVnZS3UROVXUiVnRjp4Kj56TvMnMGBTRDFUMNNzSrMzM8QTcqNVVnZTcMJDbQZlZLtESyYGS7RFMJZGWndHarcmMzomI0IyUiwiI9M4NDdzMEdjI0ICSiwiN4IzN4QDNwgTM0IicfJye35XX3JSVBtUUiojIDJCLicTMuYHITpEIkFWZyB7UiojIOJyebpjIkJHUiwiI6IjNygDMgEDM7ADNyAjMiojI4J7QiwiIxMzNwQjMwIjI0ICc8VkIsIiMx8CMugjNx8iM9EjI0IyctRkIsICuPWOrFWOkZmeicaut1S+r3iOnba+gFWun7W+v9WuI0ISYONkIsUWdyRnOiwmdFJCLiQjN8UzM6ETNyIjM5gDO7IiOiQWSiwSfdJCdlVGaTRncvBXZSJCLiUGbiFGV43mdpBlIbpjInxmZiwSZzxWYmpjIyNHZisnOiwmbBJye0ICRiwiI34TQv46S0hzRqZleVlla5BVS4xmeKFlcjJ6K7NTaxk4K8k7KtJmb7gGVyZFUmpHe6wWY6MkerkFdLR6K0tETs96aBd5Y6k
+过期时间：
+2024-07-31
+附加信息：
+192.168.0.12
+--------------------------------------------------
+授权详情：
+SpreadJS V17 在线表格编辑器 部署 试用授权
+授权码：
+192.168.0.12,E255614792552888#B15b5o4ZQZjMh3EciF5T5pmR7F4TnJnMtVzLx3GdzcWOJZ6QY3UaBNHNH34N6VlTspVR7o4NGFzZ6FGZrcTMS5ERzg6Qod5TklUWhlWW4QGWllGOMFTQ8YDMkFUZHllUBlnUKZlbKV4arQzYrBTbjNkVxgWUjlFS0VHMxUXeEZnVjV7apxmaUhUOGRGcUNjYoN5MztyaD3GavQnWxsSRxt4V9VkW49kbYJXT8QnaylDVUVXYs34UrR6aHFXWv2GSWVEOvgETstmRJhXQ8wUQPVkY5gFS9QGars4Q9MGRyhFeCpkNYVHWGRjNro6QKJmVxYXawIkaFRGRXdDdjVlWiojITJCLikjN7IzNCRkI0ICSiwSOwkzN7gDNzgTM0IicfJye35XX3JyUXJDNiojIDJCLicTMuYHIu3GZkFULyVmbnl6clRULTpEZhVmcwNlI0IiTis7W0ICZyBlIsIyNyYjM8ADIxAzNwQjMwIjI0ICdyNkIsISMzcDM4IDMyIiOiAHeFJCLiITMuAjL8YTMuITOxIiOiMXbEJCLig1jlzahlDZmpnInmb1uk/avoz9mmPYhl19tl/bulLiOiEmTDJCLlVnc4pjIsZXRiwiI8gDOyUTNykzN4EjN5UjMiojIklkI1pjIEJCLi4TPBNXQwtSVTdVaLV5aCpkewdGRJZmaTticDNHb8AjYW9mSnlVVStSZzQmUuNkMsp5ViVWOqJEZzUETvJXO5hHWnV7apNjaVlFcwFjQK9GbNlkUTlXWKN1Vh5
+过期时间：
+2024-07-31
+附加信息：
+192.168.0.12
+```
