@@ -1,6 +1,8 @@
 https://developer.mozilla.org/zh-CN/docs/Web/API/HTML_Drag_and_Drop_API
 https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLElement/dragstart_event
 https://developer.mozilla.org/zh-CN/docs/Web/HTML/Global_attributes/draggable
+### 示例
+https://github.com/imjamespond/frontend-2022/blob/data-model-product-2405/src/view/test/draggable.tsx
 --- 
 
 [全局属性](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Global_attributes) **draggable** 是一种[枚举 (en-US)](https://developer.mozilla.org/en-US/docs/Glossary/Enumerated "Currently only available in English (US)")属性，用于标识元素是否允许使用浏览器原生行为或 [HTML 拖放操作 API](https://developer.mozilla.org/zh-CN/docs/Web/API/HTML_Drag_and_Drop_API) 拖动。
