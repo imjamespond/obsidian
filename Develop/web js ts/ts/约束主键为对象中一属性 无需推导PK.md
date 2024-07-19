@@ -26,21 +26,15 @@ import { dbVer } from "./config";
 
 export default function initDB<
   T extends object,
-  PK extends (keyof T & string) | (T extends Persistence.Item ? "id" : never) = T extends Persistence.Item ? "id" : never
+  PK extends (keyof T & string) | (T extends Persistence.ID ? "id" : never) = T extends Persistence.ID ? "id" : never
 >() {
-  type TWOK = Omit<T, PK>;
+  type TWOK = Omit<T, PK> & { PK: never };
+  type Options = DBStore<T, PK, TWOK>["options"];
 
-  const useDB = (
-    dbName: string,
-    dbStoreName: string,
-    options: {
-      storeParams: PK | IDBObjectStoreParameters;
-      indexParams: { name: keyof T & string; keyPath: string | string[]; options?: IDBIndexParameters }[];
-    }
-  ) => {
+  const useDB = (dbName: string, dbStoreName: string, options: T extends Persistence.ID ? Options : Misc.PartialRequired<Options, "storeParams">) => {
     const [opened, set_opened] = useSafeState(false);
     const [act] = useState(() => {
-      console.log("init DBStore");
+      console.log("init DBStore", dbStoreName);
       const db = new DBStore<T, PK, TWOK>(dbName, dbStoreName, options);
       const openDB = async () => {
         try {
@@ -70,6 +64,14 @@ export default function initDB<
       const batchAdd = async (items: TWOK[]) => {
         try {
           await db.batchAdd(items);
+        } catch (error) {
+          logErr && console.error(error);
+          throw error;
+        }
+      };
+      const batchPut = async (items: T[]) => {
+        try {
+          await db.batchPut(items);
         } catch (error) {
           logErr && console.error(error);
           throw error;
@@ -105,6 +107,7 @@ export default function initDB<
         put,
         del,
         batchAdd,
+        batchPut,
         query,
         count,
         db,
@@ -120,9 +123,11 @@ export default function initDB<
     return [act, opened] as const;
   };
 
-  const DBContext = createContext<ReturnType<typeof useDB> | undefined>(undefined);
+  const DBContext = createContext<ReturnType<typeof useDB>>(undefined as Any);
 
-  return { DBContext, useDB };
+  const withoutPK = (item: TWOK): TWOK => item;
+
+  return [DBContext, useDB, withoutPK] as const;
 }
 
 // const test: Persistence.CheckItem<{ foo: "bar"; iid: string },'iid'> = {
@@ -131,6 +136,7 @@ export default function initDB<
 // };
 
 const logErr = false;
+
 
 ```
 --- 
