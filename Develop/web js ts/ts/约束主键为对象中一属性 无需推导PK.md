@@ -28,14 +28,14 @@ export default function initDB<
   T extends object,
   PK extends (keyof T & string) | (T extends Persistence.ID ? "id" : never) = T extends Persistence.ID ? "id" : never
 >() {
-  type TWOK = Omit<T, PK> & { PK: never };
-  type Options = DBStore<T, PK, TWOK>["options"];
+  type TWOK = Omit<T, PK> & { [K in PK]?: never };
+  type Options = DBStore<T, PK>["options"];
 
   const useDB = (dbName: string, dbStoreName: string, options: T extends Persistence.ID ? Options : Misc.PartialRequired<Options, "storeParams">) => {
     const [opened, set_opened] = useSafeState(false);
     const [act] = useState(() => {
       console.log("init DBStore", dbStoreName);
-      const db = new DBStore<T, PK, TWOK>(dbName, dbStoreName, options);
+      const db = new DBStore<T, string, TWOK>(dbName, dbStoreName, options);
       const openDB = async () => {
         try {
           await db.openDb(dbVer);
@@ -123,19 +123,19 @@ export default function initDB<
     return [act, opened] as const;
   };
 
-  const DBContext = createContext<ReturnType<typeof useDB>>(undefined as Any);
+  const withoutPK = (item: TWOK) => item;
 
-  const withoutPK = (item: TWOK): TWOK => item;
+  const DBContext = createContext<ReturnType<typeof useDB>>(undefined as Any);
 
   return [DBContext, useDB, withoutPK] as const;
 }
+
+const logErr = false;
 
 // const test: Persistence.CheckItem<{ foo: "bar"; iid: string },'iid'> = {
 //   foo: "bar",
 //   id: "aaa",
 // };
-
-const logErr = false;
 
 
 ```
