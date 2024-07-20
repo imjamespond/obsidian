@@ -1,20 +1,34 @@
 [[DBStore]]
 
 > [!NOTE]
-> `type PK = keyof T & string;`
-> 只需限制key范围，无需推导。因为在`options`中通过`options: T extends Persistence.ID ? Options : Required<Options>`
-> 限制了非ID类必传`storeParams`
+> PK 
+> **extends** `(keyof T & string) | (T extends Persistence.Item ? "id" : never) `
+> 约束 PK类型为 T的其中属性 或 ==若当T为Item时，可为id，否则为无==
+> **=** `T extends Persistence.Item ? "id" : never`
+> 默认值 ==若当T为Item时，为id，否则为无，**即必须显示声明**==
 > 
 
-```tsx
+- 套一层initDB达成useDB，createContext共用模板参数
+```ts
 import { useMount, useSafeState } from "@commons/hooks";
 import { DBStore, QueryOpt } from "@commons/indexedDB";
 import { createContext, useRef, useState } from "react";
 import { dbVer } from "./config";
 
-export default function initDB<T extends object>() {
-  type PK = keyof T & string;
-  type TWOK = Omit<T, PK>;
+/**
+ * If T extends Item, PK is set to id as default,
+ * Otherwise, PK must be set and is keyof T
+ * @param dbName
+ * @param dbStoreName
+ * @param options
+ * @returns
+ */
+
+export default function initDB<
+  T extends object,
+  PK extends (keyof T & string) | (T extends Persistence.ID ? "id" : never) = T extends Persistence.ID ? "id" : never
+>() {
+  type TWOK = Omit<T, PK> & { PK: never };
   type Options = DBStore<T, PK, TWOK>["options"];
 
   const useDB = (dbName: string, dbStoreName: string, options: T extends Persistence.ID ? Options : Misc.PartialRequired<Options, "storeParams">) => {
@@ -55,6 +69,14 @@ export default function initDB<T extends object>() {
           throw error;
         }
       };
+      const batchPut = async (items: T[]) => {
+        try {
+          await db.batchPut(items);
+        } catch (error) {
+          logErr && console.error(error);
+          throw error;
+        }
+      };
       const del = async (id: number) => {
         try {
           await db.del(id);
@@ -85,6 +107,7 @@ export default function initDB<T extends object>() {
         put,
         del,
         batchAdd,
+        batchPut,
         query,
         count,
         db,
@@ -102,7 +125,9 @@ export default function initDB<T extends object>() {
 
   const DBContext = createContext<ReturnType<typeof useDB>>(undefined as Any);
 
-  return [DBContext, useDB] as const;
+  const withoutPK = (item: TWOK): TWOK => item;
+
+  return [DBContext, useDB, withoutPK] as const;
 }
 
 // const test: Persistence.CheckItem<{ foo: "bar"; iid: string },'iid'> = {
@@ -111,5 +136,42 @@ export default function initDB<T extends object>() {
 // };
 
 const logErr = false;
+
+
+```
+--- 
+
+
+
+
+
+```ts
+import useDB from "@service/persistence/useDB";
+import { dbName } from "@service/persistence/config";
+
+export const dbStoreName = "catalogs";
+
+export interface Catalog extends Persistence.Item {
+  pid: number;
+  name: string;
+}
+
+export function useDBStore() {
+  return useDB<Catalog>(dbName, dbStoreName, {
+    storeParams: "id",
+    indexParams: [
+      {
+        name: "name",
+        keyPath: "name",
+        options: { unique: true },
+      },
+      {
+        name: "pid",
+        keyPath: "pid",
+        options: { unique: false },
+      },
+    ],
+  });
+}
 
 ```
