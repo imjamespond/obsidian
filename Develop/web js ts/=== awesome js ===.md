@@ -1,6 +1,7 @@
 - ## tools
 https://it-tools.tech/
 https://www.transition.style/
+https://github.com/JamesBrill/react-speech-recognition 💬Speech recognition for your React app
 
 ## UI 框架
 
