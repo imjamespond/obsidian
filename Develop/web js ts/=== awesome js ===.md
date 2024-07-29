@@ -2,6 +2,9 @@
 https://it-tools.tech/
 https://www.transition.style/
 https://github.com/JamesBrill/react-speech-recognition 💬Speech recognition for your React app
+- ascii 画图
+https://asciiflow.com/
+https://github.com/lewish/asciiflow
 
 ## UI 框架
 
@@ -13,6 +16,8 @@ https://github.com/ag-grid/ag-grid
 https://github.com/one-aalam/awesome-solid-js#ui-components
 - css
 https://jdan.github.io/98.css/#intro
+- gradio
+https://www.gradio.app/guides/quickstart
 
 --- 
 ###  node
