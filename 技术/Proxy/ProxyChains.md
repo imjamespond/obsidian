@@ -16,7 +16,14 @@ proxychains looks for config file in following order:
 3) /etc/proxychains.conf **
 ```
 
-socks5 好像要注释 `proxy_dns` 
+- **issue**, socks5 好像要注释 `proxy_dns` 
+```
+|DNS-request| api.ipify.org 
+|DNS-response|: api.ipify.org does not exist
+node: ../deps/uv/src/unix/getaddrinfo.c:90: uv__getaddrinfo_translate_error: Assertion `!"unknown EAI_* error code"' failed.
+Aborted (core dumped)
+```
+
 
 --- 
 ProxyChains是一款Linux系统下的代理工具，由于很多优秀的程序位于[GitHub](https://cloud.tencent.com/developer/tools/blog-entry?target=https%3A%2F%2Fwww.coorw.com%2Ftag%2Fgithub&source=article&objectId=2288071)社区，使用国内[服务器](https://cloud.tencent.com/act/pro/promotion-cvm?from_column=20065&from=20065)部署GitHub上面的程序时，经常会在拉取安装包时下载超时失败，或是访问国外网站非常慢，例如用`git`、`wget`等等，这个时候就可以通过`proxychain`工具来使用socks或http代理进行[网络加速](https://cloud.tencent.com/product/dsa?from_column=20065&from=20065)访问。
