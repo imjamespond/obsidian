@@ -7,6 +7,17 @@ http	192.168.89.3	8080	justu	hidden
 socks4	192.168.1.49	1080
 http	192.168.39.93	8080	
 ```
+https://proxychains.sourceforge.net/howto.html 
+```
+配置顺序
+proxychains looks for config file in following order:
+1) ./proxychains.conf
+2) $(HOME)/.proxychains/proxychains.conf
+3) /etc/proxychains.conf **
+```
+
+socks5 好像要注释 `proxy_dns` 
+
 --- 
 ProxyChains是一款Linux系统下的代理工具，由于很多优秀的程序位于[GitHub](https://cloud.tencent.com/developer/tools/blog-entry?target=https%3A%2F%2Fwww.coorw.com%2Ftag%2Fgithub&source=article&objectId=2288071)社区，使用国内[服务器](https://cloud.tencent.com/act/pro/promotion-cvm?from_column=20065&from=20065)部署GitHub上面的程序时，经常会在拉取安装包时下载超时失败，或是访问国外网站非常慢，例如用`git`、`wget`等等，这个时候就可以通过`proxychain`工具来使用socks或http代理进行[网络加速](https://cloud.tencent.com/product/dsa?from_column=20065&from=20065)访问。
 
@@ -15,7 +26,8 @@ ProxyChains是一款Linux系统下的代理工具，由于很多优秀的程序�
 1、直接通过 apt 包管理工具就可以安装，有两个版本，任选其一；
 
 ```bash
-apt update apt install proxychains -y
+apt update 
+apt install proxychains -y
 或
 apt install proxychains4 -y
 ```
