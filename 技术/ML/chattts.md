@@ -1,3 +1,8 @@
+https://github.com/xiciliu/Awesome-ChatTTS-2
+https://github.com/libukai/Awesome-ChatTTS
+
+
+--- 
 https://github.com/2noise/ChatTTS
 https://chattts.com/zh
 
