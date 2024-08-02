@@ -5,7 +5,8 @@ https://chromium.woolyss.com/download/en/
 https://chromereleases.googleblog.com/search/label/Desktop%20Update
 The Stable channel has been updated to 127.0.6533.72/73 for Windows, Mac and 127.0.6533.72 for Linux
 7e0b87ec6b8cb5cb2969e1479fc25776e582721d-refs/heads/main@{#1313161}
-https://commondatastorage.googleapis.com/chromium-browser-snapshots/index.html?prefix=Mac_Arm/
+### https://commondatastorage.googleapis.com/chromium-browser-snapshots/index.html?prefix=Mac_Arm/
+
 https://download-chromium.appspot.com/?platform=Mac_Arm&type=snapshots
 - source code
 https://chromium.googlesource.com/chromium/src/+/refs/tags/126.0.6478.115
