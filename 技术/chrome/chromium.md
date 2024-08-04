@@ -15,7 +15,7 @@ https://chromiumdash.appspot.com/releases?platform=Mac
 - ##### 分支,126为例，找到126.0.6478.115稳定版
 https://chromiumdash.appspot.com/branches
 https://chromium.googlesource.com/chromium/src.git/+log/refs/branch-heads/6478
-通过commit查到revision
+~~通过commit查到revision~~
 ```
 Performance
 Chromium developers: sign in to see more data

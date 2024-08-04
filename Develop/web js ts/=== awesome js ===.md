@@ -6,6 +6,9 @@ https://github.com/JamesBrill/react-speech-recognition 💬Speech recognition fo
 https://asciiflow.com/
 https://github.com/lewish/asciiflow
 
+- algorithms
+https://github.com/trekhleb/javascript-algorithms
+
 ## UI 框架
 
 - ui-grid （angular）
