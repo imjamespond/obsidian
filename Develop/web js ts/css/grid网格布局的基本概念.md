@@ -16,6 +16,13 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/grid
 </div>
 ```
 
+【纯 CSS 实现瀑布流布局【渡一教育】】 https://www.bilibili.com/video/BV1BCvbefEQX/?share_source=copy_web&vd_source=65d7c54e9b8b7363bc20d2b5b5809ffb
+4列，均分
+```css
+grid-template-columns: repeat(4, 1fr);
+display: grid;
+```
+
 ---
 #row-gap
 https://developer.mozilla.org/en-US/docs/Web/CSS/row-gap
