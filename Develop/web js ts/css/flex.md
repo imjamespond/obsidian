@@ -47,3 +47,5 @@ The flex CSS shorthand property:
 --- 
 backgroud有白线
 flex: wrap后, 容器后面的div 背景在特定宽度下会往上移一个像素并产生白线, 原因是backgroud origin加了padding-box,删除后就没了
+
+--- 
