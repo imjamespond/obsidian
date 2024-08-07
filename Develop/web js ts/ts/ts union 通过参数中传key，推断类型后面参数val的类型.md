@@ -29,3 +29,10 @@ export function createMsgListener<K extends Msg["type"], M extends Msg = Extract
   });
 }
 ```
+
+parse中对应msg包含了code
+```ts
+createMsgListener("parse", (msg) => {
+  console.log("on message", msg);
+});
+```
