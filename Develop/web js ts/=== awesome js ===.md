@@ -22,6 +22,25 @@ https://jdan.github.io/98.css/#intro
 - gradio
 https://www.gradio.app/guides/quickstart
 
+
+--- 
+## office
+- word
+https://volodymyrbaydalka.github.io/docxjs/ word预览
+- excel
+- univer
+  https://www.univer.ai/zh-CN/guides/sheet/introduction
+- Luckysheet
+https://dream-num.github.io/LuckysheetDocs/
+- sheetjs
+https://sheetjs.com/ 导入导出
+https://xlsx.nodejs.cn/docs/
+https://github.com/TonyGermaneri/canvas-datagrid  渲染
+- x-data-spreadsheet
+  https://hondrytravis.com/x-spreadsheet-doc/guide/
+  
+
+
 --- 
 ###  node
 https://github.com/redis/ioredis redis
