@@ -27,7 +27,7 @@ https://www.gradio.app/guides/quickstart
 ## office
 - word
 https://volodymyrbaydalka.github.io/docxjs/ word预览
-- excel
+- ### Excel
 - univer
   https://www.univer.ai/zh-CN/guides/sheet/introduction
 - Luckysheet
@@ -36,9 +36,9 @@ https://dream-num.github.io/LuckysheetDocs/
 https://sheetjs.com/ 导入导出
 https://xlsx.nodejs.cn/docs/
 https://github.com/TonyGermaneri/canvas-datagrid  渲染
-- x-data-spreadsheet
+- [x-spreadsheet](https://github.com/myliang/x-spreadsheet)
+  这是一个基于 Web(es6) canvas 构建的轻量级 Excel 开发库
   https://hondrytravis.com/x-spreadsheet-doc/guide/
-  
 
 
 --- 
@@ -94,11 +94,6 @@ https://github.com/atlassian/pragmatic-drag-and-drop
   - [alibaba / ali-react-table](https://github.com/alibaba/ali-react-table)
 https://ali-react-table.js.org/examples/others/cross-table-customization/
 
-
----
-- ### Excel
-  [spreadsheet](https://github.com/myliang/x-spreadsheet)
-  [sheetjs](https://github.com/SheetJS/sheetjs)
   
 
 --- 
