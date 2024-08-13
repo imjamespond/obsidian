@@ -22,6 +22,10 @@ https://jdan.github.io/98.css/#intro
 - gradio
 https://www.gradio.app/guides/quickstart
 
+--- 
+资源
+https://www.iconfont.cn/home/index
+
 
 --- 
 ## office
@@ -39,7 +43,7 @@ https://github.com/TonyGermaneri/canvas-datagrid  渲染
 - [x-spreadsheet](https://github.com/myliang/x-spreadsheet)
   这是一个基于 Web(es6) canvas 构建的轻量级 Excel 开发库
   https://hondrytravis.com/x-spreadsheet-doc/guide/
-
+migrate https://github.com/wolf-table/table
 
 --- 
 ###  node
