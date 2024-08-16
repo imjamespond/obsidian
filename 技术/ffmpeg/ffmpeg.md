@@ -8,6 +8,7 @@ ape to aac
 ```bash
 # Apple music player
 ffmpeg -i ${1} -c:v copy -c:a aac -ab 320k ${2}.m4a
+for name in *.flac; do ffmpeg -nostdin -i "$name" -c:v copy -c:a aac -ab 320k "${name%.*}.m4a"; done
 ffmpeg -i ./CDImage.ape -c:a aac -b:a 256k 1.aac
 ```
 
