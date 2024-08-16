@@ -5,7 +5,9 @@
 ./ffmpeg -user_agent "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_1_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Safari/537.36" -ss 01:40:23 -i  "https://upos-sz-mirrorali.bilivideo.com/upgcxcode/30/01/1098840130/1098840130-1-16.mp4"  -c copy new.mp4
 ```
 ape to aac
-```
+```bash
+# Apple music player
+ffmpeg -i ${1} -c:v copy -c:a aac -ab 320k ${2}.m4a
 ffmpeg -i ./CDImage.ape -c:a aac -b:a 256k 1.aac
 ```
 
