@@ -22,5 +22,5 @@ func.apply(obj, {
     length: 3
 })
 // func 接收到的参数实际上是 1,2,3
-// ES6 推荐用spread 写法
+// ES6 推荐用spread operator instead of apply
 ```
