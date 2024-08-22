@@ -26,6 +26,7 @@ https://www.gradio.app/guides/quickstart
 资源
 https://www.iconfont.cn/home/index
 https://loading.io/css/
+https://lottiefiles.com/free-animations/resource
 
 
 --- 
