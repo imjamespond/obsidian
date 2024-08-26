@@ -1,0 +1,1 @@
+- `ln -fs ./new/page2.html ./page.html` 强制override

@@ -1,0 +1,11 @@
+{
+  "showLineNumber": true,
+  "autoPairMarkdown": true,
+  "autoConvertHtml": true,
+  "readableLineLength": false,
+  "newFileLocation": "current",
+  "attachmentFolderPath": "./img",
+  "useTab": false,
+  "tabSize": 2,
+  "spellcheck": false
+}

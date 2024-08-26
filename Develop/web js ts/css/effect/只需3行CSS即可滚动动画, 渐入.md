@@ -1,0 +1,1 @@
+【只需3行CSS即可滚动动画（不需要库）】 https://www.bilibili.com/video/BV1PyvveWEaV/?share_source=copy_web&vd_source=65d7c54e9b8b7363bc20d2b5b5809ffb

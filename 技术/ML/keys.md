@@ -1,0 +1,1 @@
+https://f2api.com/product/openai
